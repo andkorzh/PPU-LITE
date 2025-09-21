@@ -1,0 +1,199 @@
+-- Copyright (C) 1991-2010 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+
+-- Quartus II generated Memory Initialization File (.mif)
+
+WIDTH=18;
+DEPTH=256;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+	00  :   1A69A;
+	01  :   2E2;
+	02  :   516A;
+	03  :   F029;
+	04  :   17020;
+	05  :   1C010;
+	06  :   1B080;
+	07  :   161C0;
+	08  :   D340;
+	09  :   3480;
+	0A  :   540;
+	0B  :   502;
+	0C  :   413;
+	[0D..0F]  :   00000;
+	10  :   2BAEB;
+	11  :   5636;
+	12  :   1143F;
+	13  :   1D2BF;
+	14  :   281F3;
+	15  :   2E21F;
+	16  :   2D308;
+	17  :   26500;
+	18  :   1B6C0;
+	19  :   0E880;
+	1A  :   3940;
+	1B  :   90D;
+	1C  :   7E3;
+	[1D..1F]  :   00000;
+	20  :   3FFFF;
+	21  :   19B3F;
+	22  :   2593F;
+	23  :   327BF;
+	24  :   3D6FF;
+	25  :   3F733;
+	26  :   3F81C;
+	27  :   3BA09;
+	28  :   2FC00;
+	29  :   22D80;
+	2A  :   17E4C;
+	2B  :   11E21;
+	2C  :   12CF8;
+	2D  :   14514;
+	[2E..2F]  :   00000;
+	30  :   3FFFF;
+	31  :   30E3F;
+	32  :   35D7F;
+	33  :   3ACBF;
+	34  :   3FC7F;
+	35  :   3FC7B;
+	36  :   3FCF1;
+	37  :   3EDA9;
+	38  :   39E65;
+	39  :   34F26;
+	3A  :   2FF6B;
+	3B  :   2DF73;
+	3C  :   2DEFD;
+	3D  :   2EBAE;
+	[3E..3F]  :   00000;
+    40  :   1B6DB;
+    41  :   160;
+    42  :   8023;
+    43  :   E01F;
+    44  :   15016;
+    45  :   17006;
+    46  :   14100;
+    47  :   F1C0;
+    48  :   9340;
+    49  :   3C0;
+    4A  :   400;
+    4B  :   389;
+    4C  :   315;
+    [4D..4F]  :   00000;
+    50  :   2EBEE;
+    51  :   6532;
+    52  :   13339;
+    53  :   1D276;
+    54  :   2522A;
+    55  :   27297;
+    56  :   26380;
+    57  :   204C0;
+    58  :   18640;
+    59  :   9780;
+    5A  :   1801;
+    5B  :   791;
+    5C  :   723;
+    [5D..5F]  :   00000;
+    60  :   3FFFF;
+    61  :   1AABF;
+    62  :   239FF;
+    63  :   2D8BF;
+    64  :   3677F;
+    65  :   397AE;
+    66  :   398DA;
+    67  :   359CA;
+    68  :   2DB03;
+    69  :   1FC44;
+    6A  :   15CD2;
+    6B  :   12CE0;
+    6C  :   120F1;
+    6D  :   134D3;
+    [6E..6F]  :   00000;
+    70  :   3FFFF;
+    71  :   33EFF;
+    72  :   37E3F;
+    73  :   38DFF;
+    74  :   39BF;
+    75  :   3DBD;
+    76  :   3FDF4;
+    77  :   3EEAD;
+    78  :   3CF2B;
+    79  :   37FEA;
+    7A  :   32FEF;
+    7B  :   31FF6;
+    7C  :   31FBE;
+    7D  :   30C30;
+    [7E..7F]  :   00000;
+    80  :   16596;
+    81  :   263;
+    82  :   167;
+    83  :   B061;
+    84  :   17015;
+    85  :   1F006;
+    86  :   1F080;
+    87  :   18180;
+    88  :   D2C0;
+    89  :   2380;
+    8A  :   400;
+    8B  :   3C9;
+    8C  :   357;
+    [8D..8F]  :   00000;
+    90  :   28A28;
+    91  :   57C;
+    92  :   53FF;
+    93  :   182B9;
+    94  :   2A1E6;
+    95  :   35210;
+    96  :   35200;
+    97  :   2B440;
+    98  :   1B600;
+    99  :   B740;
+    9A  :   FC2;
+    9B  :   795;
+    9C  :   6AA;
+    [9D..9F]  :   00000;
+    A0  :   3FFFF;
+    A1  :   8A7F;
+    A2  :   188BF;
+    A3  :   2D77F;
+    A4  :   3F67E;
+    A5  :   3F6A4;
+    A6  :   3F78F;
+    A7  :   3F942;
+    A8  :   31B40;
+    A9  :   1ECC4;
+    AA  :   FD53;
+    AB  :   4D29;
+    AC  :   2C3F;
+    AD  :   11451;
+    [AE..AF]  :   00000;
+    B0  :   3FFFF;
+    B1  :   28DBF;
+    B2  :   2FCFF;
+    B3  :   38C7F;
+    B4  :   3FBFF;
+    B5  :   3FBF4;
+    B6  :   3FC6A;
+    B7  :   3FD24;
+    B8  :   3AE22;
+    B9  :   32EA5;
+    BA  :   2AF2C;
+    BB  :   25EF6;
+    BC  :   24E7F;
+    BD  :   2BAEB;    
+    [BE..BF]  :   00000;
+    [C0..FF]  :   00000;     
+END;

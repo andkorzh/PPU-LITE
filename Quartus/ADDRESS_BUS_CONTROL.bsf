@@ -1,0 +1,148 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 168 208)
+	(text "ADDRESS_BUS_CONTROL" (rect 5 0 145 12)(font "Arial" ))
+	(text "inst" (rect 8 176 25 188)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
+		(text "Clk" (rect 21 27 37 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "PCLK" (rect 0 0 28 12)(font "Arial" ))
+		(text "PCLK" (rect 21 43 49 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "nPCLK" (rect 0 0 34 12)(font "Arial" ))
+		(text "nPCLK" (rect 21 59 55 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "R7" (rect 0 0 14 12)(font "Arial" ))
+		(text "R7" (rect 21 75 35 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "W7" (rect 0 0 16 12)(font "Arial" ))
+		(text "W7" (rect 21 91 37 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Hnn0" (rect 0 0 25 12)(font "Arial" ))
+		(text "Hnn0" (rect 21 107 46 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "Hn0" (rect 0 0 20 12)(font "Arial" ))
+		(text "Hn0" (rect 21 123 41 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "BLNK" (rect 0 0 28 12)(font "Arial" ))
+		(text "BLNK" (rect 21 139 49 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "PAD[13..8]" (rect 0 0 54 12)(font "Arial" ))
+		(text "PAD[13..8]" (rect 21 155 75 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "TSTEP" (rect 0 0 33 12)(font "Arial" ))
+		(text "TSTEP" (rect 98 27 131 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32)(line_width 1))
+	)
+	(port
+		(pt 152 48)
+		(output)
+		(text "PD_RB" (rect 0 0 36 12)(font "Arial" ))
+		(text "PD_RB" (rect 95 43 131 55)(font "Arial" ))
+		(line (pt 152 48)(pt 136 48)(line_width 1))
+	)
+	(port
+		(pt 152 64)
+		(output)
+		(text "DB_PAR" (rect 0 0 43 12)(font "Arial" ))
+		(text "DB_PAR" (rect 88 59 131 71)(font "Arial" ))
+		(line (pt 152 64)(pt 136 64)(line_width 1))
+	)
+	(port
+		(pt 152 80)
+		(output)
+		(text "ALE" (rect 0 0 20 12)(font "Arial" ))
+		(text "ALE" (rect 111 75 131 87)(font "Arial" ))
+		(line (pt 152 80)(pt 136 80)(line_width 1))
+	)
+	(port
+		(pt 152 96)
+		(output)
+		(text "nWR" (rect 0 0 24 12)(font "Arial" ))
+		(text "nWR" (rect 107 91 131 103)(font "Arial" ))
+		(line (pt 152 96)(pt 136 96)(line_width 1))
+	)
+	(port
+		(pt 152 112)
+		(output)
+		(text "nRD" (rect 0 0 22 12)(font "Arial" ))
+		(text "nRD" (rect 109 107 131 119)(font "Arial" ))
+		(line (pt 152 112)(pt 136 112)(line_width 1))
+	)
+	(port
+		(pt 152 128)
+		(output)
+		(text "XRB" (rect 0 0 21 12)(font "Arial" ))
+		(text "XRB" (rect 110 123 131 135)(font "Arial" ))
+		(line (pt 152 128)(pt 136 128)(line_width 1))
+	)
+	(port
+		(pt 152 144)
+		(output)
+		(text "TH_MUX" (rect 0 0 42 12)(font "Arial" ))
+		(text "TH_MUX" (rect 89 139 131 151)(font "Arial" ))
+		(line (pt 152 144)(pt 136 144)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 176)(line_width 1))
+	)
+)

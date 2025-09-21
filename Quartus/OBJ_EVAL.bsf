@@ -1,0 +1,148 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 160 272)
+	(text "OBJ_EVAL" (rect 5 0 59 12)(font "Arial" ))
+	(text "inst" (rect 8 240 25 252)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Clk" (rect 0 0 16 12)(font "Arial" ))
+		(text "Clk" (rect 21 27 37 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "PCLK" (rect 0 0 28 12)(font "Arial" ))
+		(text "PCLK" (rect 21 43 49 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "nPCLK" (rect 0 0 34 12)(font "Arial" ))
+		(text "nPCLK" (rect 21 59 55 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "V[7..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "V[7..0]" (rect 21 75 54 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "OB[7..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "OB[7..0]" (rect 21 91 62 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "O8_16" (rect 0 0 31 12)(font "Arial" ))
+		(text "O8_16" (rect 21 107 52 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "I_OAM2" (rect 0 0 38 12)(font "Arial" ))
+		(text "I_OAM2" (rect 21 123 59 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "nVIS" (rect 0 0 23 12)(font "Arial" ))
+		(text "nVIS" (rect 21 139 44 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "SPR_OV" (rect 0 0 43 12)(font "Arial" ))
+		(text "SPR_OV" (rect 21 155 64 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "nF_NT" (rect 0 0 33 12)(font "Arial" ))
+		(text "nF_NT" (rect 21 171 54 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "Hnn0" (rect 0 0 25 12)(font "Arial" ))
+		(text "Hnn0" (rect 21 187 46 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "S_EV" (rect 0 0 27 12)(font "Arial" ))
+		(text "S_EV" (rect 21 203 48 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "PAR_O" (rect 0 0 36 12)(font "Arial" ))
+		(text "PAR_O" (rect 21 219 57 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 1))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "OV[3..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "OV[3..0]" (rect 82 27 123 39)(font "Arial" ))
+		(line (pt 144 32)(pt 128 32)(line_width 3))
+	)
+	(port
+		(pt 144 48)
+		(output)
+		(text "OMFG" (rect 0 0 31 12)(font "Arial" ))
+		(text "OMFG" (rect 92 43 123 55)(font "Arial" ))
+		(line (pt 144 48)(pt 128 48)(line_width 1))
+	)
+	(port
+		(pt 144 64)
+		(output)
+		(text "PD_FIFO" (rect 0 0 47 12)(font "Arial" ))
+		(text "PD_FIFO" (rect 76 59 123 71)(font "Arial" ))
+		(line (pt 144 64)(pt 128 64)(line_width 1))
+	)
+	(port
+		(pt 144 80)
+		(output)
+		(text "SPR0_EV" (rect 0 0 48 12)(font "Arial" ))
+		(text "SPR0_EV" (rect 75 75 123 87)(font "Arial" ))
+		(line (pt 144 80)(pt 128 80)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 240)(line_width 1))
+	)
+)

@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.255 ns
+From           : MODE
+To             : RP2C02:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|PEN_FF
+From Clock     : --
+To Clock       : MCLK
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.833 ns
+From           : RP2C02:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_oc51:auto_generated|ram_block1a17~porta_address_reg7
+To             : RGB[12]
+From Clock     : MCLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -6.119 ns
+From           : A[0]
+To             : RP2C02:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|ADR[0]
+From Clock     : --
+To Clock       : MCLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PLL:inst1|altpll:altpll_component|_clk0'
+Slack          : 12.075 ns
+Required Time  : 42.94 MHz ( period = 23.288 ns )
+Actual Time    : N/A
+From           : RP2C02:inst|PCLK_P3
+To             : RP2C02:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[1]|CNT
+From Clock     : PLL:inst1|altpll:altpll_component|_clk1
+To Clock       : PLL:inst1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PLL:inst1|altpll:altpll_component|_clk1'
+Slack          : 20.793 ns
+Required Time  : 21.47 MHz ( period = 46.576 ns )
+Actual Time    : 200.40 MHz ( period = 4.990 ns )
+From           : RP2C02:inst|PCLK_P2
+To             : RP2C02:inst|PCLK_P4
+From Clock     : PLL:inst1|altpll:altpll_component|_clk1
+To Clock       : PLL:inst1|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Hold: 'PLL:inst1|altpll:altpll_component|_clk0'
+Slack          : 0.860 ns
+Required Time  : 42.94 MHz ( period = 23.288 ns )
+Actual Time    : N/A
+From           : RP2C02:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_5B|QS_IN[0]
+To             : RP2C02:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_5B|QS[0]
+From Clock     : PLL:inst1|altpll:altpll_component|_clk0
+To Clock       : PLL:inst1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'PLL:inst1|altpll:altpll_component|_clk1'
+Slack          : 0.865 ns
+Required Time  : 21.47 MHz ( period = 46.576 ns )
+Actual Time    : N/A
+From           : RP2C02:inst|PCLK_N1
+To             : RP2C02:inst|PCLK_N2
+From Clock     : PLL:inst1|altpll:altpll_component|_clk1
+To Clock       : PLL:inst1|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
