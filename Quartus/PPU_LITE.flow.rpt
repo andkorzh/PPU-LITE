@@ -1,5 +1,5 @@
 Flow report for PPU_LITE
-Fri Sep 19 14:46:24 2025
+Mon Sep 22 22:59:40 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Fri Sep 19 14:46:24 2025        ;
+; Flow Status             ; Successful - Mon Sep 22 22:59:40 2025        ;
 ; Quartus II Version      ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name           ; PPU_LITE                                     ;
 ; Top-level Entity Name   ; PPU_LITE                                     ;
@@ -46,7 +46,7 @@ applicable agreement for further details.
 ; Device                  ; EP1C3T100C8                                  ;
 ; Timing Models           ; Final                                        ;
 ; Met timing requirements ; Yes                                          ;
-; Total logic elements    ; 1,216 / 2,910 ( 42 % )                       ;
+; Total logic elements    ; 1,217 / 2,910 ( 42 % )                       ;
 ; Total pins              ; 62 / 65 ( 95 % )                             ;
 ; Total virtual pins      ; 0                                            ;
 ; Total memory bits       ; 7,104 / 59,904 ( 12 % )                      ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2025 14:46:17 ;
+; Start date & time ; 09/22/2025 22:59:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PPU_LITE            ;
 +-------------------+---------------------+
@@ -70,7 +70,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                                   ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 233497588822337.175828237704720                         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 48633807480252.175857117009124                          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT             ; Verilog Hdl                                             ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                ; ModelSim-Altera (Verilog)                               ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                     ; 1 ps                                                    ; --            ; --          ; eda_simulation ;
@@ -94,7 +94,6 @@ applicable agreement for further details.
 ; MISC_FILE                          ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.dpf ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                                                ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                                                  ; --            ; --          ; Top            ;
-; RTLV_GROUP_COMB_LOGIC_IN_CLOUD     ; On                                                      ; Off           ; --          ; --             ;
 ; RTLV_GROUP_RELATED_NODES           ; Off                                                     ; On            ; --          ; --             ;
 ; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                                     ; --            ; --          ; eda_blast_fpga ;
 +------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
@@ -105,12 +104,12 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 234 MB              ; 00:00:02                           ;
-; Fitter                  ; 00:00:02     ; 1.0                     ; 228 MB              ; 00:00:02                           ;
-; Assembler               ; 00:00:00     ; 1.0                     ; 187 MB              ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 169 MB              ; 00:00:00                           ;
-; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ; 180 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:04     ; --                      ; --                  ; 00:00:04                           ;
+; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 241 MB              ; 00:00:04                           ;
+; Fitter                  ; 00:00:02     ; 1.0                     ; 243 MB              ; 00:00:03                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 191 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 173 MB              ; 00:00:00                           ;
+; EDA Netlist Writer      ; 00:00:01     ; 1.0                     ; 184 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:07     ; --                      ; --                  ; 00:00:07                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -119,11 +118,11 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; Fitter                  ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; Assembler               ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; Classic Timing Analyzer ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; EDA Netlist Writer      ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
+; Analysis & Synthesis    ; AND-PCBOOK       ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; AND-PCBOOK       ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; AND-PCBOOK       ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; AND-PCBOOK       ; Windows Vista ; 6.2        ; x86_64         ;
+; EDA Netlist Writer      ; AND-PCBOOK       ; Windows Vista ; 6.2        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 

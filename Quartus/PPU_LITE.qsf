@@ -89,7 +89,6 @@ set_location_assignment PIN_84 -to VRAMA10
 set_location_assignment PIN_79 -to A[2]
 set_location_assignment PIN_78 -to A[1]
 set_location_assignment PIN_77 -to A[0]
-set_location_assignment PIN_76 -to N_DBE
 set_location_assignment PIN_20 -to nRD
 set_location_assignment PIN_21 -to ALE
 set_location_assignment PIN_22 -to HS
@@ -118,7 +117,6 @@ set_location_assignment PIN_52 -to RGB[5]
 set_location_assignment PIN_53 -to EMPH[0]
 set_location_assignment PIN_55 -to MODE
 set_location_assignment PIN_56 -to DENDY
-set_location_assignment PIN_65 -to NMI
 set_location_assignment PIN_68 -to nWR
 set_location_assignment PIN_69 -to PA[13]
 set_location_assignment PIN_70 -to PA[12]
@@ -135,15 +133,9 @@ set_location_assignment PIN_57 -to PALSEL1
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PALSEL0
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PALSEL1
 set_global_assignment -name MISC_FILE "D:/SRC/PPU_LITE/PPU_LITE.dpf"
-set_global_assignment -name RTLV_GROUP_COMB_LOGIC_IN_CLOUD ON
+set_global_assignment -name RTLV_GROUP_COMB_LOGIC_IN_CLOUD OFF
 set_global_assignment -name RTLV_GROUP_RELATED_NODES OFF
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[0]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[1]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[2]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[3]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[4]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[5]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[6]
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to PD_BUS[7]
 set_global_assignment -name MISC_FILE "D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.dpf"
+set_location_assignment PIN_76 -to nDBE
+set_location_assignment PIN_65 -to INT
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -131,7 +131,7 @@ nSTATUS                      : 61        :        :                   :         
 TCK                          : 62        : input  :                   :         : 3         :                
 TMS                          : 63        : input  :                   :         : 3         :                
 TDO                          : 64        : output :                   :         : 3         :                
-NMI                          : 65        : output : 3.3-V LVTTL       :         : 3         : Y              
+INT                          : 65        : output : 3.3-V LVTTL       :         : 3         : Y              
 GND+                         : 66        :        :                   :         : 3         :                
 TDI                          : 67        : input  :                   :         : 3         :                
 nWR                          : 68        : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -142,7 +142,7 @@ PA[10]                       : 72        : output : 3.3-V LVTTL       :         
 VRAMCS                       : 73        : input  : 3.3-V LVTTL       :         : 3         : Y              
 PA[8]                        : 74        : output : 3.3-V LVTTL       :         : 3         : Y              
 PA[9]                        : 75        : output : 3.3-V LVTTL       :         : 3         : Y              
-N_DBE                        : 76        : input  : 3.3-V LVTTL       :         : 2         : Y              
+nDBE                         : 76        : input  : 3.3-V LVTTL       :         : 2         : Y              
 A[0]                         : 77        : input  : 3.3-V LVTTL       :         : 2         : Y              
 A[1]                         : 78        : input  : 3.3-V LVTTL       :         : 2         : Y              
 A[2]                         : 79        : input  : 3.3-V LVTTL       :         : 2         : Y              

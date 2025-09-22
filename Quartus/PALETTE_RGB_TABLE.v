@@ -81,7 +81,7 @@ module PALETTE_RGB_TABLE (
 				.wren_b (1'b0));
 	defparam
 		altsyncram_component.address_aclr_a = "NONE",
-		altsyncram_component.init_file = "PALETTE_RGB_TABLE_PAL3.mif",
+		altsyncram_component.init_file = "PALETTE_RGB_TABLE.mif",
 		altsyncram_component.intended_device_family = "Cyclone",
 		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=NO",
 		altsyncram_component.lpm_type = "altsyncram",
@@ -116,7 +116,7 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "PALETTE_RGB_TABLE_PAL3.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "PALETTE_RGB_TABLE.mif"
 // Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "256"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 // Retrieval info: PRIVATE: RegAddr NUMERIC "1"
@@ -128,7 +128,7 @@ endmodule
 // Retrieval info: PRIVATE: WidthData NUMERIC "18"
 // Retrieval info: PRIVATE: rden NUMERIC "0"
 // Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
-// Retrieval info: CONSTANT: INIT_FILE STRING "PALETTE_RGB_TABLE_PAL3.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "PALETTE_RGB_TABLE.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone"
 // Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
