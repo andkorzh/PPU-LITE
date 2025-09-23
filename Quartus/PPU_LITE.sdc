@@ -1,6 +1,6 @@
 ## Generated SDC file "PPU_LITE.sdc"
 
-## Copyright (C) 1991-2013 Altera Corporation
+## Copyright (C) 1991-2010 Altera Corporation
 ## Your use of Altera Corporation's design tools, logic functions 
 ## and other software and tools, and its AMPP partner logic 
 ## functions, and any output files from any of the foregoing 
@@ -17,9 +17,9 @@
 
 ## VENDOR  "Altera"
 ## PROGRAM "Quartus II"
-## VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
+## VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
 
-## DATE    "Tue Aug 02 01:50:41 2022"
+## DATE    "Tue Sep 23 00:53:13 2025"
 
 ##
 ## DEVICE  "EP1C3T100C8"
@@ -38,16 +38,14 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-derive_clock_uncertainty
-derive_pll_clocks
+create_clock -name {MCLK} -period 46.576 -waveform { 0.000 5.000 } [get_ports {MCLK}]
 
-create_clock -name {MCLK}    -period 69.842 -waveform { 0.000 5.000 } [get_ports {MCLK}]
-create_clock -name {MCLKPAL} -period 56.388 -waveform { 0.000 5.000 } [get_ports {MCLKPAL}]
 
 #**************************************************************
 # Create Generated Clock
 #**************************************************************
 
+derive_pll_clocks
 
 
 #**************************************************************
@@ -78,7 +76,7 @@ create_clock -name {MCLKPAL} -period 56.388 -waveform { 0.000 5.000 } [get_ports
 # Set Clock Groups
 #**************************************************************
 
-set_clock_groups -exclusive -group {inst2|altpll_component|pll|clk[0]~1} -group {inst2|altpll_component|pll|clk[0]}
+
 
 #**************************************************************
 # Set False Path

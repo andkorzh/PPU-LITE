@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for PPU_LITE
-Mon Sep 22 22:59:38 2025
+Tue Sep 23 14:36:36 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -109,7 +109,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 10     ;
+; Number detected on machine ; 16     ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -985,7 +985,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Sep 22 22:59:38 2025
+    Info: Processing started: Tue Sep 23 14:36:36 2025
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE --timing_analysis_only
 Info: Found timing assignments -- calculating delays
 Info: Slack time is 12.545 ns for clock "PLL:inst1|altpll:altpll_component|_clk0" between source register "RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT3|EN" and destination register "RP2C02_LITE:inst|VID_MUX:MOD_VID_MUX|ZCOLN[0]"
@@ -1152,10 +1152,10 @@ Info: th for register "RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN
         Info: Total cell delay = 1.590 ns ( 23.80 % )
         Info: Total interconnect delay = 5.092 ns ( 76.20 % )
 Info: All timing requirements were met for slow timing model timing analysis. See Report window for more details.
-Info: Generated suppressed messages file D:/SRC/PPU_LITE/PPU_LITE.tan.smsg
+Info: Generated suppressed messages file D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.tan.smsg
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 173 megabytes
-    Info: Processing ended: Mon Sep 22 22:59:38 2025
+    Info: Peak virtual memory: 169 megabytes
+    Info: Processing ended: Tue Sep 23 14:36:36 2025
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -1163,6 +1163,6 @@ Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
 +-------------------------------------+
 ; Timing Analyzer Suppressed Messages ;
 +-------------------------------------+
-The suppressed messages can be found in D:/SRC/PPU_LITE/PPU_LITE.tan.smsg.
+The suppressed messages can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.tan.smsg.
 
 

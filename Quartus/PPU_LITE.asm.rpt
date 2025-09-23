@@ -1,5 +1,5 @@
 Assembler report for PPU_LITE
-Mon Sep 22 22:59:38 2025
+Tue Sep 23 14:36:35 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/SRC/PPU_LITE/PPU_LITE.sof
-  6. Assembler Device Options: D:/SRC/PPU_LITE/PPU_LITE.pof
+  5. Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.sof
+  6. Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Sep 22 22:59:38 2025 ;
+; Assembler Status      ; Successful - Tue Sep 23 14:36:35 2025 ;
 ; Revision Name         ; PPU_LITE                              ;
 ; Top-level Entity Name ; PPU_LITE                              ;
 ; Family                ; Cyclone                               ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------+
-; Assembler Generated Files    ;
-+------------------------------+
-; File Name                    ;
-+------------------------------+
-; D:/SRC/PPU_LITE/PPU_LITE.sof ;
-; D:/SRC/PPU_LITE/PPU_LITE.pof ;
-+------------------------------+
++---------------------------------------------------------+
+; Assembler Generated Files                               ;
++---------------------------------------------------------+
+; File Name                                               ;
++---------------------------------------------------------+
+; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.sof ;
+; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pof ;
++---------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; Assembler Device Options: D:/SRC/PPU_LITE/PPU_LITE.sof ;
-+----------------+---------------------------------------+
-; Option         ; Setting                               ;
-+----------------+---------------------------------------+
-; Device         ; EP1C3T100C8                           ;
-; JTAG usercode  ; 0xFFFFFFFF                            ;
-; Checksum       ; 0x0014697C                            ;
-+----------------+---------------------------------------+
++-----------------------------------------------------------------------------------+
+; Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.sof ;
++----------------+------------------------------------------------------------------+
+; Option         ; Setting                                                          ;
++----------------+------------------------------------------------------------------+
+; Device         ; EP1C3T100C8                                                      ;
+; JTAG usercode  ; 0xFFFFFFFF                                                       ;
+; Checksum       ; 0x00146984                                                       ;
++----------------+------------------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; Assembler Device Options: D:/SRC/PPU_LITE/PPU_LITE.pof ;
-+--------------------+-----------------------------------+
-; Option             ; Setting                           ;
-+--------------------+-----------------------------------+
-; Device             ; EPCS4                             ;
-; JTAG usercode      ; 0x00000000                        ;
-; Checksum           ; 0x078E103E                        ;
-; Compression Ratio  ; 2                                 ;
-+--------------------+-----------------------------------+
++-----------------------------------------------------------------------------------+
+; Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pof ;
++--------------------+--------------------------------------------------------------+
+; Option             ; Setting                                                      ;
++--------------------+--------------------------------------------------------------+
+; Device             ; EPCS4                                                        ;
+; JTAG usercode      ; 0x00000000                                                   ;
+; Checksum           ; 0x078E41AC                                                   ;
+; Compression Ratio  ; 2                                                            ;
++--------------------+--------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Sep 22 22:59:37 2025
+    Info: Processing started: Tue Sep 23 14:36:35 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 191 megabytes
-    Info: Processing ended: Mon Sep 22 22:59:38 2025
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 187 megabytes
+    Info: Processing ended: Tue Sep 23 14:36:35 2025
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

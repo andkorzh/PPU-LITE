@@ -3,8 +3,8 @@ JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Ign)
-		Device PartName(EP1C3) MfrSpec(OpMask(0));
+	P ActionCode(Cfg)
+		Device PartName(EP1C3T100) Path("D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/") File("PPU_LITE.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
