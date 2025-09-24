@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PPU_LITE
-Tue Sep 23 14:36:31 2025
+Wed Sep 24 13:55:00 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -71,7 +71,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Sep 23 14:36:31 2025        ;
+; Analysis & Synthesis Status ; Successful - Wed Sep 24 13:54:59 2025        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; PPU_LITE                                     ;
 ; Top-level Entity Name       ; PPU_LITE                                     ;
@@ -169,31 +169,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                          ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                      ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------+
-; PPU_LITE.bdf                     ; yes             ; User Block Diagram/Schematic File      ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.bdf           ;
-; PALETTE_RGB_TABLE.v              ; yes             ; User Wizard-Generated File             ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PALETTE_RGB_TABLE.v    ;
-; OAM_RAM.v                        ; yes             ; User Wizard-Generated File             ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/OAM_RAM.v              ;
-; OAM2_RAM.v                       ; yes             ; User Wizard-Generated File             ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/OAM2_RAM.v             ;
-; PALETTE_RAM.v                    ; yes             ; User Wizard-Generated File             ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PALETTE_RAM.v          ;
-; PLL.v                            ; yes             ; User Wizard-Generated File             ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PLL.v                  ;
-; RP2C02_LITE.v                    ; yes             ; User Verilog HDL File                  ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/RP2C02_LITE.v          ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf    ;
-; db/altsyncram_cua1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/db/altsyncram_cua1.tdf ;
-; db/altsyncram_hsa1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/db/altsyncram_hsa1.tdf ;
-; db/altsyncram_fsa1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/db/altsyncram_fsa1.tdf ;
-; db/altsyncram_9u41.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/db/altsyncram_9u41.tdf ;
-; palette_rgb_table.mif            ; yes             ; Auto-Found Memory Initialization File  ; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/palette_rgb_table.mif  ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altpll.tdf        ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------+
+; PPU_LITE.bdf                     ; yes             ; User Block Diagram/Schematic File      ; D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.bdf                      ;
+; PALETTE_RGB_TABLE.v              ; yes             ; User Wizard-Generated File             ; D:/PPU_REVERSE/FPGA/PPU_LITE/PALETTE_RGB_TABLE.v               ;
+; OAM_RAM.v                        ; yes             ; User Wizard-Generated File             ; D:/PPU_REVERSE/FPGA/PPU_LITE/OAM_RAM.v                         ;
+; OAM2_RAM.v                       ; yes             ; User Wizard-Generated File             ; D:/PPU_REVERSE/FPGA/PPU_LITE/OAM2_RAM.v                        ;
+; PALETTE_RAM.v                    ; yes             ; User Wizard-Generated File             ; D:/PPU_REVERSE/FPGA/PPU_LITE/PALETTE_RAM.v                     ;
+; PLL.v                            ; yes             ; User Wizard-Generated File             ; D:/PPU_REVERSE/FPGA/PPU_LITE/PLL.v                             ;
+; RP2C02_LITE.v                    ; yes             ; User Verilog HDL File                  ; D:/PPU_REVERSE/FPGA/PPU_LITE/RP2C02_LITE.v                     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf ;
+; db/altsyncram_cua1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_cua1.tdf            ;
+; db/altsyncram_hsa1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_hsa1.tdf            ;
+; db/altsyncram_fsa1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_fsa1.tdf            ;
+; db/altsyncram_9u41.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_9u41.tdf            ;
+; palette_rgb_table.mif            ; yes             ; Auto-Found Memory Initialization File  ; D:/PPU_REVERSE/FPGA/PPU_LITE/palette_rgb_table.mif             ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altpll.tdf     ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -239,7 +239,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Compilation Hierarchy Node                          ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                           ; Library Name ;
 +-----------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; |PPU_LITE                                           ; 1331 (0)    ; 1009         ; 7104        ; 62   ; 0            ; 322 (0)      ; 435 (0)           ; 574 (0)          ; 8 (0)           ; 0 (0)      ; |PPU_LITE                                                                                                                                     ; work         ;
-;    |PLL:inst1|                                      ; 0 (0)       ; 0            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1                                                                                                                           ; work         ;
+;    |PLL:inst1|                                      ; 0 (0)       ; 0            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1                                                                                                                           ;              ;
 ;       |altpll:altpll_component|                     ; 0 (0)       ; 0            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1|altpll:altpll_component                                                                                                   ; work         ;
 ;    |RP2C02_LITE:inst|                               ; 1331 (7)    ; 1009         ; 7104        ; 0    ; 0            ; 322 (1)      ; 435 (4)           ; 574 (2)          ; 8 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst                                                                                                                    ;              ;
 ;       |ADDRESS_BUS_CONTROL:MOD_ADDRESS_BUS_CONTROL| ; 23 (23)     ; 13           ; 0           ; 0    ; 0            ; 10 (10)      ; 5 (5)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|ADDRESS_BUS_CONTROL:MOD_ADDRESS_BUS_CONTROL                                                                        ;              ;
@@ -290,7 +290,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altsyncram:altsyncram_component|       ; 0 (0)       ; 0            ; 192         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM|altsyncram:altsyncram_component                                    ;              ;
 ;                |altsyncram_fsa1:auto_generated|     ; 0 (0)       ; 0            ; 192         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM|altsyncram:altsyncram_component|altsyncram_fsa1:auto_generated     ;              ;
 ;          |PALETTE_RGB_TABLE:MOD_RGB_TABLE|          ; 0 (0)       ; 0            ; 4608        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE                                                                ; work         ;
-;             |altsyncram:altsyncram_component|       ; 0 (0)       ; 0            ; 4608        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram:altsyncram_component|       ; 0 (0)       ; 0            ; 4608        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component                                ;              ;
 ;                |altsyncram_9u41:auto_generated|     ; 0 (0)       ; 0            ; 4608        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated ; work         ;
 ;       |PAR_GEN:MOD_PAR_GEN|                         ; 152 (115)   ; 114          ; 0           ; 0    ; 0            ; 38 (31)      ; 38 (38)           ; 76 (46)          ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN                                                                                                ;              ;
 ;          |COUNTER:FVCNT[0]|                         ; 2 (2)       ; 2            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[0]                                                                               ;              ;
@@ -1267,7 +1267,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Sep 23 14:36:29 2025
+    Info: Processing started: Wed Sep 24 13:54:56 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Found 1 design units, including 1 entities, in source file ppu_lite.bdf
     Info: Found entity 1: PPU_LITE
@@ -1471,9 +1471,9 @@ Info: Implemented 1434 device resources after synthesis - the final resource cou
     Info: Implemented 40 RAM segments
     Info: Implemented 1 PLLs
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 234 megabytes
-    Info: Processing ended: Tue Sep 23 14:36:31 2025
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 231 megabytes
+    Info: Processing ended: Wed Sep 24 13:55:00 2025
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

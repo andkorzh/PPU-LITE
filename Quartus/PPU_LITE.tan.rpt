@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for PPU_LITE
-Tue Sep 23 14:36:36 2025
+Wed Sep 24 13:55:06 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -109,7 +109,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -466,7 +466,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 1.032 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|QS_IN[5]    ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|QS[5]        ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.823 ns                 ;
 ; 1.033 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                  ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1A|QS_IN[0]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.824 ns                 ;
 ; 1.033 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1A|QS[3]       ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1A|QS_IN[4]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.824 ns                 ;
-; 1.034 ns                                ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[6]                       ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TA|QS_IN[6]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.825 ns                 ;
+; 1.034 ns                                ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[6]                      ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TA|QS_IN[6]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.825 ns                 ;
 ; 1.034 ns                                ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|FSR2[5]                      ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SR2[5]                        ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.825 ns                 ;
 ; 1.034 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|ZPOS[0]                      ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|ZPOS[1]                       ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.825 ns                 ;
 ; 1.035 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4A|QS[5]       ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4A|QS_IN[6]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.826 ns                 ;
@@ -500,7 +500,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 1.041 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1B|QS[1]       ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1B|QS_IN[2]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.832 ns                 ;
 ; 1.041 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT5|ZH_FF  ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT5|ZH_FF   ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.832 ns                 ;
 ; 1.042 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4A|QS[1]       ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4A|QS_IN[2]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.833 ns                 ;
-; 1.042 ns                                ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[3]                      ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|ATRO[1]                       ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.833 ns                 ;
+; 1.042 ns                                ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[3]                      ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|ATRO[1]                       ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.833 ns                 ;
 ; 1.042 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|QS[6]       ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|QS_IN[7]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.833 ns                 ;
 ; 1.043 ns                                ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TA|QS[2]       ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TA|QS_IN[3]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.834 ns                 ;
 ; 1.043 ns                                ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|QS[4]       ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|QS_IN[5]     ; PLL:inst1|altpll:altpll_component|_clk0 ; PLL:inst1|altpll:altpll_component|_clk0 ; 0.000 ns                   ; -0.209 ns                  ; 0.834 ns                 ;
@@ -586,13 +586,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; N/A   ; None         ; 9.270 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[6]                                                                                                     ; MCLK     ;
 ; N/A   ; None         ; 9.156 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[2]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 9.143 ns   ; PD_BUS[5] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[5]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 9.095 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[0]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 9.095 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[0]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 9.056 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[0]                                                                                                     ; MCLK     ;
-; N/A   ; None         ; 9.042 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[4]                                                                                                                        ; MCLK     ;
+; N/A   ; None         ; 9.042 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[4]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 9.002 ns   ; nDBE      ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[3]                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 9.002 ns   ; nDBE      ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[5]                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 9.002 ns   ; nDBE      ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[7]                                                                                                         ; MCLK     ;
-; N/A   ; None         ; 8.995 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[6]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 8.995 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[6]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.990 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[5]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 8.958 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[7]                                                                                                     ; MCLK     ;
 ; N/A   ; None         ; 8.930 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[2]                                                                                                                   ; MCLK     ;
@@ -600,32 +600,32 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; N/A   ; None         ; 8.901 ns   ; R_W       ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[5]                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 8.901 ns   ; R_W       ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[7]                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 8.869 ns   ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[3]                                                                                                     ; MCLK     ;
-; N/A   ; None         ; 8.850 ns   ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[5]                                                                                                                        ; MCLK     ;
-; N/A   ; None         ; 8.831 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[6]                                                                                                                        ; MCLK     ;
+; N/A   ; None         ; 8.850 ns   ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[5]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 8.831 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[6]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.746 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[2]                                                                                                     ; MCLK     ;
-; N/A   ; None         ; 8.744 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[2]                                                                                                                        ; MCLK     ;
+; N/A   ; None         ; 8.744 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[2]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.690 ns   ; PD_BUS[5] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[5]                                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 8.690 ns   ; PD_BUS[5] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[5]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 8.621 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[0]                                                                                                                        ; MCLK     ;
+; N/A   ; None         ; 8.621 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[0]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.585 ns   ; MODE      ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF                                                                                                      ; MCLK     ;
 ; N/A   ; None         ; 8.567 ns   ; MODE      ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN                                                                                                      ; MCLK     ;
 ; N/A   ; None         ; 8.531 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[4]                                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 8.513 ns   ; DENDY     ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET1                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 8.495 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[3]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 8.454 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[1]                                                                                                                        ; MCLK     ;
+; N/A   ; None         ; 8.454 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[1]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.451 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[1]                                                                                                     ; MCLK     ;
-; N/A   ; None         ; 8.428 ns   ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[3]                                                                                                                        ; MCLK     ;
+; N/A   ; None         ; 8.428 ns   ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[3]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.394 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[4]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 8.366 ns   ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[3]                                                                                                                       ; MCLK     ;
-; N/A   ; None         ; 8.350 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[7]                                                                                                                        ; MCLK     ;
+; N/A   ; None         ; 8.366 ns   ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[3]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 8.350 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[7]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.349 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[6]                                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 8.347 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[6]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 8.296 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[0]                                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 8.256 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 8.202 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[4]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 8.202 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[4]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.200 ns   ; PD_BUS[4] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[4]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 8.198 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[1]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 8.178 ns   ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[5]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 8.178 ns   ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[5]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 8.176 ns   ; PD_BUS[3] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[3]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 8.082 ns   ; PALSEL1   ; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated|ram_block1a17~porta_address_reg7 ; MCLK     ;
 ; N/A   ; None         ; 8.047 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[7]                                                                                                                   ; MCLK     ;
@@ -633,14 +633,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; N/A   ; None         ; 8.025 ns   ; R_W       ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|RnWR                                                                                                            ; MCLK     ;
 ; N/A   ; None         ; 8.013 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 8.012 ns   ; PD_BUS[0] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 7.949 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[1]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 7.949 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[1]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 7.941 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                                   ; MCLK     ;
-; N/A   ; None         ; 7.920 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[2]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 7.920 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[2]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 7.910 ns   ; MODE      ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET1                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 7.899 ns   ; PD_BUS[2] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[2]                                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 7.885 ns   ; PD_BUS[1] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[1]                                                                                                                         ; MCLK     ;
 ; N/A   ; None         ; 7.858 ns   ; PD_BUS[3] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[3]                                                                                                                         ; MCLK     ;
-; N/A   ; None         ; 7.828 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[7]                                                                                                                       ; MCLK     ;
+; N/A   ; None         ; 7.828 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[7]                                                                                                                       ; MCLK     ;
 ; N/A   ; None         ; 7.809 ns   ; PD_BUS[6] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 7.688 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                                   ; MCLK     ;
 ; N/A   ; None         ; 7.685 ns   ; PD_BUS[7] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                                                                                                   ; MCLK     ;
@@ -904,14 +904,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; N/A           ; None        ; -7.633 ns ; PD_BUS[7] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -7.636 ns ; PD_BUS[7] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -7.757 ns ; PD_BUS[6] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                                   ; MCLK     ;
-; N/A           ; None        ; -7.776 ns ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[7]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -7.776 ns ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[7]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -7.806 ns ; PD_BUS[3] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[3]                                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -7.833 ns ; PD_BUS[1] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[1]                                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -7.847 ns ; PD_BUS[2] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[2]                                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -7.858 ns ; MODE      ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET1                                                                                                         ; MCLK     ;
-; N/A           ; None        ; -7.868 ns ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[2]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -7.868 ns ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[2]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -7.889 ns ; PD_BUS[6] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                                   ; MCLK     ;
-; N/A           ; None        ; -7.897 ns ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[1]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -7.897 ns ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[1]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -7.934 ns ; PALSEL1   ; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated|ram_block1a17~porta_address_reg7 ; MCLK     ;
 ; N/A           ; None        ; -7.960 ns ; PD_BUS[0] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -7.961 ns ; PD_BUS[0] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                                   ; MCLK     ;
@@ -919,31 +919,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; N/A           ; None        ; -7.989 ns ; PD_BUS[7] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[7]                                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -7.995 ns ; PD_BUS[7] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[7]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -8.124 ns ; PD_BUS[3] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[3]                                                                                                                   ; MCLK     ;
-; N/A           ; None        ; -8.126 ns ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[5]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -8.126 ns ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[5]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.146 ns ; PD_BUS[1] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[1]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -8.146 ns ; MODE      ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN                                                                                                      ; MCLK     ;
 ; N/A           ; None        ; -8.148 ns ; PD_BUS[4] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[4]                                                                                                                   ; MCLK     ;
-; N/A           ; None        ; -8.150 ns ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[4]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -8.150 ns ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[4]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.204 ns ; PD_BUS[1] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -8.244 ns ; PD_BUS[0] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[0]                                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -8.295 ns ; PD_BUS[6] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[6]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -8.297 ns ; PD_BUS[6] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[6]                                                                                                                         ; MCLK     ;
-; N/A           ; None        ; -8.298 ns ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[7]                                                                                                                        ; MCLK     ;
-; N/A           ; None        ; -8.314 ns ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[3]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -8.298 ns ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[7]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -8.314 ns ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[3]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.342 ns ; PD_BUS[4] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[4]                                                                                                                   ; MCLK     ;
-; N/A           ; None        ; -8.376 ns ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[3]                                                                                                                        ; MCLK     ;
+; N/A           ; None        ; -8.376 ns ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[3]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.399 ns ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[1]                                                                                                     ; MCLK     ;
-; N/A           ; None        ; -8.402 ns ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[1]                                                                                                                        ; MCLK     ;
+; N/A           ; None        ; -8.402 ns ; PD_BUS[1] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[1]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.443 ns ; PD_BUS[4] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[3]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -8.461 ns ; DENDY     ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET1                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -8.479 ns ; PD_BUS[4] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[4]                                                                                                                         ; MCLK     ;
-; N/A           ; None        ; -8.569 ns ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[0]                                                                                                                        ; MCLK     ;
+; N/A           ; None        ; -8.569 ns ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[0]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.638 ns ; PD_BUS[5] ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[5]                                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -8.638 ns ; PD_BUS[5] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[5]                                                                                                                   ; MCLK     ;
-; N/A           ; None        ; -8.692 ns ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[2]                                                                                                                        ; MCLK     ;
+; N/A           ; None        ; -8.692 ns ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[2]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.694 ns ; PD_BUS[2] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[2]                                                                                                     ; MCLK     ;
-; N/A           ; None        ; -8.779 ns ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[6]                                                                                                                        ; MCLK     ;
-; N/A           ; None        ; -8.798 ns ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[5]                                                                                                                        ; MCLK     ;
+; N/A           ; None        ; -8.779 ns ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[6]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -8.798 ns ; PD_BUS[5] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[5]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.817 ns ; PD_BUS[3] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[3]                                                                                                     ; MCLK     ;
 ; N/A           ; None        ; -8.849 ns ; R_W       ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[3]                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -8.849 ns ; R_W       ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[5]                                                                                                         ; MCLK     ;
@@ -951,13 +951,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; N/A           ; None        ; -8.878 ns ; PD_BUS[2] ; RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[2]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -8.906 ns ; PD_BUS[7] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[7]                                                                                                     ; MCLK     ;
 ; N/A           ; None        ; -8.938 ns ; PD_BUS[2] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[5]                                                                                                                   ; MCLK     ;
-; N/A           ; None        ; -8.943 ns ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[6]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -8.943 ns ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[6]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -8.950 ns ; nDBE      ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[3]                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -8.950 ns ; nDBE      ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[5]                                                                                                         ; MCLK     ;
 ; N/A           ; None        ; -8.950 ns ; nDBE      ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[7]                                                                                                         ; MCLK     ;
-; N/A           ; None        ; -8.990 ns ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[4]                                                                                                                        ; MCLK     ;
+; N/A           ; None        ; -8.990 ns ; PD_BUS[4] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[4]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -9.004 ns ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[0]                                                                                                     ; MCLK     ;
-; N/A           ; None        ; -9.043 ns ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[0]                                                                                                                       ; MCLK     ;
+; N/A           ; None        ; -9.043 ns ; PD_BUS[0] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[0]                                                                                                                       ; MCLK     ;
 ; N/A           ; None        ; -9.091 ns ; PD_BUS[5] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[5]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -9.104 ns ; PD_BUS[2] ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[2]                                                                                                                   ; MCLK     ;
 ; N/A           ; None        ; -9.218 ns ; PD_BUS[6] ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[6]                                                                                                     ; MCLK     ;
@@ -985,7 +985,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Sep 23 14:36:36 2025
+    Info: Processing started: Wed Sep 24 13:55:05 2025
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE --timing_analysis_only
 Info: Found timing assignments -- calculating delays
 Info: Slack time is 12.545 ns for clock "PLL:inst1|altpll:altpll_component|_clk0" between source register "RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT3|EN" and destination register "RP2C02_LITE:inst|VID_MUX:MOD_VID_MUX|ZCOLN[0]"
@@ -1152,17 +1152,17 @@ Info: th for register "RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN
         Info: Total cell delay = 1.590 ns ( 23.80 % )
         Info: Total interconnect delay = 5.092 ns ( 76.20 % )
 Info: All timing requirements were met for slow timing model timing analysis. See Report window for more details.
-Info: Generated suppressed messages file D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.tan.smsg
+Info: Generated suppressed messages file D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.tan.smsg
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 169 megabytes
-    Info: Processing ended: Tue Sep 23 14:36:36 2025
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 170 megabytes
+    Info: Processing ended: Wed Sep 24 13:55:06 2025
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
 +-------------------------------------+
 ; Timing Analyzer Suppressed Messages ;
 +-------------------------------------+
-The suppressed messages can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.tan.smsg.
+The suppressed messages can be found in D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.tan.smsg.
 
 

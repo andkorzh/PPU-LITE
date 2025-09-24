@@ -1,5 +1,5 @@
 Fitter report for PPU_LITE
-Tue Sep 23 14:36:34 2025
+Wed Sep 24 13:55:03 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Tue Sep 23 14:36:34 2025        ;
+; Fitter Status         ; Successful - Wed Sep 24 13:55:03 2025        ;
 ; Quartus II Version    ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name         ; PPU_LITE                                     ;
 ; Top-level Entity Name ; PPU_LITE                                     ;
@@ -136,7 +136,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -177,7 +177,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pin.
+The pin-out file can be found in D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.pin.
 
 
 +---------------------------------------------------------------------------------------+
@@ -522,7 +522,7 @@ Note: User assignments will override these defaults. The user specified values a
 ; Compilation Hierarchy Node                          ; Logic Cells ; LC Registers ; Memory Bits ; M4Ks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                           ; Library Name ;
 +-----------------------------------------------------+-------------+--------------+-------------+------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; |PPU_LITE                                           ; 1217 (0)    ; 1009         ; 7104        ; 4    ; 62   ; 0            ; 208 (0)      ; 321 (0)           ; 688 (0)          ; 8 (0)           ; 106 (0)    ; |PPU_LITE                                                                                                                                     ; work         ;
-;    |PLL:inst1|                                      ; 0 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1                                                                                                                           ; work         ;
+;    |PLL:inst1|                                      ; 0 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1                                                                                                                           ;              ;
 ;       |altpll:altpll_component|                     ; 0 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1|altpll:altpll_component                                                                                                   ; work         ;
 ;    |RP2C02_LITE:inst|                               ; 1217 (6)    ; 1009         ; 7104        ; 4    ; 0    ; 0            ; 208 (0)      ; 321 (1)           ; 688 (5)          ; 8 (0)           ; 106 (1)    ; |PPU_LITE|RP2C02_LITE:inst                                                                                                                    ;              ;
 ;       |ADDRESS_BUS_CONTROL:MOD_ADDRESS_BUS_CONTROL| ; 20 (20)     ; 13           ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 1 (1)             ; 12 (12)          ; 0 (0)           ; 3 (3)      ; |PPU_LITE|RP2C02_LITE:inst|ADDRESS_BUS_CONTROL:MOD_ADDRESS_BUS_CONTROL                                                                        ;              ;
@@ -573,7 +573,7 @@ Note: User assignments will override these defaults. The user specified values a
 ;             |altsyncram:altsyncram_component|       ; 0 (0)       ; 0            ; 192         ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM|altsyncram:altsyncram_component                                    ;              ;
 ;                |altsyncram_fsa1:auto_generated|     ; 0 (0)       ; 0            ; 192         ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM|altsyncram:altsyncram_component|altsyncram_fsa1:auto_generated     ;              ;
 ;          |PALETTE_RGB_TABLE:MOD_RGB_TABLE|          ; 0 (0)       ; 0            ; 4608        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE                                                                ; work         ;
-;             |altsyncram:altsyncram_component|       ; 0 (0)       ; 0            ; 4608        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram:altsyncram_component|       ; 0 (0)       ; 0            ; 4608        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component                                ;              ;
 ;                |altsyncram_9u41:auto_generated|     ; 0 (0)       ; 0            ; 4608        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated ; work         ;
 ;       |PAR_GEN:MOD_PAR_GEN|                         ; 136 (102)   ; 114          ; 0           ; 0    ; 0    ; 0            ; 22 (18)      ; 29 (29)           ; 85 (55)          ; 4 (4)           ; 14 (11)    ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN                                                                                                ;              ;
 ;          |COUNTER:FVCNT[0]|                         ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[0]                                                                               ;              ;
@@ -696,64 +696,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[7]                                                                                                ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[7]                                                                                  ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[7]                                                                                                     ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[7]                                                                                                    ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[7]                                                                                                    ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[7]                                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                                                                                ; 0                 ; ON      ;
 ; PD_BUS[6]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[6]                                                                                                      ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[6]                                                                                                ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[6]                                                                                                    ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[6]                                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[6]                                                                                  ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[6]                                                                                                     ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[6]                                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                ; 0                 ; ON      ;
 ; PD_BUS[5]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[5]                                                                                                      ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[5]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[5]                                                                                  ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[5]                                                                                                     ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[5]                                                                                                    ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[2]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[5]                                                                                                ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[5]                                                                                                    ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[5]                                                                                                    ; 1                 ; ON      ;
 ; PD_BUS[4]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[4]                                                                                                      ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[4]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[3]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[4]                                                                                  ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[4]                                                                                                     ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[4]                                                                                                    ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[4]                                                                                                    ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[4]                                                                                                    ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[4]                                                                                                ; 1                 ; ON      ;
 ; PD_BUS[3]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[3]                                                                                                      ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[3]                                                                                                    ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[3]                                                                                                    ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[4]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[3]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[3]                                                                                  ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[3]                                                                                                     ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[3]                                                                                                    ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[3]                                                                                                ; 1                 ; ON      ;
 ; PD_BUS[2]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[2]                                                                                                      ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[2]                                                                                                    ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[2]                                                                                                    ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[5]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[2]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[2]                                                                                  ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[2]                                                                                                     ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[2]                                                                                                    ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[2]                                                                                                ; 1                 ; ON      ;
 ; PD_BUS[1]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[1]                                                                                                      ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[1]                                                                                                    ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[1]                                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[1]                                                                                  ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[1]                                                                                                     ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[1]                                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[1]                                                                                                ; 0                 ; ON      ;
 ; PD_BUS[0]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[0]                                                                                                      ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDNN[0]                                                                                                    ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDAT[0]                                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                                                                                ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[0]                                                                                  ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDN[0]                                                                                                     ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[0]                                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX|PD_R[0]                                                                                                ; 0                 ; ON      ;
 ; VRAMCS                                                                                                                                                   ;                   ;         ;
 ; VRAMA10                                                                                                                                                  ;                   ;         ;
@@ -1102,7 +1102,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Sep 23 14:36:32 2025
+    Info: Processing started: Wed Sep 24 13:55:00 2025
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Selected device EP1C3T100C8 for design "PPU_LITE"
 Info: Implementing parameter values for PLL "PLL:inst1|altpll:altpll_component|pll"
@@ -1138,7 +1138,7 @@ Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
 Info: Fitter placement was successful
-Info: Fitter placement operations ending: elapsed time is 00:00:00
+Info: Fitter placement operations ending: elapsed time is 00:00:01
 Info: Estimated most critical path is register to register delay of 8.523 ns
     Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X22_Y8; Fanout = 2; REG Node = 'RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|CLIPOR'
     Info: 2: + IC(1.909 ns) + CELL(0.590 ns) = 2.499 ns; Loc. = LAB_X11_Y9; Fanout = 3; COMB Node = 'RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SPR~2'
@@ -1160,17 +1160,17 @@ Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
 Info: Completed Auto Delay Chain Operation
 Info: Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
-Info: Generated suppressed messages file D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.fit.smsg
+Info: Generated suppressed messages file D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.fit.smsg
 Info: Quartus II Fitter was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 228 megabytes
-    Info: Processing ended: Tue Sep 23 14:36:34 2025
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Wed Sep 24 13:55:04 2025
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.fit.smsg.
+The suppressed messages can be found in D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.fit.smsg.
 
 

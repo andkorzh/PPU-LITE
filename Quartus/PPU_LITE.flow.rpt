@@ -1,5 +1,5 @@
 Flow report for PPU_LITE
-Tue Sep 23 14:36:37 2025
+Wed Sep 24 13:55:07 2025
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Tue Sep 23 14:36:37 2025        ;
+; Flow Status             ; Successful - Wed Sep 24 13:55:07 2025        ;
 ; Quartus II Version      ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name           ; PPU_LITE                                     ;
 ; Top-level Entity Name   ; PPU_LITE                                     ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/23/2025 14:36:29 ;
+; Start date & time ; 09/24/2025 13:54:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PPU_LITE            ;
 +-------------------+---------------------+
@@ -70,7 +70,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                                                   ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 233497588822337.175862738906092                         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 1096118306196.175871129701840                           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT             ; Verilog Hdl                                             ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                ; ModelSim-Altera (Verilog)                               ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                     ; 1 ps                                                    ; --            ; --          ; eda_simulation ;
@@ -104,12 +104,12 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 234 MB              ; 00:00:02                           ;
-; Fitter                  ; 00:00:02     ; 1.0                     ; 228 MB              ; 00:00:02                           ;
-; Assembler               ; 00:00:00     ; 1.0                     ; 187 MB              ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 169 MB              ; 00:00:00                           ;
-; EDA Netlist Writer      ; 00:00:01     ; 1.0                     ; 180 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:05     ; --                      ; --                  ; 00:00:04                           ;
+; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 231 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:03     ; 1.0                     ; 228 MB              ; 00:00:03                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 188 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 170 MB              ; 00:00:00                           ;
+; EDA Netlist Writer      ; 00:00:01     ; 1.0                     ; 181 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:09     ; --                      ; --                  ; 00:00:07                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,11 +118,11 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; Fitter                  ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; Assembler               ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; Classic Timing Analyzer ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
-; EDA Netlist Writer      ; MONSTER          ; Windows Vista ; 6.1        ; x86_64         ;
+; Analysis & Synthesis    ; A_N_D            ; Windows Vista ; 6.1        ; x86_64         ;
+; Fitter                  ; A_N_D            ; Windows Vista ; 6.1        ; x86_64         ;
+; Assembler               ; A_N_D            ; Windows Vista ; 6.1        ; x86_64         ;
+; Classic Timing Analyzer ; A_N_D            ; Windows Vista ; 6.1        ; x86_64         ;
+; EDA Netlist Writer      ; A_N_D            ; Windows Vista ; 6.1        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 
