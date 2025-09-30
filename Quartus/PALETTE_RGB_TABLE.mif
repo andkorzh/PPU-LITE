@@ -235,12 +235,12 @@ CONTENT BEGIN
 	0E9  :   1DC00;
 	0EA  :   17CD4;
 	0EB  :   0DC64;
-	0EC  :   140F4;
+	0EC  :   14C34;
 	0ED  :   11451;
 	[0EE..0EF]  :   00000;
 	0F0  :   3FFFF;
 	0F1  :   30D7F;
-	0F2  :   03CFF;
+	0F2  :   33CFF;
 	0F3  :   36C7F;
 	0F4  :   3BC3F;
 	0F5  :   3FC7A;
