@@ -56,13 +56,12 @@ module RP2C02_LITE(
 	output nRD,              // Строб чтения VRAM
 	output SYNC,             // Выход композитной синхронизации
 	output HSYNC,            // Выход строчной синхронизации
-    output VSYNC,            // Выход кадровой синхронизации
-	output [7:0]DBIN,        // Внутренняя шина данных CPU
-	output DB_PAR            // Проброс данных CPU на шину PPU
+    output VSYNC             // Выход кадровой синхронизации
 );
 // Связи модулей
 wire PCLK;
 wire nPCLK;
+wire [7:0]DBIN;
 wire [7:0]OB;
 wire [3:0]OV;
 wire [7:0]Vo;
@@ -123,7 +122,8 @@ wire nPICTURE;
 wire RC;       
 wire RESCL;    
 wire BLNK;         
-wire TSTEP;		
+wire TSTEP;
+wire DB_PAR;
 wire PD_RB;					
 wire XRB;			
 wire TH_MUX; 
@@ -543,8 +543,11 @@ assign VBL_EN = W0R[4];
 assign B_W    = W1R[0];
 assign nCLPB = ~( ~BGE | nVISR | CLIPBR );
 assign CLPO = ~CLIPOR;
-assign EMPH[0] = EMP_R  ? 1'b0 : 1'hZ;
-assign EMPH[1] = EMP_G  ? 1'b0 : 1'hZ;
+wire EM_R, EM_G;
+assign EM_R = (MODE) ? EMP_G : EMP_R; // For PAL Red/green color emphasis swapped.
+assign EM_G = (MODE) ? EMP_R : EMP_G; // For PAL Red/green color emphasis swapped.
+assign EMPH[0] = EM_R  ? 1'b0 : 1'hZ;
+assign EMPH[1] = EM_G  ? 1'b0 : 1'hZ;
 assign EMPH[2] = W1R[7] ? 1'b0 : 1'hZ;
 // Логика
 always @(posedge Clk) begin
@@ -1675,3 +1678,4 @@ always @(posedge Clk) begin
      if (~( LOAD | STEP ))        CNT1[7:0] <= MODE4 ? {CNT4[5:0], 2'b00 } : ( CNT[7:0] ^ {OAM1Cout[6:0],1'b1});
                       end
 endmodule
+
