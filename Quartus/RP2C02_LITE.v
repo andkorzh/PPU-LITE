@@ -56,13 +56,12 @@ module RP2C02_LITE(
 	output nRD,              // VRAM Read Strobe
 	output SYNC,             // Composite sync output
 	output HSYNC,            // horizontal synchronization
-    output VSYNC,            // vertical synchronization
-	output [7:0]DBIN,        // CPU Internal Data Bus
-	output DB_PAR            // Forwarding CPU data to PPU bus
+    output VSYNC             // vertical synchronization
 );
 // Module connections
 wire PCLK;
 wire nPCLK;
+wire [7:0]DBIN; 	
 wire [7:0]OB;
 wire [3:0]OV;
 wire [7:0]Vo;
@@ -123,7 +122,8 @@ wire nPICTURE;
 wire RC;       
 wire RESCL;    
 wire BLNK;         
-wire TSTEP;		
+wire TSTEP;
+wire DB_PAR;
 wire PD_RB;					
 wire XRB;			
 wire TH_MUX; 
@@ -1680,4 +1680,5 @@ always @(posedge Clk) begin
      if (~( LOAD | STEP ))        CNT1[7:0] <= MODE4 ? {CNT4[5:0], 2'b00 } : ( CNT[7:0] ^ {OAM1Cout[6:0],1'b1});
                       end
 endmodule
+
 
