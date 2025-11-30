@@ -14446,6 +14446,82 @@ SOurce: www.abracon.com</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="con-faston" urn="urn:adsk.eagle:library:144">
+<description>&lt;b&gt;FASTON Connector&lt;/b&gt; Printed Circuit Board Tabs&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="62221" urn="urn:adsk.eagle:footprint:6754/1" library_version="1">
+<description>&lt;b&gt;TAB, FSSTON, DUAL STAKE, .187 SERIES&lt;/b&gt;&lt;p&gt;
+Source: Tyco Electronics Corporation .. ENG_CD_62221_R.pdf&lt;br&gt;
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND&lt;br&gt;</description>
+<wire x1="2.54" y1="1.4605" x2="2.54" y2="-1.4605" width="0" layer="46"/>
+<wire x1="2.54" y1="-1.4605" x2="-2.54" y2="-1.4605" width="0" layer="46"/>
+<wire x1="-2.54" y1="-1.4605" x2="-2.54" y2="1.4605" width="0" layer="46"/>
+<wire x1="-2.54" y1="1.4605" x2="2.54" y2="1.4605" width="0" layer="46"/>
+<wire x1="-3.6195" y1="2.921" x2="-3.6195" y2="-2.921" width="0.508" layer="51"/>
+<wire x1="3.6195" y1="-2.921" x2="3.6195" y2="2.921" width="0.508" layer="51"/>
+<wire x1="-3.6" y1="3.075" x2="3.625" y2="3.075" width="0.2032" layer="51"/>
+<wire x1="3.6" y1="-3.075" x2="-3.625" y2="-3.075" width="0.2032" layer="51"/>
+<wire x1="-2.2352" y1="1.2192" x2="-2.2352" y2="-1.2192" width="0.2032" layer="51"/>
+<wire x1="2.2352" y1="-1.2192" x2="2.2352" y2="1.2192" width="0.2032" layer="51"/>
+<wire x1="-2.2352" y1="1.2192" x2="2.2352" y2="1.2192" width="0.2032" layer="51"/>
+<wire x1="2.2352" y1="-1.2192" x2="-2.2352" y2="-1.2192" width="0.2032" layer="51"/>
+<pad name="1" x="0" y="0" drill="2.921" diameter="5.08" shape="long"/>
+<text x="-3.8608" y="3.6576" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.8608" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-2.032" y1="3.048" x2="2.032" y2="3.4544" layer="51"/>
+<rectangle x1="-2.032" y1="-3.4544" x2="2.032" y2="-3.048" layer="51" rot="R180"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="62221" urn="urn:adsk.eagle:package:6764/1" type="box" library_version="1">
+<description>TAB, FSSTON, DUAL STAKE, .187 SERIES
+Source: Tyco Electronics Corporation .. ENG_CD_62221_R.pdf
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND</description>
+<packageinstances>
+<packageinstance name="62221"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="PIN" urn="urn:adsk.eagle:symbol:6744/1" library_version="1">
+<text x="-2.54" y="1.27" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="0" y1="-0.508" x2="2.54" y2="0.508" layer="94"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="middle" direction="pas" swaplevel="1"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PIN1-2" urn="urn:adsk.eagle:component:6768/1" prefix="J" library_version="1">
+<description>&lt;b&gt;CONN TAB FASTON BRASS .187 PCB&lt;/b&gt;&lt;p&gt;
+TAB, FSSTON, DUAL STAKE, .187 SERIES&lt;br&gt;
+Digi-Key Part Number: A24734CT-ND&lt;br&gt;
+Source: Tyco Electronics Corporation .. ENG_CD_62221_R.pdf&lt;br&gt;
+http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND&lt;br&gt;</description>
+<gates>
+<gate name="G$1" symbol="PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="62221">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:6764/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="TYCO ELECTRONICS" constant="no"/>
+<attribute name="MPN" value="62221-1" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="16H2318" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -14602,7 +14678,7 @@ SOurce: www.abracon.com</description>
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C9" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X9" device="" package3d_urn="urn:adsk.eagle:package:22483/2"/>
-<part name="L1" library="rcl_my" deviceset="L-EU" device="L0201" package3d_urn="urn:adsk.eagle:package:23513/2"/>
+<part name="L1" library="rcl_my" deviceset="L-EU" device="L0201" package3d_urn="urn:adsk.eagle:package:23513/2" value="BLM31"/>
 <part name="C21" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="GND47" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="XO1" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="ASE" device="" package3d_urn="urn:adsk.eagle:package:12120/1"/>
@@ -14629,6 +14705,8 @@ SOurce: www.abracon.com</description>
 <part name="V13" library="supply" deviceset="+3V3" device=""/>
 <part name="R31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="J5" library="con-faston" library_urn="urn:adsk.eagle:library:144" deviceset="PIN1-2" device="" package3d_urn="urn:adsk.eagle:package:6764/1"/>
+<part name="J6" library="con-faston" library_urn="urn:adsk.eagle:library:144" deviceset="PIN1-2" device="" package3d_urn="urn:adsk.eagle:package:6764/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -15295,7 +15373,7 @@ SOurce: www.abracon.com</description>
 <attribute name="VALUE" x="328.93" y="-30.48" size="1.778" layer="96"/>
 </instance>
 <instance part="L1" gate="G$1" x="-88.9" y="-7.62" smashed="yes" rot="R90">
-<attribute name="NAME" x="-87.63" y="-4.0386" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="-87.63" y="-1.4986" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-85.09" y="-4.318" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C21" gate="G$1" x="-60.96" y="22.86" smashed="yes" rot="R180">
@@ -15390,6 +15468,14 @@ SOurce: www.abracon.com</description>
 </instance>
 <instance part="GND20" gate="1" x="-83.82" y="93.98" smashed="yes" rot="R180">
 <attribute name="VALUE" x="-81.28" y="96.52" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="J5" gate="G$1" x="-193.04" y="114.3" smashed="yes" rot="MR0">
+<attribute name="NAME" x="-190.5" y="115.57" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="-190.5" y="111.76" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="J6" gate="G$1" x="-193.04" y="99.06" smashed="yes" rot="MR0">
+<attribute name="NAME" x="-190.5" y="100.33" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="-190.5" y="96.52" size="1.778" layer="96" rot="MR0"/>
 </instance>
 </instances>
 <busses>
@@ -17467,15 +17553,17 @@ SOurce: www.abracon.com</description>
 <net name="VRAMCS" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="A1"/>
-<wire x1="-162.56" y1="114.3" x2="-175.26" y2="114.3" width="0.1524" layer="91"/>
 <label x="-175.26" y="114.3" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="1"/>
+<wire x1="-162.56" y1="114.3" x2="-187.96" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VRAMA10" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="A7"/>
-<wire x1="-162.56" y1="99.06" x2="-175.26" y2="99.06" width="0.1524" layer="91"/>
 <label x="-175.26" y="99.06" size="1.778" layer="95"/>
+<pinref part="J6" gate="G$1" pin="1"/>
+<wire x1="-162.56" y1="99.06" x2="-187.96" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
