@@ -10,3 +10,9 @@ The prototype contains three built-in palettes that can be switched via jumpers 
 This project can implement up to four palettes without increasing the number of currently used FPGA pins.
 ![IMG_4667](https://github.com/user-attachments/assets/e9c88999-64a1-4092-b504-bd58291a6566)
 
+resources used by the FPGA
+
+<img width="368" height="247" alt="compreport" src="https://github.com/user-attachments/assets/06a608a1-2648-4466-9abd-d4cf4f819974" />
+
+
+
