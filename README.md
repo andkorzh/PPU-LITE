@@ -14,5 +14,7 @@ resources used by the FPGA
 
 <img width="368" height="247" alt="compreport" src="https://github.com/user-attachments/assets/06a608a1-2648-4466-9abd-d4cf4f819974" />
 
+Video on YouTube:  https://www.youtube.com/watch?v=B2EgrhUERuM
+
 
 
