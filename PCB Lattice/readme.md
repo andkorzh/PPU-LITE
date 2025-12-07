@@ -1,1 +1,1 @@
-
+PPU_LITE PCB on Lattice LCMXO2-1200HC-4TG100C, Version 1
