@@ -16,5 +16,5 @@ resources used by the FPGA
 
 Video on YouTube:  https://www.youtube.com/watch?v=B2EgrhUERuM
 
-
+Attention! The board only has a JTAG configuration interface. Please upload only the jic file. If you try to upload the pof file, you will receive an error.
 
