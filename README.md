@@ -8,7 +8,9 @@ Taking all of the above into account, a project was prepared in Quartus and succ
 thus eliminating the need for configuration flash memory, as it's integrated into the chips in Lattice FPGAs, but I'm not particularly keen on learning a new ecosystem. 
 The prototype contains three built-in palettes that can be switched via jumpers on the board. 
 This project can implement up to four palettes without increasing the number of currently used FPGA pins.
-![IMG_4667](https://github.com/user-attachments/assets/e9c88999-64a1-4092-b504-bd58291a6566)
+
+![IMG_4894](https://github.com/user-attachments/assets/9ada40e9-d883-4320-9fcf-176d6f9977e4)
+
 
 resources used by the FPGA
 
