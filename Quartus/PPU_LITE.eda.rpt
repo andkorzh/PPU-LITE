@@ -1,6 +1,6 @@
 EDA Netlist Writer report for PPU_LITE
-Wed Sep 24 13:55:07 2025
-Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+Wed Jan 21 18:23:48 2026
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2010 Altera Corporation
+Copyright (C) 1991-2011 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Sep 24 13:55:07 2025 ;
+; EDA Netlist Writer Status ; Successful - Wed Jan 21 18:23:48 2026 ;
 ; Revision Name             ; PPU_LITE                              ;
 ; Top-level Entity Name     ; PPU_LITE                              ;
 ; Family                    ; Cyclone                               ;
@@ -66,14 +66,14 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------+
-; Simulation Generated Files                                      ;
-+-----------------------------------------------------------------+
-; Generated Files                                                 ;
-+-----------------------------------------------------------------+
-; D:/PPU_REVERSE/FPGA/PPU_LITE/simulation/modelsim/PPU_LITE.vo    ;
-; D:/PPU_REVERSE/FPGA/PPU_LITE/simulation/modelsim/PPU_LITE_v.sdo ;
-+-----------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Simulation Generated Files                                                    ;
++-------------------------------------------------------------------------------+
+; Generated Files                                                               ;
++-------------------------------------------------------------------------------+
+; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/simulation/modelsim/PPU_LITE.vo    ;
+; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/simulation/modelsim/PPU_LITE_v.sdo ;
++-------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,14 +81,14 @@ applicable agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus II EDA Netlist Writer
-    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Sep 24 13:55:06 2025
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jan 21 18:23:48 2026
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Generated simulation netlist will be non-hierarchical because the design has SignalTap II partitions, termination control logic and/or a design partition that contains bidirectional ports
-Info: Generated files "PPU_LITE.vo" and "PPU_LITE_v.sdo" in directory "D:/PPU_REVERSE/FPGA/PPU_LITE/simulation/modelsim/" for EDA simulation tool
+Info: Generated files "PPU_LITE.vo" and "PPU_LITE_v.sdo" in directory "D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 181 megabytes
-    Info: Processing ended: Wed Sep 24 13:55:07 2025
+    Info: Peak virtual memory: 230 megabytes
+    Info: Processing ended: Wed Jan 21 18:23:49 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

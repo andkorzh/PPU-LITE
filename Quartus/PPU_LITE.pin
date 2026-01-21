@@ -1,4 +1,4 @@
- -- Copyright (C) 1991-2010 Altera Corporation
+ -- Copyright (C) 1991-2011 Altera Corporation
  -- Your use of Altera Corporation's design tools, logic functions 
  -- and other software and tools, and its AMPP partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -44,10 +44,7 @@
  --					This pin should be connected to GND. It may also be connected  to a
  --					valid signal  on the board  (low, high, or toggling)  if that signal
  --					is required for a different revision of the design.
- -- GND*          : Unused  I/O  pin.   For transceiver I/O banks, connect each pin marked GND*
- --           	    either individually through a 10k Ohm resistor to GND or tie all pins
- --           	    together and connect through a single 10k Ohm resistor to GND.
- --           	    For non-transceiver I/O banks, connect each pin marked GND* directly to GND
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
  --           	    or leave it unconnected.
  -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
  -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
@@ -62,68 +59,68 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 CHIP  "PPU_LITE"  ASSIGNED TO AN: EP1C3T100C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-PD_BUS[4]                    : 1         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-PD_BUS[3]                    : 2         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-PD_BUS[2]                    : 3         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-PD_BUS[1]                    : 4         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-PD_BUS[0]                    : 5         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 6         : input  : 3.3-V LVTTL       :         : 1         : N              
+PD_BUS[4]                    : 1         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+PD_BUS[3]                    : 2         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+PD_BUS[2]                    : 3         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+PD_BUS[1]                    : 4         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+PD_BUS[0]                    : 5         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 6         : input  : 3.3-V LVCMOS      :         : 1         : N              
 DATA0                        : 7         : input  :                   :         : 1         :                
 nCONFIG                      : 8         :        :                   :         : 1         :                
 VCCA_PLL1                    : 9         : power  :                   : 1.5V    :           :                
-MCLK                         : 10        : input  : 3.3-V LVTTL       :         : 1         : Y              
+MCLK                         : 10        : input  : 3.3-V LVCMOS      :         : 1         : Y              
 GNDA_PLL1                    : 11        : gnd    :                   :         :           :                
 nCEO                         : 12        :        :                   :         : 1         :                
 nCE                          : 13        :        :                   :         : 1         :                
 MSEL0                        : 14        :        :                   :         : 1         :                
 MSEL1                        : 15        :        :                   :         : 1         :                
 DCLK                         : 16        : bidir  :                   :         : 1         :                
-~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 17        : input  : 3.3-V LVTTL       :         : 1         : N              
+~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 17        : input  : 3.3-V LVCMOS      :         : 1         : N              
 VCCIO1                       : 18        : power  :                   : 3.3V    : 1         :                
 GND                          : 19        : gnd    :                   :         :           :                
-nRD                          : 20        : output : 3.3-V LVTTL       :         : 1         : Y              
-ALE                          : 21        : output : 3.3-V LVTTL       :         : 1         : Y              
-HS                           : 22        : output : 3.3-V LVTTL       :         : 1         : Y              
-VS                           : 23        : output : 3.3-V LVTTL       :         : 1         : Y              
-SYNC                         : 24        : output : 3.3-V LVTTL       :         : 1         : Y              
-RGB[12]                      : 25        : output : 3.3-V LVTTL       :         : 1         : Y              
-RGB[13]                      : 26        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[14]                      : 27        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[15]                      : 28        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[16]                      : 29        : output : 3.3-V LVTTL       :         : 4         : Y              
+nRD_EXT                      : 20        : output : 3.3-V LVCMOS      :         : 1         : Y              
+ALE                          : 21        : output : 3.3-V LVCMOS      :         : 1         : Y              
+HS                           : 22        : output : 3.3-V LVCMOS      :         : 1         : Y              
+VS                           : 23        : output : 3.3-V LVCMOS      :         : 1         : Y              
+SYNC                         : 24        : output : 3.3-V LVCMOS      :         : 1         : Y              
+RGB[12]                      : 25        : output : 3.3-V LVCMOS      :         : 1         : Y              
+RGB[13]                      : 26        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[14]                      : 27        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[15]                      : 28        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[16]                      : 29        : output : 3.3-V LVCMOS      :         : 4         : Y              
 GND                          : 30        : gnd    :                   :         :           :                
 VCCIO4                       : 31        : power  :                   : 3.3V    : 4         :                
 GND                          : 32        : gnd    :                   :         :           :                
 VCCINT                       : 33        : power  :                   : 1.5V    :           :                
-RGB[17]                      : 34        : output : 3.3-V LVTTL       :         : 4         : Y              
-EMPH[2]                      : 35        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[6]                       : 36        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[7]                       : 37        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[8]                       : 38        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[9]                       : 39        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[10]                      : 40        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[11]                      : 41        : output : 3.3-V LVTTL       :         : 4         : Y              
-EMPH[1]                      : 42        : output : 3.3-V LVTTL       :         : 4         : Y              
+RGB[17]                      : 34        : output : 3.3-V LVCMOS      :         : 4         : Y              
+EMPH[2]                      : 35        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[6]                       : 36        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[7]                       : 37        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[8]                       : 38        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[9]                       : 39        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[10]                      : 40        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[11]                      : 41        : output : 3.3-V LVCMOS      :         : 4         : Y              
+EMPH[1]                      : 42        : output : 3.3-V LVCMOS      :         : 4         : Y              
 GND                          : 43        : gnd    :                   :         :           :                
 VCCINT                       : 44        : power  :                   : 1.5V    :           :                
 GND                          : 45        : gnd    :                   :         :           :                
 VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
-RGB[0]                       : 47        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[1]                       : 48        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[2]                       : 49        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[3]                       : 50        : output : 3.3-V LVTTL       :         : 4         : Y              
-RGB[4]                       : 51        : output : 3.3-V LVTTL       :         : 3         : Y              
-RGB[5]                       : 52        : output : 3.3-V LVTTL       :         : 3         : Y              
-EMPH[0]                      : 53        : output : 3.3-V LVTTL       :         : 3         : Y              
-PALSEL0                      : 54        : input  : 3.3-V LVTTL       :         : 3         : Y              
-MODE                         : 55        : input  : 3.3-V LVTTL       :         : 3         : Y              
-DENDY                        : 56        : input  : 3.3-V LVTTL       :         : 3         : Y              
-PALSEL1                      : 57        : input  : 3.3-V LVTTL       :         : 3         : Y              
+RGB[0]                       : 47        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[1]                       : 48        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[2]                       : 49        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[3]                       : 50        : output : 3.3-V LVCMOS      :         : 4         : Y              
+RGB[4]                       : 51        : output : 3.3-V LVCMOS      :         : 3         : Y              
+RGB[5]                       : 52        : output : 3.3-V LVCMOS      :         : 3         : Y              
+EMPH[0]                      : 53        : output : 3.3-V LVCMOS      :         : 3         : Y              
+PALSEL0                      : 54        : input  : 3.3-V LVCMOS      :         : 3         : Y              
+MODE                         : 55        : input  : 3.3-V LVCMOS      :         : 3         : Y              
+DENDY                        : 56        : input  : 3.3-V LVCMOS      :         : 3         : Y              
+PALSEL1                      : 57        : input  : 3.3-V LVCMOS      :         : 3         : Y              
 GND                          : 58        : gnd    :                   :         :           :                
 VCCIO3                       : 59        : power  :                   : 3.3V    : 3         :                
 CONF_DONE                    : 60        :        :                   :         : 3         :                
@@ -131,39 +128,39 @@ nSTATUS                      : 61        :        :                   :         
 TCK                          : 62        : input  :                   :         : 3         :                
 TMS                          : 63        : input  :                   :         : 3         :                
 TDO                          : 64        : output :                   :         : 3         :                
-INT                          : 65        : output : 3.3-V LVTTL       :         : 3         : Y              
+INT                          : 65        : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND+                         : 66        :        :                   :         : 3         :                
 TDI                          : 67        : input  :                   :         : 3         :                
-nWR                          : 68        : output : 3.3-V LVTTL       :         : 3         : Y              
-PA[13]                       : 69        : output : 3.3-V LVTTL       :         : 3         : Y              
-PA[12]                       : 70        : output : 3.3-V LVTTL       :         : 3         : Y              
-PA[11]                       : 71        : output : 3.3-V LVTTL       :         : 3         : Y              
-PA[10]                       : 72        : output : 3.3-V LVTTL       :         : 3         : Y              
-VRAMCS                       : 73        : input  : 3.3-V LVTTL       :         : 3         : Y              
-PA[8]                        : 74        : output : 3.3-V LVTTL       :         : 3         : Y              
-PA[9]                        : 75        : output : 3.3-V LVTTL       :         : 3         : Y              
-nDBE                         : 76        : input  : 3.3-V LVTTL       :         : 2         : Y              
-A[0]                         : 77        : input  : 3.3-V LVTTL       :         : 2         : Y              
-A[1]                         : 78        : input  : 3.3-V LVTTL       :         : 2         : Y              
-A[2]                         : 79        : input  : 3.3-V LVTTL       :         : 2         : Y              
+nWR                          : 68        : output : 3.3-V LVCMOS      :         : 3         : Y              
+PA[13]                       : 69        : output : 3.3-V LVCMOS      :         : 3         : Y              
+PA[12]                       : 70        : output : 3.3-V LVCMOS      :         : 3         : Y              
+PA[11]                       : 71        : output : 3.3-V LVCMOS      :         : 3         : Y              
+PA[10]                       : 72        : output : 3.3-V LVCMOS      :         : 3         : Y              
+VRAMCS                       : 73        : input  : 3.3-V LVCMOS      :         : 3         : Y              
+PA[8]                        : 74        : output : 3.3-V LVCMOS      :         : 3         : Y              
+PA[9]                        : 75        : output : 3.3-V LVCMOS      :         : 3         : Y              
+nDBE                         : 76        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+A[0]                         : 77        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+A[1]                         : 78        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+A[2]                         : 79        : input  : 3.3-V LVCMOS      :         : 2         : Y              
 VCCIO2                       : 80        : power  :                   : 3.3V    : 2         :                
 GND                          : 81        : gnd    :                   :         :           :                
 VCCINT                       : 82        : power  :                   : 1.5V    :           :                
 GND                          : 83        : gnd    :                   :         :           :                
-VRAMA10                      : 84        : input  : 3.3-V LVTTL       :         : 2         : Y              
-DB[7]                        : 85        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-DB[6]                        : 86        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-DB[5]                        : 87        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-DB[4]                        : 88        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-DB[3]                        : 89        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-DB[2]                        : 90        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-DB[1]                        : 91        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-DB[0]                        : 92        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+VRAMA10                      : 84        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[7]                        : 85        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[6]                        : 86        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[5]                        : 87        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[4]                        : 88        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[3]                        : 89        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[2]                        : 90        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[1]                        : 91        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+DB[0]                        : 92        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
 VCCINT                       : 93        : power  :                   : 1.5V    :           :                
 GND                          : 94        : gnd    :                   :         :           :                
 VCCIO2                       : 95        : power  :                   : 3.3V    : 2         :                
 GND                          : 96        : gnd    :                   :         :           :                
-R_W                          : 97        : input  : 3.3-V LVTTL       :         : 2         : Y              
-PD_BUS[7]                    : 98        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-PD_BUS[6]                    : 99        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-PD_BUS[5]                    : 100       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+R_W                          : 97        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+PD_BUS[7]                    : 98        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+PD_BUS[6]                    : 99        : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+PD_BUS[5]                    : 100       : bidir  : 3.3-V LVCMOS      :         : 2         : Y              

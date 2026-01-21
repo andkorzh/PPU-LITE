@@ -1,6 +1,6 @@
 Assembler report for PPU_LITE
-Wed Sep 24 13:55:05 2025
-Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+Wed Jan 21 18:23:47 2026
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.sof
-  6. Assembler Device Options: D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.pof
+  5. Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.sof
+  6. Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pof
   7. Assembler Messages
 
 
@@ -19,7 +19,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2010 Altera Corporation
+Copyright (C) 1991-2011 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Sep 24 13:55:05 2025 ;
+; Assembler Status      ; Successful - Wed Jan 21 18:23:47 2026 ;
 ; Revision Name         ; PPU_LITE                              ;
 ; Top-level Entity Name ; PPU_LITE                              ;
 ; Family                ; Cyclone                               ;
@@ -51,6 +51,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 ; Option                                                                      ; Setting  ; Default Value ;
 +-----------------------------------------------------------------------------+----------+---------------+
+; Auto user code                                                              ; On       ; Off           ;
 ; Configuration device                                                        ; Epcs4    ; Auto          ;
 ; Use smart compilation                                                       ; Off      ; Off           ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation  ; On       ; On            ;
@@ -60,7 +61,6 @@ applicable agreement for further details.
 ; Clock source for configuration device                                       ; Internal ; Internal      ;
 ; Clock frequency of the configuration device                                 ; 10 MHZ   ; 10 MHz        ;
 ; Divide clock frequency by                                                   ; 1        ; 1             ;
-; Auto user code                                                              ; Off      ; Off           ;
 ; Use configuration device                                                    ; On       ; On            ;
 ; Configuration device auto user code                                         ; Off      ; Off           ;
 ; Auto-increment JTAG user code for multiple configuration devices            ; On       ; On            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------+
-; Assembler Generated Files                 ;
-+-------------------------------------------+
-; File Name                                 ;
-+-------------------------------------------+
-; D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.sof ;
-; D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.pof ;
-+-------------------------------------------+
++---------------------------------------------------------+
+; Assembler Generated Files                               ;
++---------------------------------------------------------+
+; File Name                                               ;
++---------------------------------------------------------+
+; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.sof ;
+; D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pof ;
++---------------------------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Assembler Device Options: D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.sof ;
-+----------------+----------------------------------------------------+
-; Option         ; Setting                                            ;
-+----------------+----------------------------------------------------+
-; Device         ; EP1C3T100C8                                        ;
-; JTAG usercode  ; 0xFFFFFFFF                                         ;
-; Checksum       ; 0x00146984                                         ;
-+----------------+----------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.sof ;
++----------------+------------------------------------------------------------------+
+; Option         ; Setting                                                          ;
++----------------+------------------------------------------------------------------+
+; Device         ; EP1C3T100C8                                                      ;
+; JTAG usercode  ; 0x0014F276                                                       ;
+; Checksum       ; 0x0014F276                                                       ;
++----------------+------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Assembler Device Options: D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.pof ;
-+--------------------+------------------------------------------------+
-; Option             ; Setting                                        ;
-+--------------------+------------------------------------------------+
-; Device             ; EPCS4                                          ;
-; JTAG usercode      ; 0x00000000                                     ;
-; Checksum           ; 0x078E41AC                                     ;
-; Compression Ratio  ; 2                                              ;
-+--------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Assembler Device Options: D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pof ;
++--------------------+--------------------------------------------------------------+
+; Option             ; Setting                                                      ;
++--------------------+--------------------------------------------------------------+
+; Device             ; EPCS4                                                        ;
+; JTAG usercode      ; 0x00000000                                                   ;
+; Checksum           ; 0x078DECEC                                                   ;
+; Compression Ratio  ; 2                                                            ;
++--------------------+--------------------------------------------------------------+
 
 
 +--------------------+
@@ -116,13 +116,13 @@ applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II Assembler
-    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Sep 24 13:55:04 2025
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jan 21 18:23:46 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 188 megabytes
-    Info: Processing ended: Wed Sep 24 13:55:05 2025
+    Info: Peak virtual memory: 240 megabytes
+    Info: Processing ended: Wed Jan 21 18:23:47 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

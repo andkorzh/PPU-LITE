@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP1C3T100C8
 set_global_assignment -name TOP_LEVEL_ENTITY PPU_LITE
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:20:41  AUGUST 31, 2025"
-set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name LAST_QUARTUS_VERSION "11.0 SP1"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
@@ -49,23 +49,10 @@ set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id e
 set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name BDF_FILE PPU_LITE.bdf
-set_global_assignment -name SDC_FILE PPU_LITE.sdc
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name QIP_FILE PALETTE_RGB_TABLE.qip
-set_global_assignment -name QIP_FILE OAM_RAM.qip
-set_global_assignment -name QIP_FILE OAM2_RAM.qip
-set_global_assignment -name QIP_FILE PALETTE_RAM.qip
-set_global_assignment -name QIP_FILE PLL.qip
-set_global_assignment -name MIF_FILE PALETTE_RGB_TABLE_PAL3.mif
-set_global_assignment -name VERILOG_FILE RP2C02_LITE.v
 set_global_assignment -name CYCLONE_CONFIGURATION_DEVICE EPCS4
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
 set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
-set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVCMOS"
 set_location_assignment PIN_10 -to MCLK
 set_global_assignment -name MISC_FILE "c:/altera/91sp2/quartus/PPU_LITE/PPU_LITE.dpf"
 set_location_assignment PIN_5 -to PD_BUS[0]
@@ -89,7 +76,6 @@ set_location_assignment PIN_84 -to VRAMA10
 set_location_assignment PIN_79 -to A[2]
 set_location_assignment PIN_78 -to A[1]
 set_location_assignment PIN_77 -to A[0]
-set_location_assignment PIN_20 -to nRD
 set_location_assignment PIN_21 -to ALE
 set_location_assignment PIN_22 -to HS
 set_location_assignment PIN_23 -to VS
@@ -125,17 +111,32 @@ set_location_assignment PIN_72 -to PA[10]
 set_location_assignment PIN_75 -to PA[9]
 set_location_assignment PIN_74 -to PA[8]
 set_location_assignment PIN_73 -to VRAMCS
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to MODE
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DENDY
 set_global_assignment -name MISC_FILE "D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.dpf"
 set_location_assignment PIN_54 -to PALSEL0
 set_location_assignment PIN_57 -to PALSEL1
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PALSEL0
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PALSEL1
-set_global_assignment -name MISC_FILE "D:/SRC/PPU_LITE/PPU_LITE.dpf"
 set_global_assignment -name RTLV_GROUP_COMB_LOGIC_IN_CLOUD OFF
 set_global_assignment -name RTLV_GROUP_RELATED_NODES OFF
-set_global_assignment -name MISC_FILE "D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.dpf"
 set_location_assignment PIN_76 -to nDBE
 set_location_assignment PIN_65 -to INT
+set_global_assignment -name BDF_FILE PPU_LITE.bdf
+set_global_assignment -name MIF_FILE PALETTE_RGB_TABLE.mif
+set_global_assignment -name SDC_FILE PPU_LITE.sdc
+set_global_assignment -name QIP_FILE PALETTE_RGB_TABLE.qip
+set_global_assignment -name QIP_FILE OAM_RAM.qip
+set_global_assignment -name QIP_FILE OAM2_RAM.qip
+set_global_assignment -name QIP_FILE PALETTE_RAM.qip
+set_global_assignment -name QIP_FILE PLL.qip
+set_global_assignment -name VERILOG_FILE RP2C02_LITE.v
+set_global_assignment -name QIP_FILE VRAM.qip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to MODE
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DENDY
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PALSEL0
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PALSEL1
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_location_assignment PIN_20 -to nRD_EXT
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
