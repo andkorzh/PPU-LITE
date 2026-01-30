@@ -25,6 +25,7 @@ Added project to Lattice Diamond 3.5 and Gerber PCB files for Lattice.
 ![IMG_4940](https://github.com/user-attachments/assets/40172f55-f539-4da1-b75b-03f9e6a6c7df)
 
 Contains 8 palettes:
+
 000 - NES CLASSIC
 001 - NATURAL NESTOPIA YUV
 010 - SMOOTH
