@@ -20,3 +20,7 @@ Video on YouTube:  https://www.youtube.com/watch?v=B2EgrhUERuM
 
 Attention! The board only has a JTAG configuration interface. Please upload only the jic file. If you try to upload the pof file, you will receive an error.
 
+Added project to Lattice Diamond 3.5 and Gerber PCB files for Lattice.
+
+![IMG_4940](https://github.com/user-attachments/assets/40172f55-f539-4da1-b75b-03f9e6a6c7df)
+
