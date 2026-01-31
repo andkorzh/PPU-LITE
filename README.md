@@ -26,18 +26,22 @@ Added project to Lattice Diamond 3.5 and Gerber PCB files for Lattice.
 
 Contains 8 palettes:
 
+0 - jumper open, 1 - jumper closed
+
+J5 J4 J3
+
 000 - NES CLASSIC
 
-001 - NATURAL NESTOPIA YUV
+001 - CDIRECT
 
-010 - SMOOTH
+010 - NATURAL NESTOPIA YUV
 
-011 - SONY CXA
+011 - PC 10
 
-100 - CDirect
+100 - PVM STYLE
 
-101 - PC 10
+101 - WaveBeam
 
-110 - WaveBeam
+110 - SONY CXA
 
-111 - PWM Style
+111 - SMOOTH
