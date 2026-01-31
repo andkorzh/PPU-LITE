@@ -12,7 +12,7 @@ This project can implement up to four palettes without increasing the number of 
 ![IMG_4894](https://github.com/user-attachments/assets/9ada40e9-d883-4320-9fcf-176d6f9977e4)
 
 
-resources used by the FPGA
+resources used by the FPGA CYCLONE I
 
 <img width="368" height="247" alt="compreport" src="https://github.com/user-attachments/assets/06a608a1-2648-4466-9abd-d4cf4f819974" />
 
@@ -45,3 +45,8 @@ J5 J4 J3
 110 - SONY CXA
 
 111 - SMOOTH
+
+resources used by the FPGA LATTICE LCMXO2-1200HCTQFP100
+
+![latt_res](https://github.com/user-attachments/assets/f120e214-14cc-444b-8a56-14d59b4263f6)
+
