@@ -1197,59 +1197,59 @@ endmodule
 // Module for searching sprites to be output on a given line
 //===============================================================================================
 module OBJ_EVAL(
-input	Clk,		     // System clock 
-input	PCLK,	        // Pixel clock
+input	Clk,		  // System clock
+input	PCLK,	      // Pixel clock
 input	nPCLK,        // Pixel clock
 // Inputs
-input Hnn0,		     // Synchronized state of the PPU		
-input [7:0]V,       // Vertical counter output (for sprite machine)
+input Hnn0,		      // Synchronized state of the PPU
+input [7:0]V,         // Vertical counter output (for sprite machine)
 input [7:0]OB,		  // Sprite data bus
 input O8_16,		  // Sprite height (0 - 8 points, 1 - 16 points)
 input I_OAM2,		  // OAM2 Initialization (Clear) Signal
-input nVIS,		     // Visible part of the line
+input nVIS,		      // Visible part of the line
 input SPR_OV,		  // OAM counter is full or more than 8 sprites found
 input nF_NT,		  // Reading tile number from Name Table
-input S_EV,		     // Starting the sprite list view process
+input S_EV,		      // Starting the sprite list view process
 input PAR_O,		  // Fetch sprite graphics
 // Outputs
-output [3:0]OV,	  // Sprite graphic line number 
+output [3:0]OV,	      // Sprite graphic line number
 output OMFG,		  // Signal to copy the current comparison sprite in OAM2
-output reg PD_FIFO, // Resetting sprite graphics
-output reg SPR0_EV  // Sprite #0 is on the current line
+output reg PD_FIFO,   // Resetting sprite graphics
+output reg SPR0_EV    // Sprite #0 is on the current line
 );
 // Variables
-reg LATCH1, LATCH2, LATCH3, LATCH4, LATCH5, LATCH6;
+reg [5:0]CLATCH;
 reg SPR0_EV1, PD_FIFO1, PD_FIFO2;
 reg [7:0]OBLATCH;
 // Combinatorics
 wire [7:0]OVS;
 assign OVS[7:0] = V[7:0] - OBLATCH[7:0];
 wire OVZ;
-assign OVZ = ( LATCH2 | LATCH4 | LATCH6 ) | ( ~O8_16 & OVS[3] ) | OVS[4] | OVS[5] | OVS[6] | OVS[7] | ~( ~OBLATCH[7] | V[7] );
+assign OVZ = ( CLATCH[1] | CLATCH[3] | CLATCH[5] ) | ( ~O8_16 & OVS[3] ) | OVS[4] | OVS[5] | OVS[6] | OVS[7] | ~( ~OBLATCH[7] | V[7] );
 wire DO_COPY;
 assign DO_COPY = ~( nVIS | I_OAM2 | SPR_OV | OVZ );
-assign OMFG = ~(( LATCH2 | LATCH4 | LATCH6 ) | DO_COPY );
+assign OMFG = ~(( CLATCH[1] | CLATCH[3] | CLATCH[5] ) | DO_COPY );
 assign OV[3:0] = OVS[3:0];
 // Logics
 always @(posedge Clk) begin
          if (PCLK) begin
 			OBLATCH[7:0] <= OB[7:0];
-			LATCH2 <= LATCH1;
-			LATCH4 <= LATCH3;
-			LATCH6 <= LATCH5;
-			end
+			CLATCH[1] <= CLATCH[0];
+			CLATCH[3] <= CLATCH[2];
+			CLATCH[5] <= CLATCH[4];
+			        end
          if (nPCLK) begin
 			PD_FIFO1 <= OVZ;
 			PD_FIFO2 <= nF_NT | ~Hnn0;
-			end
+			        end
          if (~( nPCLK | PD_FIFO2 )) PD_FIFO <= ~PD_FIFO1;
          if (S_EV  & nPCLK) SPR0_EV1 <=  DO_COPY;
-		   if (PAR_O & nPCLK) SPR0_EV  <= ~SPR0_EV1;
-		   if ( nPCLK & Hnn0 ) begin
-			LATCH1 <= DO_COPY;
-			LATCH3 <= LATCH2;
-			LATCH5 <= LATCH4;
-			                    end
+		 if (PAR_O & nPCLK) SPR0_EV  <= ~SPR0_EV1;
+		 if ( nPCLK & Hnn0 ) begin
+			CLATCH[0] <= DO_COPY;
+			CLATCH[2] <= CLATCH[1];
+			CLATCH[4] <= CLATCH[3];
+			                  end
                      end
 // End of module for searching sprites to be output on this line
 endmodule
@@ -1301,7 +1301,7 @@ wire OAP;
 assign OAP = ~(( Hnn0 | nVIS ) & ~BLNK );
 wire SPR_OVERFLOW;
 assign SPR_OVERFLOW = ~( nPCLK | Hn0 | OVF_LATCH | OMFG_LATCH );
-// ÎÀÌ counter control
+// ÃŽÃ€ÃŒ counter control
 wire OMSTEP;
 assign OMSTEP = ~(( nPCLK | ~OMSTEP1 ) & ( nPCLK | OMSTEP2 ));
 wire MODE4;
@@ -1712,3 +1712,4 @@ always @(posedge Clk) begin
      if (~( LOAD | STEP ))        CNT1[7:0] <= MODE4 ? {CNT4[5:0], 2'b00 } : ( CNT[7:0] ^ {OAM1Cout[6:0],1'b1});
                       end
 endmodule
+
