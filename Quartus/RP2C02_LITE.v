@@ -34,14 +34,14 @@
 // module RP2C02_LITE
 module RP2C02_LITE(
    input Clk,               // System clock
-   input Clk2,	             // Clock 21.477/26.601 for divider
+   input Clk2,              // Clock 21.477/26.601 for divider
    // Inputs
    input MODE,              // PAL/NTSC mode
 	input DENDY,             // DENDY mode	(for PAL)
-	input nRES,              // Reset 
+	input nRES,              // Reset
 	input PALSEL0,           // Palette select
 	input PALSEL1,           // Palette select
-   input RnW,               // External Pin Read/Write	
+   input RnW,               // External Pin Read/Write
    input nDBE,              // PPU access strobe
 	input [2:0]A,            // Register address
 	input [7:0]PD,           // PPU Graphics Data Bus Input
@@ -52,11 +52,12 @@ module RP2C02_LITE(
 	output [13:0]PAD,        // PPU Bus Address Output
 	output INT,              // Interrupt Request Output
 	output ALE,              // ALE VRAM Address Low Byte Latch Strobe Output
-	output nWR,              // VRAM Write Strobe	
+	output nWR,              // VRAM Write Strobe
 	output nRD,              // VRAM Read Strobe
 	output SYNC,             // Composite sync output
 	output HSYNC,            // horizontal synchronization
-   output VSYNC             // vertical synchronization
+   output VSYNC,            // vertical synchronization
+	output SUBCLK            // Subcarrier clock
 
 );
 // Module connections
@@ -136,23 +137,17 @@ wire SPR_OV;
 wire nSPR0HIT;
 wire SH2;
 wire RPIX;
-// Variables
-reg PCLK_N1, PCLK_N2;
-reg PCLK_P1, PCLK_P2, PCLK_P3, PCLK_P4;
-// Combinatorics
-assign PCLK  =  PCLK_N2 | PCLK_P3 | PCLK_P4;
-assign nPCLK = ~PCLK;
-// Logics (Pixel clock divider)
-always @(posedge Clk2) begin
-		  PCLK_N1 <= ~( ~nRES |  MODE | PCLK_N2 );
-        PCLK_N2 <= PCLK_N1;
-        PCLK_P1 <= ~( ~nRES | ~MODE | ( PCLK_P2 | PCLK_P3 ));
-		  PCLK_P2 <= PCLK_P1;
-		  PCLK_P3 <= PCLK_P2;
-                       end
-always @(negedge Clk2) begin
-		  PCLK_P4 <= PCLK_P2;
-                       end
+
+// CLK DIVIDER
+CLK_DIV MOD_CLK_DIV(
+Clk2,
+MODE,
+nRES,
+PCLK,
+nPCLK,
+SUBCLK
+);
+
 // Register Selection Signals
 REGISTER_SELECT MOD_REGISTER_SELECT(
 Clk,
@@ -408,7 +403,7 @@ ZCOL[4:0]
 );
 
 //Pixel multiplexer
-VID_MUX MOD_VID_MUX(
+PIX_MUX MOD_PIX_MUX(
 Clk,
 PCLK,
 nPCLK,
@@ -443,6 +438,39 @@ PIX[5:0],
 RGB[17:0]
 );
 // End of module RP2C02_LITE
+endmodule
+
+//===============================================================================================
+// CLK DIVIDER Module
+//===============================================================================================
+module CLK_DIV(
+input Clk2,          // MASTER clock
+// Inputs
+input MODE,          // PAL/NTSC mode
+input nRES,          // Reset
+// Outputs
+output  PCLK,        //  PIXEL CLOCK
+output nPCLK,        // ~PIXEL CLOCK
+output reg SUBCLK    // Subcarrier clock
+);
+// Variables
+reg [1:0]PCLK_N;
+reg [3:0]PCLK_P;
+reg [1:0]SUB;
+// Combinatorics
+assign PCLK  =   PCLK_N[1] | PCLK_P[2] | PCLK_P[3];
+assign nPCLK = ~(PCLK_N[1] | PCLK_P[2] | PCLK_P[3]);
+// Logics
+always @(posedge Clk2) begin
+	      // PCLK DIVIDER
+		  PCLK_N[1:0] <= {PCLK_N[0],   ~( ~nRES |  MODE | PCLK_N[1] )};
+		  PCLK_P[2:0] <= {PCLK_P[1:0], ~( ~nRES | ~MODE | ( PCLK_P[1] | PCLK_P[2] ))};
+		  // SUBCARRIER DIVIDER
+		  {SUBCLK, SUB[1:0]} <= {SUB[1:0], ~( SUBCLK | ~nRES )};
+                       end
+always @(negedge Clk2) begin
+	      PCLK_P[3] <= PCLK_P[1];
+                        end
 endmodule
 
 //===============================================================================================
@@ -610,7 +638,7 @@ always @(posedge Clk) begin
 	   if (PCLK)  OB_R[7:0] <= OB[7:0];
 	   if (RC)    PD_R[7:0] <= 8'h00;
   else if (PD_RB) PD_R[7:0] <= PD[7:0];
-        Do[7:0] <= ({8{R4}} & OB_R[7:0]) | ({8{RPIX}} & {2'h0,PIX[5:0]}) | ({8{R2}} & {R2DB[2:0],5'h00}) | ({8{XRB}} & PD_R[7:0]);
+        Do[7:0] <= ({8{R4}} & OB_R[7:0]) | ({8{RPIX}} & {DBIN[7:6],PIX[5:0]}) | ({8{R2}} & {R2DB[2:0],DBIN[4:0]}) | ({8{XRB}} & PD_R[7:0]);
                       end
 endmodule
 
@@ -1283,6 +1311,8 @@ assign ORES = ~( nPCLK | ORES_LATCH );
 wire OSTEP;
 assign OSTEP = ~( nPCLK | OSTEP1 | ~(( PAR_O & NHn2 ) | ~( Hn0 | ~( OSTEP2 | OSTEP3 ))));
 wire OMV;
+wire [2:0]OBDZ;
+assign OBDZ[2:0] =  OAMQ[4:2] &  {3{ ~( OAM1ADR[1] & ~OAM1ADR[0] )}};
 wire [4:0]OAM2ADR, OAM2Cout;
 wire [7:0]OAM1ADR;
 // OAM COUNTER
@@ -1293,8 +1323,8 @@ OAM_COUNTER OAMCNT (Clk, MODE4, PAR_O, W3, OMSTEP, DBIN[7:0], OAM1ADR[7:0], OMV)
 COUNTER OAM2CNT[4:0] (Clk, nPCLK, {OAM2Cout[3:0], 1'b1}, ORES, 1'b0, OSTEP, 5'h00, OAM2ADR[4:0], OAM2Cout[4:0]);
 // Internal memory modules
 wire [7:0]OAMQ, OAM2Q; 
-OAM_RAM  MOD_OAM_RAM  (OAM1ADR[7:0], Clk, DBIN[7:0], (WE & BLNK), OAMQ[7:0]);             // OAM
-OAM2_RAM MOD_OAM2_RAM (OAM2ADR[4:0], Clk, ( {8{ I_OAM2 }} | OB2[7:0] ), WE, OAM2Q[7:0]);  // OAM2
+OAM_RAM  MOD_OAM_RAM  (OAM1ADR[7:0], Clk, DBIN[7:0], (WE & BLNK), OAMQ[7:0]);  // OAM
+OAM2_RAM MOD_OAM2_RAM (OAM2ADR[4:0], Clk,  OB2[7:0],  WE, OAM2Q[7:0]);         // OAM2
 // Logics
 always @(posedge Clk) begin
          if (~W4Q4) W4FF <= 1'b0;
@@ -1314,7 +1344,7 @@ always @(posedge Clk) begin
           if (nPCLK) begin
 			W4Q2 <=  W4Q1;
 			W4Q4 <= ~W4Q3;
-         OB[7:0] <= OAP ? OAMQ[7:0] : OAM2Q[7:0];
+         OB[7:0] <= I_OAM2 ? 8'hFF : OAP ? {OAMQ[7:5], OBDZ[2:0], OAMQ[1:0]} : OAM2Q[7:0];
 		   OMSTEP1 <= OFETCH;
 			OMSTEP2 <= ~( Hnn0 & ~( I_OAM2 | nVIS ));
 			ORES_LATCH <= nEVAL;
@@ -1524,7 +1554,7 @@ endmodule
 //===============================================================================================
 // Pixel multiplexer module
 //===============================================================================================
-module VID_MUX(
+module PIX_MUX(
 input	Clk,		      // System clock
 input	PCLK,	         // Pixel clock
 input	nPCLK,         // Pixel clock
@@ -1568,7 +1598,7 @@ always @(posedge Clk) begin
 			ZCOL_LATCH <= ZCOLN[1] | ZCOLN[0];
 			OCOLN      <= OCOL;
 			            end
-                     end
+                       end
 // End of pixel multiplexer module
 endmodule
 
