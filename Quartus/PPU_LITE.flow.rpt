@@ -1,5 +1,5 @@
 Flow report for PPU_LITE
-Wed Jan 21 18:23:48 2026
+Fri Mar 06 15:17:00 2026
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -38,14 +38,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------+
 ; Flow Summary                                                          ;
 +-----------------------+-----------------------------------------------+
-; Flow Status           ; Successful - Wed Jan 21 18:23:48 2026         ;
+; Flow Status           ; Successful - Fri Mar 06 15:17:00 2026         ;
 ; Quartus II Version    ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
 ; Revision Name         ; PPU_LITE                                      ;
 ; Top-level Entity Name ; PPU_LITE                                      ;
 ; Family                ; Cyclone                                       ;
 ; Device                ; EP1C3T100C8                                   ;
 ; Timing Models         ; Final                                         ;
-; Total logic elements  ; 1,215 / 2,910 ( 42 % )                        ;
+; Total logic elements  ; 1,217 / 2,910 ( 42 % )                        ;
 ; Total pins            ; 62 / 65 ( 95 % )                              ;
 ; Total virtual pins    ; 0                                             ;
 ; Total memory bits     ; 7,104 / 59,904 ( 12 % )                       ;
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/21/2026 18:23:37 ;
+; Start date & time ; 03/06/2026 15:16:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PPU_LITE            ;
 +-------------------+---------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                       ; Value                                         ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------------+-----------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                 ; 233497588822337.176900901705116               ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                 ; 233497588822337.177279940907032               ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                   ; ModelSim-Altera (Verilog)                     ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                        ; 1 ps                                          ; --            ; --          ; eda_simulation ;
@@ -88,7 +88,6 @@ applicable agreement for further details.
 ; MAX_CORE_JUNCTION_TEMP                ; 85                                            ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                ; 0                                             ; --            ; --          ; --             ;
 ; MISC_FILE                             ; c:/altera/91sp2/quartus/PPU_LITE/PPU_LITE.dpf ; --            ; --          ; --             ;
-; MISC_FILE                             ; D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.dpf     ; --            ; --          ; --             ;
 ; MISC_FILE                             ; PLL.bsf                                       ; --            ; --          ; --             ;
 ; MISC_FILE                             ; PLL.ppf                                       ; --            ; --          ; --             ;
 ; MISC_FILE                             ; VRAM.bsf                                      ; --            ; --          ; --             ;
@@ -107,12 +106,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 281 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 297 MB              ; 00:00:04                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 285 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 297 MB              ; 00:00:03                           ;
 ; Assembler                 ; 00:00:01     ; 1.0                     ; 239 MB              ; 00:00:00                           ;
 ; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 230 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 229 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:09                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 229 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,5 +1,5 @@
 Assembler report for PPU_LITE
-Wed Jan 21 18:23:47 2026
+Fri Mar 06 15:16:59 2026
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jan 21 18:23:47 2026 ;
+; Assembler Status      ; Successful - Fri Mar 06 15:16:59 2026 ;
 ; Revision Name         ; PPU_LITE                              ;
 ; Top-level Entity Name ; PPU_LITE                              ;
 ; Family                ; Cyclone                               ;
@@ -94,8 +94,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                          ;
 +----------------+------------------------------------------------------------------+
 ; Device         ; EP1C3T100C8                                                      ;
-; JTAG usercode  ; 0x0014F276                                                       ;
-; Checksum       ; 0x0014F276                                                       ;
+; JTAG usercode  ; 0x0014D61B                                                       ;
+; Checksum       ; 0x0014D61B                                                       ;
 +----------------+------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+--------------------------------------------------------------+
 ; Device             ; EPCS4                                                        ;
 ; JTAG usercode      ; 0x00000000                                                   ;
-; Checksum           ; 0x078DECEC                                                   ;
+; Checksum           ; 0x078E935B                                                   ;
 ; Compression Ratio  ; 2                                                            ;
 +--------------------+--------------------------------------------------------------+
 
@@ -117,12 +117,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jan 21 18:23:46 2026
+    Info: Processing started: Fri Mar 06 15:16:58 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 240 megabytes
-    Info: Processing ended: Wed Jan 21 18:23:47 2026
+    Info: Peak virtual memory: 239 megabytes
+    Info: Processing ended: Fri Mar 06 15:16:59 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
