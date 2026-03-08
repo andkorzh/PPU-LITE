@@ -47,7 +47,7 @@ input [2:0]A,      // Адрес регистра
 input [7:0]PD,     // Вход шины графических данных PPU
 // Выходы
 inout [7:0]DB,     // Внешняя шина данных CPU
-output [17:0]RGB,  // Выход RGB 6 + 6 + 6
+output [17:0]RGB,  // Выход RGB R6 + G6 + B6
 output [2:0]EMPH,  // EMPHASIS R G B
 output [13:0]PAD,  // Выход адресов шины PPU
 output INT,        // Выход запроса прерывания NMI
@@ -109,11 +109,11 @@ wire E_EV;
 wire I_OAM2;
 wire PAR_O;
 wire nVIS;
-wire nF_NT;
-wire F_TB;
-wire F_TA;
-wire N_FO;
+wire F_NT;
 wire F_AT;
+wire F_TA;
+wire F_TB;
+wire N_FO;
 wire BURST;
 wire SC_CNT;
 wire nPICTURE;
@@ -237,11 +237,11 @@ E_EV,
 I_OAM2,
 PAR_O,
 nVIS,
-nF_NT,
-F_TB,
-F_TA,
-N_FO,
+F_NT,
 F_AT,
+F_TA,
+F_TB,
+N_FO,
 BURST,
 SC_CNT,
 SYNC,
@@ -284,8 +284,8 @@ PCLK,
 nPCLK,
 Hnn[0],
 nCLPB,
-F_TA,
 F_AT,
+F_TA,
 F_TB,
 N_FO,
 PD[7:0],
@@ -305,7 +305,9 @@ nPCLK,
 Hnn[0],
 nHn1,
 nHn2,
-nF_NT,
+F_NT,
+F_AT,
+F_TB,
 RC,
 PAR_O,
 SH2,
@@ -323,11 +325,9 @@ W5_1,
 W5_2,
 W6_1,
 W6_2,
-F_AT,
 DB_PAR,
 E_EV,
 TSTEP,
-F_TB,
 I1_32,
 BLNK,
 PAD[13:0],
@@ -335,7 +335,7 @@ THO[4:0],
 TVO1
 );
 
-//Поиск спрайтов, подлежащих выводу на данной строке
+//Поиск спрайтов, подлежащих выводу на следующей строке
 OBJ_EVAL MOD_OBJ_EVAL(
 Clk,
 PCLK,
@@ -347,7 +347,7 @@ O8_16,
 I_OAM2,
 nVIS,
 SPR_OV,
-nF_NT,
+F_NT,
 S_EV,
 PAR_O,
 OV[3:0],
@@ -658,12 +658,12 @@ output reg nEVAL,    // Сброс счетчика OAM2 и начало процесса обработки OAM2
 output reg E_EV,     // Окончание процесса просмотра списка и сравнения спрайтов
 output reg I_OAM2,   // Сигнал инициализации (очистки) OAM2
 output reg PAR_O,    // Вычитывание графики спрайтов
-output reg nVIS,     // Видимая часть строки
-output reg nF_NT,    // Чтение номера тайла из Name Table
-output F_TB,         // Фаза выборки второго байта тайла
-output F_TA,         // Фаза выборки первого байта тайла
-output N_FO,         // Сигнал разрешения вывода графики фона
+output reg nVIS,     // Видимая часть строки спрайтов
+output reg F_NT,     // Фаза выборки номера тайла из Name Table
 output F_AT,         // Фаза выборки атрибутов из Name Table
+output F_TA,         // Фаза выборки первого байта тайла
+output F_TB,         // Фаза выборки второго байта тайла
+output N_FO,         // Сигнал разрешения вывода графики фона
 output BURST,        // Маска вывода вспышки синхронизации поднесущей цвета
 output SC_CNT,       // Запуск счетчика адресов при включении растра и/или фона
 output SYNC,         // Выход композитной синхронизации
@@ -793,7 +793,7 @@ always @(posedge Clk) begin
         I_OAM2    <= IOAM2_IN;
         PAR_O     <= PARO_IN;
         nVIS      <= ~NVIS_IN;
-        nF_NT     <= ~FNT_IN;
+        F_NT      <=  FNT_IN;
         FTB_OUT   <= ~FTB_IN;
         FTA_OUT   <= ~FTA_IN;
         NFO_OUT   <= ~( NFO1 | NFO2 );
@@ -917,10 +917,10 @@ input nPCLK,      // Пиксельклок
 // Входы
 input Hnn0,       // Синхронизированное атомарное состояние PPU
 input nCLPB,      // Фон отключён
-input F_TA,       // Фаза выборки первого байта тайла
 input F_AT,       // Фаза выборки атрибутов
+input F_TA,       // Фаза выборки первого байта тайла
 input F_TB,       // Фаза выборки второго байта тайла
-input N_FO,       // Активация сдвига графики
+input N_FO,       // Активация сдвиговых регистров фона
 input [7:0]PD,    // Шина графических данных PPU
 input THO1,       // Горизонтальная координата в атрибуте
 input TVO1,       // Вертикальная координата в атрибуте
@@ -993,19 +993,19 @@ always @(posedge Clk) begin
         SR1[7:0] <= FSR1[7:0];
         SR2[7:0] <= FSR2[7:0];
         SR3[7:0] <= FSR3[7:0];
-                  end
+                   end
         if (STEP2) begin
         FSR0[7:0] <= {SR0[6:0],QTA};
         FSR1[7:0] <= {SR1[6:0],QTB};
         FSR2[7:0] <= {SR2[6:0],ATR[0]};
         FSR3[7:0] <= {SR3[6:0],ATR[1]};
-                   end
+                    end
         if (PCLK) begin
         CLPB_LATCH <= nCLPB;
         F_AT_LATCH <= F_AT;
         THO1R <= THO1;
         BGC2[3:0] <= BGC1[3:0];
-                  end
+                   end
         if (nPCLK) BGC1[3:0] <= BGC_POS[3:0];
                     end
 // Конец модуля генератора пикселей фона
@@ -1019,37 +1019,37 @@ input Clk,        // Системный клок
 input PCLK,       // Пиксельклок
 input nPCLK,      // Пиксельклок
 // Входы
-input	Hnn0,       // Синхронизированное атомарное состояние PPU
-input	NHn1,       // Синхронизированное атомарное состояние PPU
-input	NHn2,       // Синхронизированное атомарное состояние PPU
-input	nF_NT,      // Чтение номера тайла из Name Table
-input	RC,         // Очистка регистров
-input	PAR_O,      // Чтение графики спрайтов
-input	SH2,        // Фаза чтения атрибута спрайта
-input	[3:0]OV,    // Номер строки графики спрайта
-input	[7:0]OB,    // Шина данных спрайтовой машины
-input	[7:0]PD,    // Шина графических данных PPU
-input	[7:0]DBIN,  // Шина данных CPU
-input	O8_16,      // Высота спрайта
-input	OBSEL,      // Старший бит адреса обьектов
-input	BGSEL,      // Старший бит адреса фона
-input	RESCL,      // Очистка флагов, загрузка данных в счетчики скроллинга
-input	SC_CNT,     // Запуск счетчика адресов при включении растра и/или фона
-input	W0,         // Запись в регистр #0
-input	W5_1,       // Запись в регистр #5.1
-input	W5_2,       // Запись в регистр #5.2
-input	W6_1,       // Запись в регистр #6.1
-input	W6_2,       // Запись в регистр #6.2
-input	F_AT,       // Фаза выборки атрибутов
-input	DB_PAR,     // Проброс данных CPU на шину PPU
-input	E_EV,       // Окончание процесса просмотра списка и сравнения спрайтов
-input	TSTEP,      // Инкремент счетчиков адреса PPU
-input	F_TB,       // Фаза выборки второго байта тайла
-input	I1_32,      // Инкремент адреса PPU +1/+32
-input	BLNK,       // Рендер отключен
+input Hnn0,       // Синхронизированное атомарное состояние PPU
+input NHn1,       // Синхронизированное атомарное состояние PPU
+input NHn2,       // Синхронизированное атомарное состояние PPU
+input F_NT,       // Фаза выборки номера тайла из Name Table
+input F_AT,       // Фаза выборки атрибутов
+input F_TB,       // Фаза выборки второго байта тайла
+input RC,         // Очистка регистров
+input PAR_O,      // Чтение графики спрайтов
+input SH2,        // Фаза выборки атрибута спрайта
+input [3:0]OV,    // Номер строки графики спрайта
+input [7:0]OB,    // Шина данных спрайтовой машины
+input [7:0]PD,    // Шина графических данных PPU
+input [7:0]DBIN,  // Шина данных CPU
+input O8_16,      // Высота спрайта
+input OBSEL,      // Старший бит адреса обьектов
+input BGSEL,      // Старший бит адреса фона
+input RESCL,      // Очистка флагов, загрузка данных в счетчики скроллинга
+input SC_CNT,     // Запуск счетчика адресов при включении растра и/или фона
+input W0,         // Запись в регистр $2000
+input W5_1,       // Запись в регистр $2005.1
+input W5_2,       // Запись в регистр $2005.2
+input W6_1,       // Запись в регистр $2006.1
+input W6_2,       // Запись в регистр $2006.2
+input DB_PAR,     // Проброс данных CPU на шину PPU
+input E_EV,       // Окончание процесса просмотра списка и сравнения спрайтов
+input TSTEP,      // Инкремент счетчиков адреса PPU
+input I1_32,      // Инкремент адреса PPU +1/+32
+input BLNK,       // Рендер отключен
 // Выходы
 output reg [13:0]PAD,   // Выход адреса/данных VRAM
-output [4:0]THO,        // Выход данных пикселя в ручном режиме
+output [4:0]THO,        // Горизонтальная координата тайла
 output TVO1             // Вертикальная координата в атрибуте
 );
 // Переменные
@@ -1155,7 +1155,7 @@ always @(posedge Clk) begin
       PAD[13:0]  <= PAMUX[13:0];
                 end
       if (nPCLK) begin
-      TAL_LATCH <= nF_NT | ~Hnn0;
+      TAL_LATCH <= ~F_NT | ~Hnn0;
       OVR[3:0]  <= OV[3:0];
       PDIN[7:0] <= PD[7:0];
       TP[2:0]   <= (PAR_O) ? OBJ_INV[2:0] : FVO[2:0] ; 
@@ -1168,12 +1168,11 @@ always @(posedge Clk) begin
       W62_1     <= ~( ~W62_FF | W6_2 );
                  end
                       end
-
 // Конец модуля генератора адреса PPU
 endmodule
 
 //===============================================================================================
-// Модуль поиска спрайтов, подлежащих выводу на данной строке
+// Модуль поиска спрайтов, подлежащих выводу на следующей строке
 //===============================================================================================
 module OBJ_EVAL(
 input Clk,          // Системный клок
@@ -1187,7 +1186,7 @@ input O8_16,        // Высота спрайта
 input I_OAM2,       // Сигнал инициализации (очистки) OAM2
 input nVIS,         // Видимая часть строки
 input SPR_OV,       // Счетчик ОАМ переполнен или найдено боллее 8-ми спрайтов
-input nF_NT,        // Чтение номера тайла из Name Table
+input F_NT,         // Фаза выборки номера тайла из Name Table
 input S_EV,         // Запуск процесса просмотра списка спрайтов
 input PAR_O,        // Чтение графики спрайтов
 // Выходы
@@ -1214,11 +1213,11 @@ always @(posedge Clk) begin
          if (PCLK) begin
          OBLATCH[7:0] <= OB[7:0];
          {CLATCH[1], CLATCH[3], CLATCH[5]} <= {CLATCH[0], CLATCH[2], CLATCH[4]};
-                   end
+                    end
          if (nPCLK) begin
          PD_FIFO1 <= OVZ;
-         PD_FIFO2 <= nF_NT | ~Hnn0;
-                    end
+         PD_FIFO2 <= ~F_NT | ~Hnn0;
+                     end
          if (~( nPCLK | PD_FIFO2 )) PD_FIFO <= ~PD_FIFO1;
          if (S_EV  & nPCLK) SPR0_EV1 <=  DO_COPY;
          if (PAR_O & nPCLK) SPR0_EV  <= ~SPR0_EV1;
@@ -1337,14 +1336,14 @@ input	[5:0]Hnn,   // Синхронизированное атомарное состояние PPU
 input HPOS_0,     // Запуск счетчиков координаты X спрайтов (позиция 0 спрайтов)
 input PAR_O,      // Вычитывание графики спрайтов
 input CLPO,       // Спрайты отключены
-input nVIS,       // Видимая часть строки
+input nVIS,       // Видимая часть строки спрайтов
 input PD_FIFO,    // Блокировка входа FIFO
 input [7:0]PD,    // Шина графических данных PPU
 input [7:0]OB,    // Шина данных спрайтовой машины
 // Выходы 
 output nSPR0HIT,  // Детектор спрайта #0
 output reg SH2,   // Чтение атрибутов спрайтов (для мирроринга по вертикали)
-output [4:0]ZCOL  // Выход спрайтового FIFO 
+output [4:0]ZCOL  // Выход спрайтового FIFO
 );
 // Переменные
 reg [7:0]SEL_LATCH;
@@ -1411,43 +1410,43 @@ assign ZCOL[4:0] = SPR[0] ? { ATR0[2:0],COL1[0],COL0[0] } :
 assign nSPR0HIT = ~SPR0HIT_LATCH;
 // Логика
 always @(posedge Clk) begin
-			if (PCLK) begin
-			ZPOS[1] <= ZPOS[0];
-			SPR0HIT_LATCH <= SPR[0];
-			          end
-			if (nPCLK) begin
-			SH2  <= PAR_O & ~Hnn[0] &  Hnn[1] & ~Hnn[2];
-			SH3  <= PAR_O &  Hnn[0] &  Hnn[1] & ~Hnn[2];
-			SH5  <= PAR_O &  Hnn[0] & ~Hnn[1] &  Hnn[2];
-			SH7  <= PAR_O &  Hnn[0] &  Hnn[1] &  Hnn[2];
-			SEL_LATCH[0] <= ~Hnn[3] & ~Hnn[4] & ~Hnn[5];
-			SEL_LATCH[1] <=  Hnn[3] & ~Hnn[4] & ~Hnn[5];
-			SEL_LATCH[2] <= ~Hnn[3] &  Hnn[4] & ~Hnn[5];
-			SEL_LATCH[3] <=  Hnn[3] &  Hnn[4] & ~Hnn[5];
-			SEL_LATCH[4] <= ~Hnn[3] & ~Hnn[4] &  Hnn[5];
-			SEL_LATCH[5] <=  Hnn[3] & ~Hnn[4] &  Hnn[5];
-			SEL_LATCH[6] <= ~Hnn[3] &  Hnn[4] &  Hnn[5];
-			SEL_LATCH[7] <=  Hnn[3] &  Hnn[4] &  Hnn[5];
-			{ZPOS[0], ZPOS[2]} <= {HPOS_0, ZPOS[1]};
-			PD_LATCH[7:0] <= MIRR_MUX[7:0];
-			ATR0[2:0] <= ATR_IN0[2:0];
-			ATR1[2:0] <= ATR_IN1[2:0];
-			ATR2[2:0] <= ATR_IN2[2:0];
-			ATR3[2:0] <= ATR_IN3[2:0];
-			ATR4[2:0] <= ATR_IN4[2:0];
-			ATR5[2:0] <= ATR_IN5[2:0];
-			ATR6[2:0] <= ATR_IN6[2:0];
-			ATR7[2:0] <= ATR_IN7[2:0];
-			           end
-			if (PCLK & SH2) MIRR_LATCH <= OB[6];
-			if (PCLK & SH2 & SEL_LATCH[0]) ATR_IN0[2:0] <= {OB[5], OB[1:0]};
-			if (PCLK & SH2 & SEL_LATCH[1]) ATR_IN1[2:0] <= {OB[5], OB[1:0]};
-			if (PCLK & SH2 & SEL_LATCH[2]) ATR_IN2[2:0] <= {OB[5], OB[1:0]};
-			if (PCLK & SH2 & SEL_LATCH[3]) ATR_IN3[2:0] <= {OB[5], OB[1:0]};
-			if (PCLK & SH2 & SEL_LATCH[4]) ATR_IN4[2:0] <= {OB[5], OB[1:0]};
-			if (PCLK & SH2 & SEL_LATCH[5]) ATR_IN5[2:0] <= {OB[5], OB[1:0]};
-			if (PCLK & SH2 & SEL_LATCH[6]) ATR_IN6[2:0] <= {OB[5], OB[1:0]};
-			if (PCLK & SH2 & SEL_LATCH[7]) ATR_IN7[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK) begin
+         ZPOS[1] <= ZPOS[0];
+         SPR0HIT_LATCH <= SPR[0];
+                   end
+         if (nPCLK) begin
+         SH2  <= PAR_O & ~Hnn[0] &  Hnn[1] & ~Hnn[2];
+         SH3  <= PAR_O &  Hnn[0] &  Hnn[1] & ~Hnn[2];
+         SH5  <= PAR_O &  Hnn[0] & ~Hnn[1] &  Hnn[2];
+         SH7  <= PAR_O &  Hnn[0] &  Hnn[1] &  Hnn[2];
+         SEL_LATCH[0] <= ~Hnn[3] & ~Hnn[4] & ~Hnn[5];
+         SEL_LATCH[1] <=  Hnn[3] & ~Hnn[4] & ~Hnn[5];
+         SEL_LATCH[2] <= ~Hnn[3] &  Hnn[4] & ~Hnn[5];
+         SEL_LATCH[3] <=  Hnn[3] &  Hnn[4] & ~Hnn[5];
+         SEL_LATCH[4] <= ~Hnn[3] & ~Hnn[4] &  Hnn[5];
+         SEL_LATCH[5] <=  Hnn[3] & ~Hnn[4] &  Hnn[5];
+         SEL_LATCH[6] <= ~Hnn[3] &  Hnn[4] &  Hnn[5];
+         SEL_LATCH[7] <=  Hnn[3] &  Hnn[4] &  Hnn[5];
+         {ZPOS[0], ZPOS[2]} <= {HPOS_0, ZPOS[1]};
+         PD_LATCH[7:0] <= MIRR_MUX[7:0];
+         ATR0[2:0] <= ATR_IN0[2:0];
+         ATR1[2:0] <= ATR_IN1[2:0];
+         ATR2[2:0] <= ATR_IN2[2:0];
+         ATR3[2:0] <= ATR_IN3[2:0];
+         ATR4[2:0] <= ATR_IN4[2:0];
+         ATR5[2:0] <= ATR_IN5[2:0];
+         ATR6[2:0] <= ATR_IN6[2:0];
+         ATR7[2:0] <= ATR_IN7[2:0];
+                    end
+         if (PCLK & SH2) MIRR_LATCH <= OB[6];
+         if (PCLK & SH2 & SEL_LATCH[0]) ATR_IN0[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK & SH2 & SEL_LATCH[1]) ATR_IN1[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK & SH2 & SEL_LATCH[2]) ATR_IN2[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK & SH2 & SEL_LATCH[3]) ATR_IN3[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK & SH2 & SEL_LATCH[4]) ATR_IN4[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK & SH2 & SEL_LATCH[5]) ATR_IN5[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK & SH2 & SEL_LATCH[6]) ATR_IN6[2:0] <= {OB[5], OB[1:0]};
+         if (PCLK & SH2 & SEL_LATCH[7]) ATR_IN7[2:0] <= {OB[5], OB[1:0]};
                       end
 // Конец модуля спрайтового FIFO
 endmodule
@@ -1491,11 +1490,11 @@ endmodule
 // Модуль сдвигового регистра спрайтового FIFO и BG_COLOR
 //===============================================================================================
 module SHIFTREG(
-input	Clk,		     // Системный клок
+input Clk,          // Системный клок
 // Входы
-input	SIN,          // Последовательный вход сдвигового регистра
-input	NEXT,	        // Разрешение на сдвиг, 2 фаза
-input	STEP,         // Разрешение на сдвиг, 1 фаза
+input SIN,          // Последовательный вход сдвигового регистра
+input NEXT,         // Разрешение на сдвиг, 2 фаза
+input STEP,         // Разрешение на сдвиг, 1 фаза
 input LOAD,         // Разрешение на загрузку данных для сдвига
 input [7:0]D,       // Данные для сдвига
 // Выходы 
@@ -1508,9 +1507,9 @@ reg [7:0]QS_IN;     // Первая фаза сдвига
 assign Q = QS[7];   // Выход сдвигового регистра
 // Логика
 always @(posedge Clk) begin
-  if (LOAD | STEP) QS_IN[7:0] <= LOAD ? D[7:0] : {QS[6:0], SIN};
-  if (NEXT) QS[7:0] <= QS_IN[7:0];
-                      end
+                      if (LOAD | STEP) QS_IN[7:0] <= LOAD ? D[7:0] : {QS[6:0], SIN};
+                      if (NEXT) QS[7:0] <= QS_IN[7:0];
+                       end
 // Конец модуля сдвигового регистра спрайтового FIFO и BG_COLOR
 endmodule
 
@@ -1518,18 +1517,18 @@ endmodule
 // Модуль мультиплексора пикселей
 //===============================================================================================
 module PIX_MUX(
-input Clk,		      // Системный клок
-input PCLK,	         // Пиксельклок
+input Clk,           // Системный клок
+input PCLK,          // Пиксельклок
 input nPCLK,         // Пиксельклок
 // Входы
-input [3:0]BGC,      //
-input [4:0]ZCOL,     //
-input [4:0]THO,      //
-input nVIS,			   // Видимая часть строки
+input [3:0]BGC,      // Выход генератора пикселей фона
+input [4:0]ZCOL,     // Выход спрайтового FIFO
+input [4:0]THO,      // Горизонтальная координата тайла
+input nVIS,          // Видимая часть строки спрайтов
 input SPR0_EV,       // Спрайт #0 находится на текущей строке
-input nSPR0HIT,	   // Детектор спрайта #0
-input RESCL,		   // Строка пререндера (сброс всех схем выборки)
-input TH_MUX,		   //
+input nSPR0HIT,      // Детектор спрайта #0
+input RESCL,         // Строка пререндера (сброс всех схем выборки)
+input TH_MUX,        // Обращение в палитру
 // Выходы
 output [4:0]CGA,     // Шина данных графики
 output reg R2DB6     // Флаг спрайтхита
@@ -1549,18 +1548,18 @@ assign CGA[4:0] = TH_MUX ? THO_LATCH[4:0] : STEP3[4:0];
 // Логика
 always @(posedge Clk) begin
          if (RESCL) R2DB6 <= 1'b0;
-	 else if (~( PCLK | nVIS | SPR0_EV | nSPR0HIT | ~( BGC[0] | BGC[1] ))) R2DB6 <= 1'b1;
+    else if (~( PCLK | nVIS | SPR0_EV | nSPR0HIT | ~( BGC[0] | BGC[1] ))) R2DB6 <= 1'b1;
          if (PCLK) begin
-			ZCOLN[4:0] <= ZCOL[4:0];
-			THO_LATCH[4:0] <= THO[4:0];
-			STEP3[4:0] <= {OCOLN,BGCF[3:0]};
-			           end
+         ZCOLN[4:0] <= ZCOL[4:0];
+         THO_LATCH[4:0] <= THO[4:0];
+         STEP3[4:0] <= {OCOLN,BGCF[3:0]};
+                    end
          if (nPCLK) begin
-			STEP2[3:0] <= OCOL ? ZCOLN[3:0] : BGC[3:0];
+         STEP2[3:0] <= OCOL ? ZCOLN[3:0] : BGC[3:0];
          BGC_LATCH  <= BGC[1]   | BGC[0];
-			ZCOL_LATCH <= ZCOLN[1] | ZCOLN[0];
-			OCOLN      <= OCOL;
-			           end
+         ZCOL_LATCH <= ZCOLN[1] | ZCOLN[0];
+         OCOLN      <= OCOL;
+                    end
                        end
 // Конец модуля мультиплексора пикселей
 endmodule
@@ -1569,24 +1568,24 @@ endmodule
 // Модуль палитры
 //=============================================================================================== 
 module PALETTE(
-input Clk,		        // Системный клок
-input PCLK,	           // Пиксельклок
+input Clk,             // Системный клок
+input PCLK,            // Пиксельклок
 input nPCLK,           // Пиксельклок
 // Входы
-input R7,              // Чтение из регистра 7
-input TH_MUX,		     // Обращение в палитру
+input R7,              // Чтение из регистра $2007
+input TH_MUX,          // Обращение в палитру
 input nPICTURE,        // Гашение
 input B_W,             // Режим Ч/Б (обнуление младших 4х битов индекса цвета)
-input DB_PAR,		     // Проброс данных CPU на шину PPU
+input DB_PAR,          // Проброс данных CPU на шину PPU
 input [4:0]CGA,        // Шина данных графики
-input [5:0]DBIN,	     // Шина данных CPU
+input [5:0]DBIN,       // Шина данных CPU
 input PALSEL0,         // Выбор палитры
 input PALSEL1,         // Выбор палитры
 
 // Выходы
 output RPIX,           // Выбор пиксельного вывода
 output reg [5:0]PIX,   // Данные пиксельного вывода
-output [17:0]RGB       // Выход RGB 6 + 6 + 6
+output [17:0]RGB       // Выход RGB R6 + G6 + B6
 );
 // Переменные
 reg DB_PARR;
@@ -1600,20 +1599,20 @@ wire nB_W;
 assign nB_W = ~( B_W | ( nPICTURE & ~RPIX ));
 assign RPIX = R7 & TH_MUX;
 // Вложенные модули палитрового ОЗУ / ПЗУ
-wire [17:0]RGB_IN;
+wire [17:0]RGB_TABLE;
 wire [5:0]C;
 PALETTE_RAM MOD_PALETTE_RAM ( {CGAH,CGA[3:0]}, Clk, DBIN[5:0],( TH_MUX & DB_PARR ), C[5:0] );
-PALETTE_RGB_TABLE MOD_RGB_TABLE ( {PALSEL1,PALSEL0,PIX[5:0]}, Clk, RGB_IN[17:0] );
+PALETTE_RGB_TABLE MOD_RGB_TABLE ( {PALSEL1,PALSEL0,PIX[5:0]}, Clk, RGB_TABLE[17:0] );
 // Выход
-assign RGB[17:0] = RGB_IN[17:0] & { 18 { ~PICTR[1] }};
+assign RGB[17:0] = RGB_TABLE[17:0] & { 18 { ~PICTR[1] }};
 // Логика
 always @(posedge Clk) begin
          if (PCLK) begin
-			DB_PARR  <= DB_PAR;
-			PIX[5:0] <= {C[5:4], CN[3:0]};
-			PICTR[0] <= nPICTURE;
-			          end
-			PICTR[1] <= PICTR[0];
+         DB_PARR  <= DB_PAR;
+         PIX[5:0] <= {C[5:4], CN[3:0]};
+         PICTR[0] <= nPICTURE;
+                    end
+         PICTR[1] <= PICTR[0];
                       end
 // Конец модуля палитры
 endmodule

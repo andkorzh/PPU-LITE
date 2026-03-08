@@ -47,7 +47,7 @@ input [2:0]A,      // Register address
 input [7:0]PD,     // PPU Graphics Data Bus Input
 // Outputs
 inout [7:0]DB,     // CPU External Data Bus
-output [17:0]RGB,  // RGB output 6 + 6 + 6
+output [17:0]RGB,  // RGB output R6 + G6 + B6
 output [2:0]EMPH,  // EMPHASIS R G B
 output [13:0]PAD,  // PPU Bus Address Output
 output INT,        // Interrupt Request Output
@@ -110,11 +110,11 @@ wire E_EV;
 wire I_OAM2;
 wire PAR_O;
 wire nVIS;
-wire nF_NT;
-wire F_TB;
-wire F_TA;
-wire N_FO;
+wire F_NT;
 wire F_AT;
+wire F_TA;
+wire F_TB;
+wire N_FO;
 wire BURST;
 wire SC_CNT;
 wire nPICTURE;
@@ -239,11 +239,11 @@ E_EV,
 I_OAM2,
 PAR_O,
 nVIS,
-nF_NT,
-F_TB,
-F_TA,
-N_FO,
+F_NT,
 F_AT,
+F_TA,
+F_TB,
+N_FO,
 BURST,
 SC_CNT,
 SYNC,
@@ -286,8 +286,8 @@ PCLK,
 nPCLK,
 Hnn[0],
 nCLPB,
-F_TA,
 F_AT,
+F_TA,
 F_TB,
 N_FO,
 PD[7:0],
@@ -307,7 +307,9 @@ nPCLK,
 Hnn[0],
 nHn1,
 nHn2,
-nF_NT,
+F_NT,
+F_AT,
+F_TB,
 RC,
 PAR_O,
 SH2,
@@ -325,11 +327,9 @@ W5_1,
 W5_2,
 W6_1,
 W6_2,
-F_AT,
 DB_PAR,
 E_EV,
 TSTEP,
-F_TB,
 I1_32,
 BLNK,
 PAD[13:0],
@@ -337,7 +337,7 @@ THO[4:0],
 TVO1
 );
 
-//Find sprites to be output on a given line
+//Find sprites to be output on a next line
 OBJ_EVAL MOD_OBJ_EVAL(
 Clk,
 PCLK,
@@ -349,7 +349,7 @@ O8_16,
 I_OAM2,
 nVIS,
 SPR_OV,
-nF_NT,
+F_NT,
 S_EV,
 PAR_O,
 OV[3:0],
@@ -522,7 +522,7 @@ always @(posedge Clk) begin
         W7   <=  ADR[2] &  ADR[1] &  ADR[0] & ~RnWR & ~nDBER;
 
         if (R2) DWR1 <= 1'b1;
-   else if (W5_1 | W5_2 | W6_1 | W6_2) DWR1 <= ~DWR2;
+   else if (  W5_1 | W5_2 | W6_1 | W6_2)  DWR1 <= ~DWR2;
         if (R2) DWR2 <= 1'b1;
    else if (~(W5_1 | W5_2 | W6_1 | W6_2)) DWR2 <=  DWR1;
         if (~nDBE & ~RnW) DBIN[7:0] <= DB[7:0];
@@ -628,7 +628,7 @@ always @(posedge Clk) begin
        if (RC)    PD_R[7:0] <= 8'h00;
   else if (PD_RB) PD_R[7:0] <= PD[7:0];
        Do[7:0] <= ({8{R4}} & OB_R[7:0]) | ({8{RPIX}} & {DBIN[7:6],PIX[5:0]}) | ({8{R2}} & {R2DB[2:0],DBIN[4:0]}) | ({8{XRB}} & PD_R[7:0]);
-                      end
+                       end
 endmodule
 
 //===============================================================================================
@@ -660,12 +660,12 @@ output reg nEVAL,    // Reset OAM2 counter and start OAM2 processing
 output reg E_EV,     // End of the process of viewing the list and comparing sprites
 output reg I_OAM2,   // OAM2 Initialization (Clear) Signal
 output reg PAR_O,    // Fetch sprite graphics
-output reg nVIS,     // Visible part of the line
-output reg nF_NT,    // Reading tile number from Name Table
-output F_TB,         // Second tile byte fetch phase
-output F_TA,         // First byte tile fetch phase
-output N_FO,         // Activate graphics shift
+output reg nVIS,     // Visible part of the line sprites
+output reg F_NT,     // Reading tile number from Name Table
 output F_AT,         // Phase of fetching attributes from Name Table
+output F_TA,         // First byte tile fetch phase
+output F_TB,         // Second tile byte fetch phase
+output N_FO,         // Activate graphics shift
 output BURST,        // Color Subcarrier Sync Burst Output Mask
 output SC_CNT,       // Starting the address counter when raster and/or background are
 output SYNC,         // Composite sync output
@@ -777,7 +777,7 @@ always @(posedge Clk) begin
          if (N_HB) begin
          if (V_LINE1N | V_LINE1P) VSYNC_FF <= 1'b1;
     else if (V_LINE0N | V_LINE0P) VSYNC_FF <= 1'b0;
-                   end
+                    end
          if (~nRES) RC <= 1'b1;
     else if (RESCL) RC <= 1'b0;
          if (RESCL | R2)                  INT_FF <= 1'b0;
@@ -795,7 +795,7 @@ always @(posedge Clk) begin
          I_OAM2    <= IOAM2_IN;
          PAR_O     <= PARO_IN;
          nVIS      <= ~NVIS_IN;
-         nF_NT     <= ~FNT_IN;
+         F_NT      <= FNT_IN;
          FTB_OUT   <= ~FTB_IN;
          FTA_OUT   <= ~FTA_IN;
          NFO_OUT   <= ~( NFO1 | NFO2 );
@@ -919,8 +919,8 @@ input nPCLK,      // Pixel clock
 // Inputs
 input Hnn0,       // Synchronized state of the PPU
 input nCLPB,      // Background is off
-input F_TA,       // First byte tile fetch phase
 input F_AT,       // Attribute Fetching Phase
+input F_TA,       // First byte tile fetch phase
 input F_TB,       // Second tile byte fetch phase
 input N_FO,       // Activate graphics shift
 input [7:0]PD,    // PPU Graphics Data Bus
@@ -1024,7 +1024,9 @@ input nPCLK,          // Pixel clock
 input Hnn0,           // Synchronized state of the PPU
 input NHn1,           // Synchronized state of the PPU
 input NHn2,           // Synchronized state of the PPU
-input nF_NT,          // Reading tile number from Name Table
+input F_NT,           // Reading tile number from Name Table
+input F_AT,           // Attribute Fetching Phase
+input F_TB,           // Second tile byte fetch phase
 input RC,             // Clearing registers
 input PAR_O,          // Fetch sprite graphics
 input SH2,            // Sprite attribute reading phase
@@ -1042,11 +1044,9 @@ input W5_1,           // Write to register $2005.1
 input W5_2,           // Write to register $2005.2
 input W6_1,           // Write to register $2006.1
 input W6_2,           // Write to register $2006.2
-input F_AT,           // Attribute Fetching Phase
 input DB_PAR,         // Forwarding CPU data to PPU bus
 input E_EV,           // End of the process of viewing the list and comparing sprites
 input TSTEP,          // Increment PPU address counters
-input F_TB,           // Second tile byte fetch phase
 input I1_32,          // PPU address increment +1/+32
 input BLNK,           // Rendering is disabled
 // Outputs
@@ -1157,7 +1157,7 @@ always @(posedge Clk) begin
       PAD[13:0]  <= PAMUX[13:0];
                  end
       if (nPCLK) begin
-      TAL_LATCH <= nF_NT | ~Hnn0;
+      TAL_LATCH <= ~F_NT | ~Hnn0;
       OVR[3:0]  <= OV[3:0];
       PDIN[7:0] <= PD[7:0];
       TP[2:0]   <= (PAR_O) ? OBJ_INV[2:0] : FVO[2:0] ; 
@@ -1175,12 +1175,12 @@ always @(posedge Clk) begin
 endmodule
 
 //===============================================================================================
-// Module for searching sprites to be output on a given line
+// Module for searching sprites to be output on a next line
 //===============================================================================================
 module OBJ_EVAL(
-input	Clk,          // System clock
-input	PCLK,         // Pixel clock
-input	nPCLK,        // Pixel clock
+input Clk,          // System clock
+input PCLK,         // Pixel clock
+input nPCLK,        // Pixel clock
 // Inputs
 input Hnn0,         // Synchronized state of the PPU
 input [7:0]V,       // Vertical counter output (for sprite machine)
@@ -1189,7 +1189,7 @@ input O8_16,        // Sprite height (0 - 8 points, 1 - 16 points)
 input I_OAM2,       // OAM2 Initialization (Clear) Signal
 input nVIS,         // Visible part of the line
 input SPR_OV,       // OAM counter is full or more than 8 sprites found
-input nF_NT,        // Reading tile number from Name Table
+input F_NT,         // Reading tile number from Name Table
 input S_EV,         // Starting the sprite list view process
 input PAR_O,        // Fetch sprite graphics
 // Outputs
@@ -1219,7 +1219,7 @@ always @(posedge Clk) begin
                    end
          if (nPCLK) begin
          PD_FIFO1 <= OVZ;
-         PD_FIFO2 <= nF_NT | ~Hnn0;
+         PD_FIFO2 <= ~F_NT | ~Hnn0;
                      end
          if (~( nPCLK | PD_FIFO2 )) PD_FIFO <= ~PD_FIFO1;
          if (S_EV  & nPCLK) SPR0_EV1 <=  DO_COPY;
@@ -1587,7 +1587,7 @@ input PALSEL1,        // Palette select
 // Outputs
 output RPIX,          // Selecting pixel output
 output reg [5:0]PIX,  // Pixel output data
-output [17:0]RGB      // RGB output 6 + 6 + 6
+output [17:0]RGB      // RGB output R6 + G6 + B6
 );
 // Variables
 reg DB_PARR;
@@ -1601,12 +1601,12 @@ wire nB_W;
 assign nB_W = ~( B_W | ( nPICTURE & ~RPIX ));
 assign RPIX = R7 & TH_MUX;
 // Internal Palette RAM/ROM Modules
-wire [17:0]RGB_IN;
+wire [17:0]RGB_TABLE;
 wire [5:0]C;
 PALETTE_RAM MOD_PALETTE_RAM ( {CGAH,CGA[3:0]}, Clk, DBIN[5:0],( TH_MUX & DB_PARR ), C[5:0] );
-PALETTE_RGB_TABLE MOD_RGB_TABLE ( {PALSEL1,PALSEL0,PIX[5:0]}, Clk, RGB_IN[17:0] );
+PALETTE_RGB_TABLE MOD_RGB_TABLE ( {PALSEL1,PALSEL0,PIX[5:0]}, Clk, RGB_TABLE[17:0] );
 // Output
-assign RGB[17:0] = RGB_IN[17:0] & { 18 { ~PICTR[1] }};
+assign RGB[17:0] = RGB_TABLE[17:0] & { 18 { ~PICTR[1] }};
 // Logics
 always @(posedge Clk) begin
          if (PCLK) begin

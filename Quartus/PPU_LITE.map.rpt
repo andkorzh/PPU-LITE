@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PPU_LITE
-Sun Mar 08 00:55:43 2026
+Sun Mar 08 17:04:16 2026
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -92,7 +92,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                ;
 +-----------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Mar 08 00:55:43 2026         ;
+; Analysis & Synthesis Status ; Successful - Sun Mar 08 17:04:15 2026         ;
 ; Quartus II Version          ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
 ; Revision Name               ; PPU_LITE                                      ;
 ; Top-level Entity Name       ; PPU_LITE                                      ;
@@ -190,7 +190,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 10     ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -200,14 +200,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                            ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+
-; PPU_LITE.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/SRC/PPU_LITE/PPU_LITE.bdf                                            ;
-; PALETTE_RGB_TABLE.mif            ; yes             ; User Memory Initialization File    ; D:/SRC/PPU_LITE/PALETTE_RGB_TABLE.mif                                   ;
-; PALETTE_RGB_TABLE.v              ; yes             ; User Wizard-Generated File         ; D:/SRC/PPU_LITE/PALETTE_RGB_TABLE.v                                     ;
-; OAM_RAM.v                        ; yes             ; User Wizard-Generated File         ; D:/SRC/PPU_LITE/OAM_RAM.v                                               ;
-; OAM2_RAM.v                       ; yes             ; User Wizard-Generated File         ; D:/SRC/PPU_LITE/OAM2_RAM.v                                              ;
-; PALETTE_RAM.v                    ; yes             ; User Wizard-Generated File         ; D:/SRC/PPU_LITE/PALETTE_RAM.v                                           ;
-; PLL.v                            ; yes             ; User Wizard-Generated File         ; D:/SRC/PPU_LITE/PLL.v                                                   ;
-; RP2C02_LITE.v                    ; yes             ; User Verilog HDL File              ; D:/SRC/PPU_LITE/RP2C02_LITE.v                                           ;
+; PPU_LITE.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.bdf                               ;
+; PALETTE_RGB_TABLE.mif            ; yes             ; User Memory Initialization File    ; D:/PPU_REVERSE/FPGA/PPU_LITE/PALETTE_RGB_TABLE.mif                      ;
+; PALETTE_RGB_TABLE.v              ; yes             ; User Wizard-Generated File         ; D:/PPU_REVERSE/FPGA/PPU_LITE/PALETTE_RGB_TABLE.v                        ;
+; OAM_RAM.v                        ; yes             ; User Wizard-Generated File         ; D:/PPU_REVERSE/FPGA/PPU_LITE/OAM_RAM.v                                  ;
+; OAM2_RAM.v                       ; yes             ; User Wizard-Generated File         ; D:/PPU_REVERSE/FPGA/PPU_LITE/OAM2_RAM.v                                 ;
+; PALETTE_RAM.v                    ; yes             ; User Wizard-Generated File         ; D:/PPU_REVERSE/FPGA/PPU_LITE/PALETTE_RAM.v                              ;
+; PLL.v                            ; yes             ; User Wizard-Generated File         ; D:/PPU_REVERSE/FPGA/PPU_LITE/PLL.v                                      ;
+; RP2C02_LITE.v                    ; yes             ; User Verilog HDL File              ; D:/PPU_REVERSE/FPGA/PPU_LITE/RP2C02_LITE.v                              ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;
@@ -217,10 +217,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altrom.inc                       ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/altrom.inc            ;
 ; altram.inc                       ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/altram.inc            ;
 ; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;
-; db/altsyncram_cua1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/SRC/PPU_LITE/db/altsyncram_cua1.tdf                                  ;
-; db/altsyncram_hsa1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/SRC/PPU_LITE/db/altsyncram_hsa1.tdf                                  ;
-; db/altsyncram_fsa1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/SRC/PPU_LITE/db/altsyncram_fsa1.tdf                                  ;
-; db/altsyncram_9u41.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/SRC/PPU_LITE/db/altsyncram_9u41.tdf                                  ;
+; db/altsyncram_cua1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_cua1.tdf                     ;
+; db/altsyncram_hsa1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_hsa1.tdf                     ;
+; db/altsyncram_fsa1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_fsa1.tdf                     ;
+; db/altsyncram_9u41.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/PPU_REVERSE/FPGA/PPU_LITE/db/altsyncram_9u41.tdf                     ;
 ; altpll.tdf                       ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/altpll.tdf            ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/stratix_pll.inc       ;
 ; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/altera/11.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc     ;
@@ -235,14 +235,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------------------------------------+
 ; Total logic elements                        ; 1341                                    ;
 ;     -- Combinational with no register       ; 329                                     ;
-;     -- Register only                        ; 437                                     ;
-;     -- Combinational with a register        ; 575                                     ;
+;     -- Register only                        ; 438                                     ;
+;     -- Combinational with a register        ; 574                                     ;
 ;                                             ;                                         ;
 ; Logic element usage by number of LUT inputs ;                                         ;
 ;     -- 4 input functions                    ; 553                                     ;
 ;     -- 3 input functions                    ; 193                                     ;
 ;     -- 2 input functions                    ; 127                                     ;
-;     -- 1 input functions                    ; 31                                      ;
+;     -- 1 input functions                    ; 30                                      ;
 ;     -- 0 input functions                    ; 0                                       ;
 ;                                             ;                                         ;
 ; Logic elements by mode                      ;                                         ;
@@ -272,10 +272,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                           ; Library Name ;
 +-------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |PPU_LITE                                       ; 1341 (11)   ; 1012         ; 7104        ; 62   ; 0            ; 329 (9)      ; 437 (1)           ; 575 (1)          ; 8 (0)           ; 0 (0)      ; |PPU_LITE                                                                                                                                     ;              ;
+; |PPU_LITE                                       ; 1341 (11)   ; 1012         ; 7104        ; 62   ; 0            ; 329 (9)      ; 438 (1)           ; 574 (1)          ; 8 (0)           ; 0 (0)      ; |PPU_LITE                                                                                                                                     ;              ;
 ;    |PLL:inst1|                                  ; 0 (0)       ; 0            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1                                                                                                                           ;              ;
 ;       |altpll:altpll_component|                 ; 0 (0)       ; 0            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1|altpll:altpll_component                                                                                                   ;              ;
-;    |RP2C02_LITE:inst|                           ; 1330 (0)    ; 1010         ; 7104        ; 0    ; 0            ; 320 (0)      ; 436 (0)           ; 574 (0)          ; 8 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst                                                                                                                    ;              ;
+;    |RP2C02_LITE:inst|                           ; 1330 (0)    ; 1010         ; 7104        ; 0    ; 0            ; 320 (0)      ; 437 (0)           ; 573 (0)          ; 8 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst                                                                                                                    ;              ;
 ;       |BG_COLOR:MOD_BG_COLOR|                   ; 152 (120)   ; 129          ; 0           ; 0    ; 0            ; 23 (23)      ; 106 (90)          ; 23 (7)           ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR                                                                                              ;              ;
 ;          |SHIFTREG:SREG_TA|                     ; 16 (16)     ; 16           ; 0           ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TA                                                                             ;              ;
 ;          |SHIFTREG:SREG_TB|                     ; 16 (16)     ; 16           ; 0           ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB                                                                             ;              ;
@@ -347,7 +347,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |READBUSMUX:MOD_READBUSMUX|               ; 41 (41)     ; 16           ; 0           ; 0    ; 0            ; 25 (25)      ; 8 (8)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|READBUSMUX:MOD_READBUSMUX                                                                                          ;              ;
 ;       |REG2000_2001:MOD_REG2000_2001|           ; 28 (28)     ; 26           ; 0           ; 0    ; 0            ; 2 (2)        ; 24 (24)           ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001                                                                                      ;              ;
 ;       |REGISTER_SELECT:MOD_REGISTER_SELECT|     ; 32 (32)     ; 27           ; 0           ; 0    ; 0            ; 5 (5)        ; 13 (13)           ; 14 (14)          ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT                                                                                ;              ;
-;       |TIMING_GENERATOR:MOD_TIMING_GENERATOR|   ; 143 (143)   ; 95           ; 0           ; 0    ; 0            ; 48 (48)      ; 21 (21)           ; 74 (74)          ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR                                                                              ;              ;
+;       |TIMING_GENERATOR:MOD_TIMING_GENERATOR|   ; 143 (143)   ; 95           ; 0           ; 0    ; 0            ; 48 (48)      ; 22 (22)           ; 73 (73)          ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR                                                                              ;              ;
 +-------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -365,16 +365,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 The IP Core highlighted in red is outdated. Regenerate the outdated IP with the current version of the Quartus II software and the MegaWizard interface.
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                ;
-+--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------+-------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                ; IP Include File                     ;
-+--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------+-------------------------------------+
-; Altera ; ALTPLL       ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|PLL:inst1                                                            ; D:/SRC/PPU_LITE/PLL.v               ;
-; Altera ; RAM: 1-PORT  ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM2_RAM:MOD_OAM2_RAM                   ; D:/SRC/PPU_LITE/OAM2_RAM.v          ;
-; Altera ; RAM: 1-PORT  ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM     ; D:/SRC/PPU_LITE/PALETTE_RAM.v       ;
-; Altera ; ROM: 1-PORT  ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE ; D:/SRC/PPU_LITE/PALETTE_RGB_TABLE.v ;
-+--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------+-------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                             ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------+--------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                ; IP Include File                                  ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------+--------------------------------------------------+
+; Altera ; ALTPLL       ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|PLL:inst1                                                            ; D:/PPU_REVERSE/FPGA/PPU_LITE/PLL.v               ;
+; Altera ; RAM: 1-PORT  ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM2_RAM:MOD_OAM2_RAM                   ; D:/PPU_REVERSE/FPGA/PPU_LITE/OAM2_RAM.v          ;
+; Altera ; RAM: 1-PORT  ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM     ; D:/PPU_REVERSE/FPGA/PPU_LITE/PALETTE_RAM.v       ;
+; Altera ; ROM: 1-PORT  ; 9.1     ; N/A          ; N/A          ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE ; D:/PPU_REVERSE/FPGA/PPU_LITE/PALETTE_RGB_TABLE.v ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------+--------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1482,7 +1482,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1492,7 +1492,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Mar 08 00:55:41 2026
+    Info: Processing started: Sun Mar 08 17:04:12 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Found 1 design units, including 1 entities, in source file ppu_lite.bdf
     Info: Found entity 1: PPU_LITE
@@ -1689,7 +1689,7 @@ Info: Instantiated megafunction "PLL:inst1|altpll:altpll_component" with the fol
     Info: Parameter "port_extclk1" = "PORT_UNUSED"
     Info: Parameter "port_extclk2" = "PORT_UNUSED"
     Info: Parameter "port_extclk3" = "PORT_UNUSED"
-Info: Generated suppressed messages file D:/SRC/PPU_LITE/PPU_LITE.map.smsg
+Info: Generated suppressed messages file D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.map.smsg
 Info: Generating hard_block partition "hard_block:auto_generated_inst"
     Info: Adding node "PLL:inst1|altpll:altpll_component|pll"
 Warning: Design contains 2 input pin(s) that do not drive logic
@@ -1703,15 +1703,15 @@ Info: Implemented 1444 device resources after synthesis - the final resource cou
     Info: Implemented 40 RAM segments
     Info: Implemented 1 PLLs
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 299 megabytes
-    Info: Processing ended: Sun Mar 08 00:55:43 2026
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 283 megabytes
+    Info: Processing ended: Sun Mar 08 17:04:16 2026
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/SRC/PPU_LITE/PPU_LITE.map.smsg.
+The suppressed messages can be found in D:/PPU_REVERSE/FPGA/PPU_LITE/PPU_LITE.map.smsg.
 
 
