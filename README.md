@@ -11,6 +11,17 @@ This project can implement up to four palettes without increasing the number of 
 
 ![IMG_4894](https://github.com/user-attachments/assets/9ada40e9-d883-4320-9fcf-176d6f9977e4)
 
+Contains 4 palettes:
+
+0 - jumper open, 1 - jumper closed
+
+00 - NES CLASSIC
+
+01 - SONY CXA
+
+10 - SMOOTH
+
+11 - NATURAL NESTOPIA YUV
 
 resources used by the FPGA CYCLONE I
 
