@@ -15,6 +15,8 @@ Contains 4 palettes:
 
 0 - jumper open, 1 - jumper closed
 
+J4 J3
+
 00 - NES CLASSIC
 
 01 - SONY CXA
