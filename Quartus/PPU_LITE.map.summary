@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Sun Mar 08 17:04:15 2026
+Analysis & Synthesis Status : Successful - Mon Apr 06 18:50:54 2026
 Quartus II Version : 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition
 Revision Name : PPU_LITE
 Top-level Entity Name : PPU_LITE
 Family : Cyclone
-Total logic elements : 1,341
+Total logic elements : 1,337
 Total pins : 62
 Total virtual pins : 0
 Total memory bits : 7,104

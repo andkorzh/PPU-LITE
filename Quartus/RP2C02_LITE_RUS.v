@@ -16,7 +16,7 @@
  *                              2C02(7) NES P P U LITE (Cyclone I)
  *
  *   This design is inspired by Wiki BREAKNES. I tried to replicate the design of the real
- *	 NMOS processor Ricoh 2C02(7) as much as possible. The Logsim 2C02(7) model was taken as the
+ *  NMOS processor Ricoh 2C02(7) as much as possible. The Logsim 2C02(7) model was taken as the
  *  basis for the design of the circuit diagram. Dedicated to the lost web portal BREAKNES.com
  *  Our Wiki  https://github.com/emu-russia/breaks/tree/master/BreakingNESWiki/PPU
  *
@@ -32,7 +32,7 @@
 */
 
 // Модуль RP2C02_LITE
-module RP2C02_LITE(
+module RP2C02_LITE_RUS(
 input Clk,         // Системный клок
 input Clk2,        // Клок 21.477/ 26,601 для делителя
 // Входы
@@ -62,6 +62,8 @@ output SUBCLK      // Выход поднесущей цвета
 // Связи модулей
 wire PCLK;
 wire nPCLK;
+wire [5:0]Hn;
+wire [5:0]Hnn;
 wire [7:0]DBIN;
 wire [7:0]OB;
 wire [3:0]OV;
@@ -72,10 +74,6 @@ wire [4:0]THO;
 wire [3:0]BGC;
 wire [4:0]ZCOL;
 wire [4:0]CGA;
-wire Hn0;
-wire nHn2;
-wire nHn1;
-wire [5:0]Hnn;
 wire W0;
 wire W1;
 wire R2;
@@ -141,8 +139,9 @@ MODE,
 nRES,
 PCLK,
 nPCLK,
-SUBCLK
+SUBCLK // Не используется
 );
+
 // Сигналы выбора регистра
 REGISTER_SELECT MOD_REGISTER_SELECT(
 Clk,
@@ -224,9 +223,7 @@ BLACK,
 VBL_EN,
 R2,
 nRES,
-Hn0,
-nHn2,
-nHn1,
+Hn[5:0],
 Hnn[5:0],
 S_EV,
 CLIP_O,
@@ -262,7 +259,7 @@ Clk,
 PCLK,
 nPCLK,
 Hnn[0],
-Hn0,
+Hn[0],
 R7,
 W7,
 BLNK,
@@ -303,8 +300,8 @@ Clk,
 PCLK,
 nPCLK,
 Hnn[0],
-nHn1,
-nHn2,
+Hn[1],
+Hn[2],
 F_NT,
 F_AT,
 F_TB,
@@ -362,8 +359,8 @@ Clk,
 PCLK,
 nPCLK,
 Hnn[0],
-Hn0,
-nHn2,
+Hn[0],
+Hn[2],
 BLNK,
 nVIS,
 W3,
@@ -439,14 +436,14 @@ endmodule
 // Модуль делителя клока
 //===============================================================================================
 module CLK_DIV(
-input Clk2,          // Мастерклок
+input Clk2,         // Мастерклок
 // Inputs
-input MODE,          // режим PAL/NTSC
-input nRES,          // Сброс
+input MODE,         // режим PAL/NTSC
+input nRES,         // Сброс
 // Outputs
-output  PCLK,        //  Пиксельклок
-output nPCLK,        // ~Пиксельклок
-output reg SUBCLK    //  Поднесущая цвета
+output  PCLK,       //  Пиксельклок
+output nPCLK,       // ~Пиксельклок
+output reg SUBCLK   //  Поднесущая цвета
 );
 // Переменные
 reg [1:0]PCLK_N;
@@ -479,7 +476,7 @@ input nDBE,             // Строб обращения к PPU
 input RnW,              // Направление обращения R/W
 input [2:0]A,           // Адрес регистра
 // Выходы
-output reg [7:0]DBIN,   // Данные внешней шины данных CPU
+output reg [7:0]DBIN,   // Данные открытой шины регистров PPU
 output R_EN,            // Управление тристэйтом шины данных CPU
 output reg W0,          // Запись в  регистр  $2000
 output reg W1,          // Запись в  регистр  $2001
@@ -537,7 +534,7 @@ input nPCLK,        // Пиксельклок
 input W0,           // Запись в регистр 0
 input W1,           // Запись в регистр 1
 input RC,           // Очистка регистров
-input [7:0]DBIN,    // Шина данных CPU
+input [7:0]DBIN,    // Данные открытой шины регистров PPU
 input nVIS,         // Видимая часть строки
 input CLIP_O,       // Гашение левого столбца из 8ми точек экрана для спрайтов
 input CLIP_B,       // Гашение левого столбца из 8ми точек экрана для фона
@@ -607,7 +604,7 @@ input [2:0]R2DB,  // Данные R2
 input XRB,        // Выбор чтения VRAM
 input PD_RB,      // Строб моста шины VRAM
 input RC,         // Очистка регистров
-input [7:0]DBIN,  // Шина данных CPU
+input [7:0]DBIN,  // Данные открытой шины регистров PPU
 input [7:0]PD,    // Шина графических данных PPU
 // Выходы
 output [7:0]DB    // Выход данных для чтения PPU со стороны CPU
@@ -633,7 +630,7 @@ endmodule
 // Модуль главного генератора таймингов PPU
 //===============================================================================================
 module TIMING_GENERATOR(
-input Clk,           // Системный клок 
+input Clk,           // Системный клок
 input PCLK,          // Пиксельклок
 input nPCLK,         // Пиксельклок
 // Входы
@@ -643,12 +640,10 @@ input OBCLIP,        // Обрезание левой части экрана спрайтов
 input BGCLIP,        // Обрезание левой части экрана фона
 input BLACK,         // Отключение рендера
 input	VBL_EN,        // Разрешение запроса прерывания VBlank
-input R2,            // Чтение регистра #2002
+input R2,            // Чтение регистра $2002
 input nRES,          // Общий сброс PPU
 // Выходы
-output Hn0,          // Синхронизированное атомарное состояние PPU
-output nHn2,         // Синхронизированное атомарное состояние PPU
-output nHn1,         // Синхронизированное атомарное состояние PPU
+output reg[5:0]Hn,   // Синхронизированное атомарное состояние PPU
 output reg[5:0]Hnn,  // Синхронизированное атомарное состояние PPU
 output reg S_EV,     // Запуск процесса просмотра списка спрайтов
 output CLIP_O,       // Гашение левого столбца из 8ми точек экрана для спрайтов
@@ -667,8 +662,8 @@ output N_FO,         // Сигнал разрешения вывода графики фона
 output BURST,        // Маска вывода вспышки синхронизации поднесущей цвета
 output SC_CNT,       // Запуск счетчика адресов при включении растра и/или фона
 output SYNC,         // Выход композитной синхронизации
-output reg HSYNC,    // Выход строчной синхронизации
-output reg VSYNC,    // Выход кадровой синхронизации
+output HSYNCo,       // Выход строчной синхронизации
+output VSYNCo,       // Выход кадровой синхронизации
 output nPICTURE,     // Гашение
 output reg RC,       // Очистка регистров PPU
 output reg RESCL,    // Строка пререндера (сброс всех схем выборки)
@@ -678,14 +673,9 @@ output reg R2DB7,    // Чтение флага NMI
 output [7:0]Vo       // Выход вертикального счетчика (для спрайтовой машины)
 );
 // Переменные
-reg [8:0]H;
-reg [8:0]V;
-reg [8:0]H_IN;
-reg [8:0]V_IN;
 reg HC, VC_LATCH;
-reg ODDEVEN1, ODDEVEN2;
+reg [1:0]ODDEVEN;
 reg FPORCH_FF;
-reg [5:0]Hn;
 reg SEV_IN;
 reg CLIP_OUT, CLIP1, CLIP2;
 reg HPOS_IN;
@@ -702,32 +692,31 @@ reg FAT_IN;
 reg BURST_FF, BURST_OUT;
 reg N_HB;
 reg VSYNC_FF;
+reg HSYNC;
+reg VSYNC;
 reg BPORCH_FF;
 reg PEN_FF, PICT1, PICT2;
 reg RESCL_IN;
 reg BLNK_FF;
 reg VB_FF;
-reg VSET1,VSET2,VSET3;
-reg INT_FF; 
+reg [2:0]VSET;
+reg INT_FF;
 // Комбинаторика
-// HV COUNTERS CONTROL
-wire [8:0]HCarry;
-assign HCarry[8:0] = H[8:0] & {HCarry[7:5], HIN5, HCarry[3:0], 1'b1};
-wire [8:0]VCarry;
-assign VCarry[8:0] = V[8:0] & {VCarry[7:0], H_LINE23};
-wire HIN5;
-assign HIN5 = H[4] & H[3] & H[2] & H[1] & H[0];
-wire VC;
-assign VC = HC | ~VC_LATCH; 
-assign Hn0  =  Hn[0];
-assign nHn1 = ~Hn[1];
-assign nHn2 = ~Hn[2];
 assign CLIP_O = ~( CLIP_OUT | OBCLIP );
 assign CLIP_B = ~( CLIP_OUT | BGCLIP );
+// HV COUNTERS CONTROL
+wire [8:0]H, V, HCout, VCout;
+wire VC, HIN5;
+assign HIN5 = H[4] & H[3] & H[2] & H[1] & H[0];
+assign VC = HC | ~VC_LATCH;
+// HV COUNTERS
+//                Clk   F2    DIR                   C_IN                  Reset     LOAD     STEP   DATA   CNT_OUT    C_OUT
+COUNTER HCNT[8:0](Clk, nPCLK, 1'b1, {HCout[7:5], HIN5, HCout[3:0], 1'b1}, ~nRES, ~HC & PCLK, PCLK, 9'h000, H[8:0],  HCout[8:0]);
+COUNTER VCNT[8:0](Clk, nPCLK, 1'b1, {VCout[7:0], H_LINE23},               ~nRES, ~VC & PCLK, PCLK, 9'h000, V[8:0],  VCout[8:0]);
 //HV PLA (NTSC/PAL)
 wire H_LINE0, H_LINE1, H_LINE2, H_LINE5, H_LINE6, H_LINE7, H_LINE17, H_LINE18;
 wire H_LINE20, H_LINE21, H_LINE22, H_LINE23;
-wire V_LINE0N, V_LINE0P, V_LINE1N, V_LINE1P, V_LINE2N, V_LINE2P; 
+wire V_LINE0N, V_LINE0P, V_LINE1N, V_LINE1P, V_LINE2N, V_LINE2P;
 wire V_LINE3N, V_LINE3P, V_LINE4, V_LINE5, VLINE241, VLINE291, VLINE311;
 assign H_LINE0  = ~( ~H[8] |  H[7] |  H[6] |  H[5] | ~H[4] |  H[3] | ~H[2] | ~H[1] | ~H[0] );                  // H279
 assign H_LINE1  = ~( ~H[8] |  H[7] |  H[6] |  H[5] |  H[4] |  H[3] |  H[2] |  H[1] |  H[0] );                  // H256
@@ -762,6 +751,8 @@ assign F_AT = ~( ~FAT_IN | ~( NFO1 | NFO2 ));
 //Выходы
 assign BURST = ~( BURST_OUT | ~SYNC );
 assign SC_CNT = ~( ~N_HB | BLACK );
+assign HSYNCo = HSYNC;
+assign VSYNCo = VSYNC_FF;
 assign SYNC = HSYNC | VSYNC;
 assign nPICTURE = PICT1 | PICT2;
 assign BLNK = BLACK | BLNK_FF;
@@ -769,46 +760,42 @@ assign Vo[7:0] = V[7:0];
 assign INT = VBL_EN & INT_FF;
 // Логика
 always @(posedge Clk) begin
-        if (~nRES) ODDEVEN1 <= 1'b0;
-   else if ( V[8]) ODDEVEN1 <=  ODDEVEN2;
-        if (~V[8]) ODDEVEN2 <= ~ODDEVEN1;
+        if (~nRES) ODDEVEN[0] <= 1'b0;
+   else if ( V[8]) ODDEVEN[0] <=  ODDEVEN[1];
+        if (~V[8]) ODDEVEN[1] <= ~ODDEVEN[0];
         if (N_HB) begin
         if (V_LINE1N | V_LINE1P) VSYNC_FF <= 1'b1;
    else if (V_LINE0N | V_LINE0P) VSYNC_FF <= 1'b0;
                    end
         if (~nRES) RC <= 1'b1;
    else if (RESCL) RC <= 1'b0;
-        if (RESCL | R2)                  INT_FF <= 1'b0;
-   else if (~( nPCLK | ~VSET1 | VSET3 )) INT_FF <= 1'b1;
+        if (RESCL | R2)                      INT_FF <= 1'b0;
+   else if (~( nPCLK | ~VSET[0] | VSET[2] )) INT_FF <= 1'b1;
         if (~R2) R2DB7 <= INT_FF;
         if (PCLK) begin
-        H[8:0]    <= ~nRES ? 9'h000 : { 9 { HC }} & H_IN[8:0];
-        V[8:0]    <= ~nRES ? 9'h000 : { 9 { VC }} & V_IN[8:0];
-        Hnn[5:0]  <= Hn[5:0];
-        S_EV      <= SEV_IN;
+        Hnn[5:0]  <=  Hn[5:0];
+        S_EV      <=  SEV_IN;
         CLIP_OUT  <= ~( CLIP1 | ~CLIP2 );
-        O_HPOS    <= HPOS_IN;
+        O_HPOS    <=  HPOS_IN;
         nEVAL     <= ~( HPOS_IN | EVAL_IN | EEV_IN );
-        E_EV      <= EEV_IN;
-        I_OAM2    <= IOAM2_IN;
-        PAR_O     <= PARO_IN;
+        E_EV      <=  EEV_IN;
+        I_OAM2    <=  IOAM2_IN;
+        PAR_O     <=  PARO_IN;
         nVIS      <= ~NVIS_IN;
         F_NT      <=  FNT_IN;
         FTB_OUT   <= ~FTB_IN;
         FTA_OUT   <= ~FTA_IN;
         NFO_OUT   <= ~( NFO1 | NFO2 );
-        BURST_OUT <= BURST_FF;
+        BURST_OUT <=  BURST_FF;
         HSYNC     <= ~FPORCH_FF;
         VSYNC     <= ~( N_HB | VSYNC_FF );
-        PICT1     <= BPORCH_FF;
-        PICT2     <= PEN_FF;
-        RESCL     <= RESCL_IN;
-        VSET2     <= ~VSET1;
+        PICT1     <=  BPORCH_FF;
+        PICT2     <=  PEN_FF;
+        RESCL     <=  RESCL_IN;
+        VSET[1]   <= ~VSET[0];
                    end
         if (nPCLK) begin
-        H_IN[8:0] <= H[8:0] ^ {HCarry[7:5],HIN5,HCarry[3:0], 1'b1};
-        V_IN[8:0] <= V[8:0] ^ {VCarry[7:0], H_LINE23};
-        HC        <= ~( H_LINE23 | ( H_LINE5 & ~ODDEVEN1 & RESCL & ~MODE ));
+        HC        <= ~( H_LINE23 | ( H_LINE5 & ~ODDEVEN[0] & RESCL & ~MODE ));
         VC_LATCH  <= V_LINE2N | VLINE311;
         Hn[5:0]   <= H[5:0];
         SEV_IN    <= H_LINE2;
@@ -816,7 +803,7 @@ always @(posedge Clk) begin
         CLIP2     <= ~( H[8] | ~VB_FF );
         HPOS_IN   <= H_LINE5;
         EVAL_IN   <= H_LINE6;
-        EEV_IN    <= H_LINE7; 
+        EEV_IN    <= H_LINE7;
         IOAM2_IN  <= ~( BLNK |  H[8] |  H[7] |  H[6] );
         PARO_IN   <= ~( BLNK | ~H[8] |  H[7] |  H[6] );
         NVIS_IN   <= ~( BLNK |  H[8] | ~VB_FF );
@@ -841,8 +828,8 @@ always @(posedge Clk) begin
         if (V_LINE4)  VB_FF   <= 1'b1;
    else if (V_LINE5)  VB_FF   <= 1'b0;
         RESCL_IN <= V_LINE2N | VLINE311;
-        VSET1    <= V_LINE3N | VLINE291 | VLINE241; // Активация очереди для прерывания
-        VSET3    <= ~VSET2;
+        VSET[0]  <= V_LINE3N | VLINE291 | VLINE241; // Активация очереди для прерывания
+        VSET[2]  <= ~VSET[1];
                 end
                       end
 // Конец модуля главного генератора таймингов PPU
@@ -855,11 +842,11 @@ module LOCAL_BUS_CONTROL(
 input Clk,        // Системный клок
 input PCLK,       // Пиксельклок
 input nPCLK,      // Пиксельклок
+// Входы
 input Hnn0,       // Синхронизированное атомарное состояние PPU
 input Hn0,        // Синхронизированное атомарное состояние PPU
-// Входы
-input R7,         // Чтение из регистра 7
-input W7,         // Запись в  регистр  7
+input R7,         // Чтение из регистра $2007
+input W7,         // Запись в  регистр  $2007
 input BLNK,       // Рендер отключен
 input [13:8]PAD,  // Старшие адреса шины PPU
 // Выходы
@@ -870,7 +857,7 @@ output ALE,       // Сигнал ALE
 output nWR,       // Активация записи
 output nRD,       // Активация чтения
 output XRB,       // Данные на шину CPU
-output TH_MUX     // Обращение в палитру
+output TH_MUX     // Диапазон палиты
 );
 // Переменные
 reg W7_FF, R7_FF;
@@ -882,11 +869,11 @@ reg TSTEP_LATCH;
 assign TH_MUX = PAD[13] & PAD[12] & PAD[11] & PAD[10] & PAD[9] & PAD[8] & BLNK_LATCH;
 assign TSTEP  = PD_RB | TSTEP_LATCH;
 assign PD_RB  = ~( ~R7Q[4] | R7Q[2] );
-assign DB_PAR = ~(  W7Q[1] | W7Q[3] );
+assign DB_PAR = ~(  W7Q[3] | W7Q[1] );
 assign nWR = ~DB_PAR | TH_MUX;
 assign nRD = ~( PD_RB | ( Hnn0 & ~BLNK ));
 assign XRB = ~( ~R7 | TH_MUX );
-assign ALE = ~( ~R7Q[2] | R7Q[4] ) | ~( ~W7Q[2] | W7Q[4] ) | ~( nPCLK | Hn0 | BLNK );
+assign ALE = ~( R7Q[4] | ~R7Q[2] ) | ~( W7Q[4] | ~W7Q[2] ) | ~( nPCLK | Hn0 | BLNK );
 // Логика
 always @(posedge Clk) begin
          if (~R7Q[3]) R7_FF <= 1'b0;
@@ -896,12 +883,12 @@ always @(posedge Clk) begin
          if (PCLK) begin
          BLNK_LATCH  <= BLNK;
          TSTEP_LATCH <= DB_PAR;
-         {R7Q[0], R7Q[2], R7Q[4]} <= { R7_FF & ~R7, R7Q[1], ~R7Q[3]};
-         {W7Q[0], W7Q[2], W7Q[4]} <= { W7_FF & ~W7, W7Q[1], ~W7Q[3]};
-                   end
+         {R7Q[4], R7Q[2], R7Q[0]} <= {~R7Q[3], R7Q[1], R7_FF & ~R7};
+         {W7Q[4], W7Q[2], W7Q[0]} <= {~W7Q[3], W7Q[1], W7_FF & ~W7};
+                    end
          if (nPCLK) begin
-         {R7Q[1], R7Q[3]} <= {R7Q[0], ~R7Q[2]};
-         {W7Q[1], W7Q[3]} <= {W7Q[0], ~W7Q[2]};
+         {R7Q[3], R7Q[1]} <= {~R7Q[2], R7Q[0]};
+         {W7Q[3], W7Q[1]} <= {~W7Q[2], W7Q[0]};
                     end
                        end
 // Конец модуля управления локальной шиной PPU
@@ -924,7 +911,7 @@ input N_FO,       // Активация сдвиговых регистров фона
 input [7:0]PD,    // Шина графических данных PPU
 input THO1,       // Горизонтальная координата в атрибуте
 input TVO1,       // Вертикальная координата в атрибуте
-input [2:0]DBIN,  // Шина данных CPU
+input [2:0]DBIN,  // Данные открытой шины регистров PPU
 input W5_1,       // Запись в регистр точной горизонтальной прокрутки
 input RC,         // Очистка регистров
 // Выходы
@@ -939,33 +926,30 @@ reg F_AT_LATCH;
 reg THO1R;
 reg [7:0]PDAT;
 reg [7:0]PDTA;
-reg [7:0]SR0;
-reg [7:0]SR1;
-reg [7:0]SR2;
-reg [7:0]SR3;
-reg [7:0]FSR0;
-reg [7:0]FSR1;
-reg [7:0]FSR2;
-reg [7:0]FSR3;
 reg [1:0]ATR;
 reg [1:0]ATRO;
 // Комбинаторика
-wire PD_SR;
+wire PD_SR, PD_SEL, SRLOAD, STEP, STEP2, NEXT;
 assign PD_SR  = nPCLK & Hnn0 & F_TA;
-wire PD_SEL;
 assign PD_SEL = nPCLK & Hnn0 & F_AT_LATCH;
-wire SRLOAD;
 assign SRLOAD = nPCLK & Hnn0 & F_TB;
-wire STEP;
 assign STEP   = nPCLK & N_FO & ~( Hnn0 & F_TB );
-wire STEP2;
 assign STEP2  = nPCLK & N_FO;
-wire NEXT;
 assign NEXT   = ~( nPCLK | STEP | STEP2 );
 wire [1:0]ATSEL;
 assign ATSEL[0] = ( PDAT[0] & ~THO1R & ~TVO1 )|( PDAT[2] & THO1R & ~TVO1 )|( PDAT[4] & ~THO1R & TVO1 )|( PDAT[6] & THO1R & TVO1 );
 assign ATSEL[1] = ( PDAT[1] & ~THO1R & ~TVO1 )|( PDAT[3] & THO1R & ~TVO1 )|( PDAT[5] & ~THO1R & TVO1 )|( PDAT[7] & THO1R & TVO1 );
-wire [3:0]BGC_POS;
+// Сдвиговые регистры фона
+wire QTA, QTB, QT0, QT1, QT2, QT3; // QT0 - QT3 - not used
+wire[7:0]SR0, SR1, SR2, SR3;
+//                  Clk  SIn     STEP   NEXT  LOAD    P DATA In  PAROut    SEROut
+SHIFTREG SREG_TA  ( Clk, 1'b1,   STEP,  NEXT, SRLOAD, PDTA[7:0],         , QTA );
+SHIFTREG SREG_TB  ( Clk, 1'b1,   STEP,  NEXT, SRLOAD, PD[7:0]  ,         , QTB );
+SHIFTREG SREG_FS0 ( Clk, QTA,    STEP2, NEXT, 1'h0,   8'h00    , SR0[7:0], QT0 );
+SHIFTREG SREG_FS1 ( Clk, QTB,    STEP2, NEXT, 1'h0,   8'h00    , SR1[7:0], QT1 );
+SHIFTREG SREG_FS2 ( Clk, ATR[0], STEP2, NEXT, 1'h0,   8'h00    , SR2[7:0], QT2 );
+SHIFTREG SREG_FS3 ( Clk, ATR[1], STEP2, NEXT, 1'h0,   8'h00    , SR3[7:0], QT3 );
+wire [3:0]BGC_POS;  // Выбор позиции точного склолла
 assign BGC_POS[3:0] = (~FH[0] & ~FH[1] & ~FH[2]) ? {SR3[7], SR2[7], SR1[7], SR0[7]} :
                       ( FH[0] & ~FH[1] & ~FH[2]) ? {SR3[6], SR2[6], SR1[6], SR0[6]} :
                       (~FH[0] &  FH[1] & ~FH[2]) ? {SR3[5], SR2[5], SR1[5], SR0[5]} :
@@ -974,32 +958,16 @@ assign BGC_POS[3:0] = (~FH[0] & ~FH[1] & ~FH[2]) ? {SR3[7], SR2[7], SR1[7], SR0[
                       ( FH[0] & ~FH[1] &  FH[2]) ? {SR3[2], SR2[2], SR1[2], SR0[2]} :
                       (~FH[0] &  FH[1] &  FH[2]) ? {SR3[1], SR2[1], SR1[1], SR0[1]} :
                       ( FH[0] &  FH[1] &  FH[2]) ? {SR3[0], SR2[0], SR1[0], SR0[0]} :
-                                                                            4'b0000 ;
-// Сдвиговые регистры пикселей фона
-wire QTA, QTB;
-SHIFTREG SREG_TA( Clk, 1'b1, NEXT, STEP, SRLOAD ,PDTA[7:0], QTA );
-SHIFTREG SREG_TB( Clk, 1'b1, NEXT, STEP, SRLOAD ,PD[7:0],   QTB );
-assign BGC[3:0] = BGC2[3:0] & { 4 { CLPB_LATCH }};
+                                                                               4'h0 ;
+assign BGC[3:0] = BGC2[3:0] & { 4 { CLPB_LATCH }};  // Выход пикселей фона
 // Логика
 always @(posedge Clk) begin
         if (PD_SR)  PDTA[7:0] <= PD[7:0];
         if (PD_SEL) PDAT[7:0] <= PD[7:0];
-        if (RC)   FH[2:0]     <= 3'b000;
-   else if (W5_1)   FH[2:0]   <= DBIN[2:0];
+        if (RC)       FH[2:0] <= 3'h0;
+   else if (W5_1)     FH[2:0] <= DBIN[2:0];
         if (SRLOAD) ATRO[1:0] <= ATSEL[1:0];
-        if (NEXT) begin
-        ATR[1:0] <= ATRO[1:0];
-        SR0[7:0] <= FSR0[7:0];
-        SR1[7:0] <= FSR1[7:0];
-        SR2[7:0] <= FSR2[7:0];
-        SR3[7:0] <= FSR3[7:0];
-                   end
-        if (STEP2) begin
-        FSR0[7:0] <= {SR0[6:0],QTA};
-        FSR1[7:0] <= {SR1[6:0],QTB};
-        FSR2[7:0] <= {SR2[6:0],ATR[0]};
-        FSR3[7:0] <= {SR3[6:0],ATR[1]};
-                    end
+        if (NEXT)    ATR[1:0] <= ATRO[1:0];
         if (PCLK) begin
         CLPB_LATCH <= nCLPB;
         F_AT_LATCH <= F_AT;
@@ -1020,8 +988,8 @@ input PCLK,       // Пиксельклок
 input nPCLK,      // Пиксельклок
 // Входы
 input Hnn0,       // Синхронизированное атомарное состояние PPU
-input NHn1,       // Синхронизированное атомарное состояние PPU
-input NHn2,       // Синхронизированное атомарное состояние PPU
+input Hn1,        // Синхронизированное атомарное состояние PPU
+input Hn2,        // Синхронизированное атомарное состояние PPU
 input F_NT,       // Фаза выборки номера тайла из Name Table
 input F_AT,       // Фаза выборки атрибутов
 input F_TB,       // Фаза выборки второго байта тайла
@@ -1031,7 +999,7 @@ input SH2,        // Фаза выборки атрибута спрайта
 input [3:0]OV,    // Номер строки графики спрайта
 input [7:0]OB,    // Шина данных спрайтовой машины
 input [7:0]PD,    // Шина графических данных PPU
-input [7:0]DBIN,  // Шина данных CPU
+input [7:0]DBIN,  // Данные открытой шины регистров PPU
 input O8_16,      // Высота спрайта
 input OBSEL,      // Старший бит адреса обьектов
 input BGSEL,      // Старший бит адреса фона
@@ -1065,26 +1033,23 @@ reg [4:0]TH;
 reg [4:0]TV;
 reg NTH, NTV;
 reg [2:0]FV;
-reg EEVR1, EEVR2;
+reg [1:0]EEVR;
 reg SCCNTR;
-reg Z_TV1, Z_TV2, TVZR;
+reg [1:0]Z_TV;
+reg TVZR;
 reg W62_FF;
-reg W62_1, W62_2;
+reg [1:0]W62;
 reg TV_IN;
 // Комбинаторика
-wire TAL;
-assign TAL = ~( nPCLK | TAL_LATCH );
 wire [3:0]OBJ_INV;
 assign OBJ_INV[3:0] = {4{ VINV_LATCH }} ^ OVOUT[3:0];
 // Управление счетчиками адреса
-wire THLOAD, TVLOAD;
-assign THLOAD = ~( ~( EEVR2 | W62_2 )  | PCLK );
-assign TVLOAD = ~( ~(( SCCNTR & RESCL )| W62_2 ) | PCLK );
-wire THSTEP, TVSTEP;
+wire THLOAD, TVLOAD, THSTEP, TVSTEP, ZTV;
+assign THLOAD = ~( ~( EEVR[1] | W62[1] )  | PCLK );
+assign TVLOAD = ~( ~(( SCCNTR & RESCL )| W62[1] ) | PCLK );
 assign THSTEP = ~( ~(( F_TB & Hnn0 )  | TSTEP )| PCLK );
 assign TVSTEP = ~( ~( E_EV   | TSTEP )| PCLK  );
-wire Z_TV;
-assign Z_TV = ~( Z_TV1 | Z_TV2 );
+assign ZTV = ~( Z_TV[0] | Z_TV[1] );
 wire TH_IN, NTH_IN, NTV_IN, FV_IN;
 assign TH_IN = ~( I1_32 & BLNK );
 assign NTH_IN =   THZ | TVZB;
@@ -1101,24 +1066,24 @@ wire NTHDO, NTVDO, NTHC, NTVC;
 wire [2:0]FVO, FVOCout;
 //PAR COUNTERS
 // TH COUNTER
-//                  Clk   F2              C_IN        Reset   LOAD    STEP   DATA    CNT_OUT     C_OUT
-COUNTER THCNT[4:0] (Clk, PCLK, {THOCout[3:0], TH_IN}, 1'b0, THLOAD, THSTEP, TH[4:0], THO[4:0], THOCout[4:0]);
+//                  Clk   F2   DIR             C_IN         Reset  LOAD    STEP   DATA     CNT_OUT     C_OUT
+COUNTER THCNT[4:0] (Clk, PCLK, 1'b1, {THOCout[3:0], TH_IN}, 1'b0, THLOAD, THSTEP, TH[4:0], THO[4:0], THOCout[4:0]);
 // TV COUNTER
-COUNTER TVCNT[4:0] (Clk, PCLK, {TVOCout[3:0], TV_IN}, Z_TV, TVLOAD, TVSTEP, TV[4:0], TVO[4:0], TVOCout[4:0]);
+COUNTER TVCNT[4:0] (Clk, PCLK, 1'b1, {TVOCout[3:0], TV_IN}, ZTV,  TVLOAD, TVSTEP, TV[4:0], TVO[4:0], TVOCout[4:0]);
 // NTH COUNTER
-COUNTER NTHCNT     (Clk, PCLK,                NTH_IN, 1'b0, THLOAD, THSTEP, NTH,     NTHDO,    NTHC);
+COUNTER NTHCNT     (Clk, PCLK, 1'b1,                NTH_IN, 1'b0, THLOAD, THSTEP, NTH,     NTHDO,    NTHC);
 // NTV COUNTER
-COUNTER NTVCNT     (Clk, PCLK,                NTV_IN, 1'b0, TVLOAD, TVSTEP, NTV,     NTVDO,    NTVC);
+COUNTER NTVCNT     (Clk, PCLK, 1'b1,                NTV_IN, 1'b0, TVLOAD, TVSTEP, NTV,     NTVDO,    NTVC);
 // FV COUNTER
-COUNTER FVCNT[2:0] (Clk, PCLK, {FVOCout[1:0], FV_IN}, 1'b0, TVLOAD, TVSTEP, FV[2:0], FVO[2:0], FVOCout[2:0]);
+COUNTER FVCNT[2:0] (Clk, PCLK, 1'b1, {FVOCout[1:0], FV_IN}, 1'b0, TVLOAD, TVSTEP, FV[2:0], FVO[2:0], FVOCout[2:0]);
 // Мультиплексор адреса
 wire BFVO0, NBFVO1;
 assign BFVO0  =  BLNK & FVO[0];
 assign NBFVO1 = ~BLNK | FVO[1];
 wire PARR;
-assign PARR = ~( NHn2 | BLNK );
+assign PARR =  Hn2 & ~BLNK;
 wire [13:0]PAMUX;  // Picture address multiplexer
-assign PAMUX[7:0]  = DB_PAR ? DBIN[7:0] : PARR ? {TP[6:3],~NHn1,TP[2:0]} : F_AT ? {2'b11,TVO[4:2],THO[4:2]} : {TVO[2:0],THO[4:0]};
+assign PAMUX[7:0]  = DB_PAR ? DBIN[7:0] : PARR ? {TP[6:3],Hn1,TP[2:0]} : F_AT ? {2'b11,TVO[4:2],THO[4:2]} : {TVO[2:0],THO[4:0]};
 assign PAMUX[13:8] = PARR   ? {1'b0,TP[11:7]} : {NBFVO1,BFVO0,NTVDO,NTHDO, F_AT ? 2'b11 : TVO[4:3]};
 assign TVO1 = TVO[1];
 // Логика
@@ -1140,33 +1105,32 @@ always @(posedge Clk) begin
       if (W6_1 | W5_2 | RC) FV[2] <= RC ? 1'b0 : (W6_1 & 1'b0   ) | (W5_2 & DBIN[2]);
       if ( PCLK & SH2 ) VINV_LATCH <= OB[7];
       TV_IN <= THZB | FVZ | ( I1_32 & BLNK );
-      if (TAL) begin
+      if (~( nPCLK | TAL_LATCH )) begin
       OVOUT[3:0] <= OVR[3:0];
       OBOUT[7:0] <= OB[7:0];
       PDOUT[7:0] <= PDIN[7:0];
-               end
-      if (nPCLK & W62_2) W62_FF <= 1'b0;
- else if (W6_2)          W62_FF <= 1'b1;
+                                   end
+      if (nPCLK & W62[1]) W62_FF <= 1'b0;
+ else if (W6_2)           W62_FF <= 1'b1;
       if (PCLK) begin
-      TVZR   <= TVZ;
-      EEVR2  <= EEVR1;
-      SCCNTR <= SC_CNT;
-      W62_2  <= W62_1;
-      PAD[13:0]  <= PAMUX[13:0];
-                end
+      TVZR    <= TVZ;
+      EEVR[1] <= EEVR[0];
+      SCCNTR  <= SC_CNT;
+      W62[1]  <= W62[0];
+      PAD[13:0] <= PAMUX[13:0];
+                 end
       if (nPCLK) begin
       TAL_LATCH <= ~F_NT | ~Hnn0;
       OVR[3:0]  <= OV[3:0];
       PDIN[7:0] <= PD[7:0];
-      TP[2:0]   <= (PAR_O) ? OBJ_INV[2:0] : FVO[2:0] ; 
-      TP[3]     <= (PAR_O) ? ((O8_16)   ? OBJ_INV[3] :  OBOUT[0] ) : PDOUT[0];
+      TP[2:0]   <= (PAR_O) ? OBJ_INV[2:0] : FVO[2:0] ;
+      TP[3]     <= (PAR_O) ? ((O8_16)   ? OBJ_INV[3] : OBOUT[0] ) : PDOUT[0];
       TP[10:4]  <= (PAR_O) ? OBOUT[7:1] : PDOUT[7:1] ;
-      TP[11]    <= (PAR_O) ? ((O8_16)   ? OBOUT[0] : OBSEL ) : BGSEL;
-      Z_TV1     <= ~TVSTEP; 
-      Z_TV2     <= ~TVZR;
-      EEVR1     <= E_EV;
-      W62_1     <= ~( ~W62_FF | W6_2 );
-                 end
+      TP[11]    <= (PAR_O) ? ((O8_16)   ? OBOUT[0]   : OBSEL )    : BGSEL;
+      Z_TV[1:0] <= {~TVZR, ~TVSTEP};
+      EEVR[0]   <= E_EV;
+      W62[0]    <= W62_FF & ~W6_2;  // W$2006.2 EDGE DET
+                  end
                       end
 // Конец модуля генератора адреса PPU
 endmodule
@@ -1175,82 +1139,80 @@ endmodule
 // Модуль поиска спрайтов, подлежащих выводу на следующей строке
 //===============================================================================================
 module OBJ_EVAL(
-input Clk,          // Системный клок
-input PCLK,         // Пиксельклок
-input nPCLK,        // Пиксельклок
+input Clk,           // Системный клок
+input PCLK,          // Пиксельклок
+input nPCLK,         // Пиксельклок
 // Входы
-input Hnn0,         // Синхронизированное атомарное состояние PPU
-input [7:0]V,       // Выход вертикального счетчика (для спрайтовой машины)
-input [7:0]OB,      // Шина данных спрайтовой машины
-input O8_16,        // Высота спрайта
-input I_OAM2,       // Сигнал инициализации (очистки) OAM2
-input nVIS,         // Видимая часть строки
-input SPR_OV,       // Счетчик ОАМ переполнен или найдено боллее 8-ми спрайтов
-input F_NT,         // Фаза выборки номера тайла из Name Table
-input S_EV,         // Запуск процесса просмотра списка спрайтов
-input PAR_O,        // Чтение графики спрайтов
+input Hnn0,          // Синхронизированное атомарное состояние PPU
+input [7:0]V,        // Выход вертикального счетчика (для спрайтовой машины)
+input [7:0]OB,       // Шина данных спрайтовой машины
+input O8_16,         // Высота спрайта
+input I_OAM2,        // Сигнал инициализации (очистки) OAM2
+input nVIS,          // Видимая часть строки
+input SPR_OV,        // Счетчик ОАМ переполнен или найдено боллее 8-ми спрайтов
+input F_NT,          // Фаза выборки номера тайла из Name Table
+input S_EV,          // Запуск процесса просмотра списка спрайтов
+input PAR_O,         // Чтение графики спрайтов
 // Выходы
-output [3:0]OV,     // Номер строки графики спрайта 
-output OMFG,        // Сигнал копирования текущего спрайта сравнения в ОАМ2
-output reg PD_FIFO, // Блокировка входа FIFO
-output reg SPR0_EV  // Спрайт #0 находится на текущей строке
+output [3:0]OV,      // Номер строки графики спрайта
+output OMFG,         // Сигнал копирования текущего спрайта сравнения в ОАМ2
+output reg PD_FIFO,  // Блокировка входа FIFO
+output reg SPR0_EV   // Спрайт #0 находится на текущей строке
 );
 // Переменные
 reg [5:0]CLATCH;
-reg SPR0_EV1, PD_FIFO1, PD_FIFO2;
+reg SPR0_EV1;
+reg [1:0]PDFIFO;
 reg [7:0]OBLATCH;
 // Комбинаторика
 wire [7:0]OVS;
 assign OVS[7:0] = V[7:0] - OBLATCH[7:0];
 wire OVZ;
-assign OVZ = ( CLATCH[1] | CLATCH[3] | CLATCH[5] ) | ( ~O8_16 & OVS[3] ) | OVS[4] | OVS[5] | OVS[6] | OVS[7] | ~( ~OBLATCH[7] | V[7] );
+assign OVZ = ( CLATCH[5] | CLATCH[3] | CLATCH[1] ) | ( OVS[7] | OVS[6] ) | OVS[5] | OVS[4] | ( ~O8_16 & OVS[3] ) | ~( ~OBLATCH[7] | V[7] );
 wire DO_COPY;
 assign DO_COPY = ~( nVIS | I_OAM2 | SPR_OV | OVZ );
-assign OMFG = ~(( CLATCH[1] | CLATCH[3] | CLATCH[5] ) | DO_COPY );
+assign OMFG = ~( CLATCH[5] | CLATCH[3] | CLATCH[1] | DO_COPY );
 assign OV[3:0] = OVS[3:0];
 // Логика
 always @(posedge Clk) begin
          if (PCLK) begin
          OBLATCH[7:0] <= OB[7:0];
-         {CLATCH[1], CLATCH[3], CLATCH[5]} <= {CLATCH[0], CLATCH[2], CLATCH[4]};
-                    end
-         if (nPCLK) begin
-         PD_FIFO1 <= OVZ;
-         PD_FIFO2 <= ~F_NT | ~Hnn0;
-                     end
-         if (~( nPCLK | PD_FIFO2 )) PD_FIFO <= ~PD_FIFO1;
+         {CLATCH[5], CLATCH[3], CLATCH[1]} <= {CLATCH[4], CLATCH[2], CLATCH[0]};
+                   end
+         if (nPCLK) PDFIFO[1:0] <= { ~F_NT | ~Hnn0, OVZ };
+         if (~( nPCLK | PDFIFO[1] )) PD_FIFO <= ~PDFIFO[0];
          if (S_EV  & nPCLK) SPR0_EV1 <=  DO_COPY;
          if (PAR_O & nPCLK) SPR0_EV  <= ~SPR0_EV1;
-         if ( nPCLK & Hnn0 ) {CLATCH[0], CLATCH[2], CLATCH[4]} <= {DO_COPY, CLATCH[1], CLATCH[3]};
+         if (nPCLK & Hnn0)  {CLATCH[4], CLATCH[2], CLATCH[0]} <= {CLATCH[3], CLATCH[1], DO_COPY};
                        end
-// Конец модуля поиска спрайтов, подлежащих выводу на данной строке
+// Конец модуля поиска спрайтов, подлежащих выводу на следующей строке
 endmodule
 
 //===============================================================================================
 // Модуль управления памятью спрайтов
 //===============================================================================================
 module OAM(
-input Clk,          // Системный клок
-input PCLK,         // Пиксельклок
-input nPCLK,        // Пиксельклок
+input Clk,            // Системный клок
+input PCLK,           // Пиксельклок
+input nPCLK,          // Пиксельклок
 // Входы
-input Hnn0,         // Синхронизированное атомарное состояние PPU
-input Hn0,          // Синхронизированное атомарное состояние PPU
-input NHn2,         // Синхронизированное атомарное состояние PPU
-input BLNK,         // Рендер отключен
-input nVIS,         // Видимая часть строки
-input W3,           // Запись в регистр адреса OAM
-input W4,           // Запись в регистр данных OAM
-input I_OAM2,       // Сигнал инициализации (очистки) OAM2
-input nEVAL,        // Сброс счетчика OAM2 и начало процесса обработки OAM2
-input PAR_O,        // Чтение графики спрайтов
-input OMFG,         // Сигнал копирования текущего спрайта сравнения в ОАМ2
-input RESCL,        // Строка пререндера (сброс всех схем выборки)
-input [7:0]DBIN,    // Шина данных CPU
+input Hnn0,           // Синхронизированное атомарное состояние PPU
+input Hn0,            // Синхронизированное атомарное состояние PPU
+input Hn2,            // Синхронизированное атомарное состояние PPU
+input BLNK,           // Рендер отключен
+input nVIS,           // Видимая часть строки
+input W3,             // Запись в регистр адреса OAM
+input W4,             // Запись в регистр данных OAM
+input I_OAM2,         // Сигнал инициализации (очистки) OAM2
+input nEVAL,          // Сброс счетчика OAM2 и начало процесса обработки OAM2
+input PAR_O,          // Чтение графики спрайтов
+input OMFG,           // Сигнал копирования текущего спрайта сравнения в ОАМ2
+input RESCL,          // Строка пререндера (сброс всех схем выборки)
+input [7:0]DBIN,      // Данные открытой шины регистров PPU
 // Выходы
-output reg [7:0]OB, // Шина данных спрайтовой машины
-output reg R2DB5,   // Флаг переполнения спрайтов
-output reg SPR_OV   // Счетчик ОАМ переполнен или найдено боллее 8-ми спрайтов
+output reg [7:0]OB,   // Шина данных спрайтовой машины
+output reg R2DB5,     // Флаг переполнения спрайтов
+output reg SPR_OV     // Счетчик ОАМ переполнен или найдено боллее 8-ми спрайтов
 );
 // Переменные
 reg W4FF;
@@ -1273,54 +1235,54 @@ wire OAP;
 assign OAP = ~(( Hnn0 | nVIS ) & ~BLNK );
 wire SPR_OVERFLOW;
 assign SPR_OVERFLOW = ~( nPCLK | Hn0 | OVF_LATCH | OMFG_LATCH );
-// Управление счетчиками ОАМ
+// Управление счетчиками OAM
 wire OAMSTEP;
-assign OAMSTEP = ~(( nPCLK | ~OMSTEP[0] ) & ( nPCLK | OMSTEP[1] ));
+assign OAMSTEP = ~(( nPCLK | OMSTEP[1] ) & ( nPCLK | ~OMSTEP[0] ));
 wire MODE4;
 assign MODE4 = ~( ~OMFG | BLNK );
 wire ORES;
 assign ORES = ~( nPCLK | ORES_LATCH );
 wire OAM2STEP;
-assign OAM2STEP = ~( nPCLK | OSTEP[0] | ~(( PAR_O & NHn2 ) | ~( Hn0 | ~( OSTEP[1] | OSTEP[2] ))));
+assign OAM2STEP = ~( nPCLK | OSTEP[0] | ~(( PAR_O & ~Hn2 ) | ~( Hn0 | ~( OSTEP[1] | OSTEP[2] ))));
 wire OMV;
 wire [2:0]OBDZ;
-assign OBDZ[2:0] =  OAMQ[4:2] &  {3{ ~( OAM1ADR[1] & ~OAM1ADR[0] )}};
+assign OBDZ[2:0] = OAMQ[4:2] & {3{ ~( OAM1ADR[1] & ~OAM1ADR[0] )}};
 wire [4:0]OAM2ADR, OAM2Cout;
 wire [7:0]OAM1ADR;
 // OAM COUNTER
 //                  Clk  MODE   Reset LOAD   STEP    DATA      CNT_OUT      C_OUT
 OAM_COUNTER OAMCNT (Clk, MODE4, PAR_O, W3, OAMSTEP, DBIN[7:0], OAM1ADR[7:0], OMV);
 // OAM2 COUNTER
-//                    Clk   F2              C_IN        Reset  LOAD     STEP   DATA    CNT_OUT        C_OUT
-COUNTER OAM2CNT[4:0] (Clk, nPCLK, {OAM2Cout[3:0], 1'b1}, ORES, 1'b0, OAM2STEP, 5'h00, OAM2ADR[4:0], OAM2Cout[4:0]);
+//                    Clk   F2    DIR             C_IN        Reset  LOAD     STEP   DATA    CNT_OUT        C_OUT
+COUNTER OAM2CNT[4:0] (Clk, nPCLK, 1'b1, {OAM2Cout[3:0], 1'b1}, ORES, 1'b0, OAM2STEP, 5'h00, OAM2ADR[4:0], OAM2Cout[4:0]);
 // Вложенные модули памяти
-wire [7:0]OAMQ, OAM2Q; 
+wire [7:0]OAMQ, OAM2Q;
 OAM_RAM  MOD_OAM_RAM  (OAM1ADR[7:0], Clk, DBIN[7:0], (WE & BLNK), OAMQ[7:0]);   // Память OAM
 OAM2_RAM MOD_OAM2_RAM (OAM2ADR[4:0], Clk, OB2[7:0],   WE,         OAM2Q[7:0]);  // Память OAM2
 // Логика
 always @(posedge Clk) begin
-         if (~W4Q[3]) W4FF <= 1'b0;
-    else if (W4)      W4FF <= 1'b1;
+         if (~W4Q[3])        W4FF <= 1'b0;
+    else if (W4)             W4FF <= 1'b1;
          if (RESCL)        R2DB5  <= 1'b0;
     else if (SPR_OVERFLOW) R2DB5  <= 1'b1;
          if (I_OAM2)       SPR_OV <= 1'b0;
-    else if ( SPR_OVERFLOW |( OAMSTEP & OMV_LATCH )) SPR_OV <= 1'b1;
+    else if (SPR_OVERFLOW |( OAMSTEP & OMV_LATCH )) SPR_OV <= 1'b1;
          if (ORES)                  OAMCTR2 <= 1'b0;
     else if (OAM2STEP & TMV_LATCH ) OAMCTR2 <= 1'b1;
          if (~( BLNK | nPCLK )) OB2[7:0] <= OB[7:0];
-         if (PCLK) {W4Q[0], W4Q[2], W4Q[4]} <= {~(W4 | ~W4FF), W4Q[1], ~W4Q[3]};
+         if (PCLK) {W4Q[4], W4Q[2], W4Q[0]} <= {~W4Q[3], W4Q[1], ~(W4 | ~W4FF)};
          if (nPCLK) begin
-         {W4Q[1], W4Q[3]} <= {W4Q[0], ~W4Q[2]};
+         {W4Q[3], W4Q[1]} <= { ~W4Q[2], W4Q[0]};
          OB[7:0] <= I_OAM2 ? 8'hFF : OAP ? {OAMQ[7:5], OBDZ[2:0], OAMQ[1:0]} : OAM2Q[7:0];
          OMSTEP[1:0] <= {~( Hnn0 & ~( I_OAM2 | nVIS )), OFETCH};
          OSTEP[2:0]  <= {~OMFG, I_OAM2, ~(nEVAL & ~OAMCTR2)};
-         ORES_LATCH <= nEVAL;
-         OVF_LATCH  <= ~OAMCTR2;
-         OMFG_LATCH <= OMFG;
-         OMV_LATCH  <= OMV;
-         TMV_LATCH  <= OAM2Cout[4];
-                    end
-                      end
+         ORES_LATCH  <= nEVAL;
+         OVF_LATCH   <= ~OAMCTR2;
+         OMFG_LATCH  <= OMFG;
+         OMV_LATCH   <= OMV;
+         TMV_LATCH   <= OAM2Cout[4];
+                     end
+                       end
 // Конец модуля управления памятью спрайтов
 endmodule
 
@@ -1332,7 +1294,7 @@ input Clk,        // Системный клок
 input PCLK,       // Пиксельклок
 input nPCLK,      // Пиксельклок
 // Входы
-input	[5:0]Hnn,   // Синхронизированное атомарное состояние PPU
+input [5:0]Hnn,   // Синхронизированное атомарное состояние PPU
 input HPOS_0,     // Запуск счетчиков координаты X спрайтов (позиция 0 спрайтов)
 input PAR_O,      // Вычитывание графики спрайтов
 input CLPO,       // Спрайты отключены
@@ -1351,12 +1313,12 @@ reg MIRR_LATCH;
 reg [2:0]ZPOS;
 reg [7:0]PD_LATCH;
 reg SH3, SH5, SH7;
-reg [2:0] ATR_IN0, ATR_IN1, ATR_IN2, ATR_IN3, ATR_IN4, ATR_IN5, ATR_IN6, ATR_IN7;
-reg [2:0] ATR0, ATR1, ATR2, ATR3, ATR4, ATR5, ATR6, ATR7;
+reg [2:0]ATR_IN0, ATR_IN1, ATR_IN2, ATR_IN3, ATR_IN4, ATR_IN5, ATR_IN6, ATR_IN7;
+reg [2:0]ATR0, ATR1, ATR2, ATR3, ATR4, ATR5, ATR6, ATR7;
 reg SPR0HIT_LATCH;
 // Комбинаторика
 wire [7:0]MIRR_MUX;
-assign MIRR_MUX[7:0] = MIRR_LATCH ? {PD[0],PD[1],PD[2],PD[3],PD[4],PD[5],PD[6],PD[7]} : PD[7:0]; 
+assign MIRR_MUX[7:0] = MIRR_LATCH ? {PD[0],PD[1],PD[2],PD[3],PD[4],PD[5],PD[6],PD[7]} : PD[7:0];
 // Счетчики горизонтальной позиции спрайтового FIFO
 wire [7:0]EN;   // Выходы счетчиков горизонтальной позиции спрайта
 FIFO_HPOSCNT HPOSCNT0( Clk, PCLK, nPCLK, OB[7:0], (PCLK & SH3 & SEL_LATCH[0]), nVIS, ~ZPOS[2], EN[0] );
@@ -1371,22 +1333,23 @@ FIFO_HPOSCNT HPOSCNT7( Clk, PCLK, nPCLK, OB[7:0], (PCLK & SH3 & SEL_LATCH[7]), n
 wire [7:0]SDATA;
 assign SDATA[7:0] = {8{ PD_FIFO }} & PD_LATCH[7:0];
 wire[7:0]COL0, COL1;
-SHIFTREG SREG_0A( Clk, 1'b0, nPCLK, (PCLK & EN[0]), (PCLK & SH5 & SEL_LATCH[0]), SDATA[7:0], COL0[0] );
-SHIFTREG SREG_0B( Clk, 1'b0, nPCLK, (PCLK & EN[0]), (PCLK & SH7 & SEL_LATCH[0]), SDATA[7:0], COL1[0] );
-SHIFTREG SREG_1A( Clk, 1'b0, nPCLK, (PCLK & EN[1]), (PCLK & SH5 & SEL_LATCH[1]), SDATA[7:0], COL0[1] );
-SHIFTREG SREG_1B( Clk, 1'b0, nPCLK, (PCLK & EN[1]), (PCLK & SH7 & SEL_LATCH[1]), SDATA[7:0], COL1[1] );
-SHIFTREG SREG_2A( Clk, 1'b0, nPCLK, (PCLK & EN[2]), (PCLK & SH5 & SEL_LATCH[2]), SDATA[7:0], COL0[2] );
-SHIFTREG SREG_2B( Clk, 1'b0, nPCLK, (PCLK & EN[2]), (PCLK & SH7 & SEL_LATCH[2]), SDATA[7:0], COL1[2] );
-SHIFTREG SREG_3A( Clk, 1'b0, nPCLK, (PCLK & EN[3]), (PCLK & SH5 & SEL_LATCH[3]), SDATA[7:0], COL0[3] );
-SHIFTREG SREG_3B( Clk, 1'b0, nPCLK, (PCLK & EN[3]), (PCLK & SH7 & SEL_LATCH[3]), SDATA[7:0], COL1[3] );
-SHIFTREG SREG_4A( Clk, 1'b0, nPCLK, (PCLK & EN[4]), (PCLK & SH5 & SEL_LATCH[4]), SDATA[7:0], COL0[4] );
-SHIFTREG SREG_4B( Clk, 1'b0, nPCLK, (PCLK & EN[4]), (PCLK & SH7 & SEL_LATCH[4]), SDATA[7:0], COL1[4] );
-SHIFTREG SREG_5A( Clk, 1'b0, nPCLK, (PCLK & EN[5]), (PCLK & SH5 & SEL_LATCH[5]), SDATA[7:0], COL0[5] );
-SHIFTREG SREG_5B( Clk, 1'b0, nPCLK, (PCLK & EN[5]), (PCLK & SH7 & SEL_LATCH[5]), SDATA[7:0], COL1[5] );
-SHIFTREG SREG_6A( Clk, 1'b0, nPCLK, (PCLK & EN[6]), (PCLK & SH5 & SEL_LATCH[6]), SDATA[7:0], COL0[6] );
-SHIFTREG SREG_6B( Clk, 1'b0, nPCLK, (PCLK & EN[6]), (PCLK & SH7 & SEL_LATCH[6]), SDATA[7:0], COL1[6] );
-SHIFTREG SREG_7A( Clk, 1'b0, nPCLK, (PCLK & EN[7]), (PCLK & SH5 & SEL_LATCH[7]), SDATA[7:0], COL0[7] );
-SHIFTREG SREG_7B( Clk, 1'b0, nPCLK, (PCLK & EN[7]), (PCLK & SH7 & SEL_LATCH[7]), SDATA[7:0], COL1[7] ); 
+//                Clk   SIn       STEP        NEXT              LOAD             P DATA In  NC  SEROut
+SHIFTREG SREG_0A( Clk, 1'b0, (PCLK & EN[0]), nPCLK, (PCLK & SH5 & SEL_LATCH[0]), SDATA[7:0],  ,COL0[0] );
+SHIFTREG SREG_0B( Clk, 1'b0, (PCLK & EN[0]), nPCLK, (PCLK & SH7 & SEL_LATCH[0]), SDATA[7:0],  ,COL1[0] );
+SHIFTREG SREG_1A( Clk, 1'b0, (PCLK & EN[1]), nPCLK, (PCLK & SH5 & SEL_LATCH[1]), SDATA[7:0],  ,COL0[1] );
+SHIFTREG SREG_1B( Clk, 1'b0, (PCLK & EN[1]), nPCLK, (PCLK & SH7 & SEL_LATCH[1]), SDATA[7:0],  ,COL1[1] );
+SHIFTREG SREG_2A( Clk, 1'b0, (PCLK & EN[2]), nPCLK, (PCLK & SH5 & SEL_LATCH[2]), SDATA[7:0],  ,COL0[2] );
+SHIFTREG SREG_2B( Clk, 1'b0, (PCLK & EN[2]), nPCLK, (PCLK & SH7 & SEL_LATCH[2]), SDATA[7:0],  ,COL1[2] );
+SHIFTREG SREG_3A( Clk, 1'b0, (PCLK & EN[3]), nPCLK, (PCLK & SH5 & SEL_LATCH[3]), SDATA[7:0],  ,COL0[3] );
+SHIFTREG SREG_3B( Clk, 1'b0, (PCLK & EN[3]), nPCLK, (PCLK & SH7 & SEL_LATCH[3]), SDATA[7:0],  ,COL1[3] );
+SHIFTREG SREG_4A( Clk, 1'b0, (PCLK & EN[4]), nPCLK, (PCLK & SH5 & SEL_LATCH[4]), SDATA[7:0],  ,COL0[4] );
+SHIFTREG SREG_4B( Clk, 1'b0, (PCLK & EN[4]), nPCLK, (PCLK & SH7 & SEL_LATCH[4]), SDATA[7:0],  ,COL1[4] );
+SHIFTREG SREG_5A( Clk, 1'b0, (PCLK & EN[5]), nPCLK, (PCLK & SH5 & SEL_LATCH[5]), SDATA[7:0],  ,COL0[5] );
+SHIFTREG SREG_5B( Clk, 1'b0, (PCLK & EN[5]), nPCLK, (PCLK & SH7 & SEL_LATCH[5]), SDATA[7:0],  ,COL1[5] );
+SHIFTREG SREG_6A( Clk, 1'b0, (PCLK & EN[6]), nPCLK, (PCLK & SH5 & SEL_LATCH[6]), SDATA[7:0],  ,COL0[6] );
+SHIFTREG SREG_6B( Clk, 1'b0, (PCLK & EN[6]), nPCLK, (PCLK & SH7 & SEL_LATCH[6]), SDATA[7:0],  ,COL1[6] );
+SHIFTREG SREG_7A( Clk, 1'b0, (PCLK & EN[7]), nPCLK, (PCLK & SH5 & SEL_LATCH[7]), SDATA[7:0],  ,COL0[7] );
+SHIFTREG SREG_7B( Clk, 1'b0, (PCLK & EN[7]), nPCLK, (PCLK & SH7 & SEL_LATCH[7]), SDATA[7:0],  ,COL1[7] );
 // Приоритет вывода спрайтов
 wire [7:0]SPR;
 assign SPR[0] = ~( CLPO | ~EN[0] | ~( COL0[0] | COL1[0] ) );
@@ -1399,7 +1362,7 @@ assign SPR[6] = ~( CLPO | ~EN[6] | ~( COL0[6] | COL1[6] ) | SPR[0] | SPR[1] | SP
 assign SPR[7] = ~( CLPO | ~EN[7] | ~( COL0[7] | COL1[7] ) | SPR[0] | SPR[1] | SPR[2] | SPR[3] | SPR[4] | SPR[5] | SPR[6] );
 // Выход пикселей спрайта
 assign ZCOL[4:0] = SPR[0] ? { ATR0[2:0],COL1[0],COL0[0] } :
-                   SPR[1] ? { ATR1[2:0],COL1[1],COL0[1] } :    
+                   SPR[1] ? { ATR1[2:0],COL1[1],COL0[1] } :
                    SPR[2] ? { ATR2[2:0],COL1[2],COL0[2] } :
                    SPR[3] ? { ATR3[2:0],COL1[3],COL0[3] } :
                    SPR[4] ? { ATR4[2:0],COL1[4],COL0[4] } :
@@ -1468,19 +1431,17 @@ output reg EN   // Разрешение на вывод спрайта
 );
 // Переменные
 reg ZH_FF;      // Триггер управления обратным счетчиком
-reg [7:0]CNT;   // Защелки обратного счетчика
-reg [7:0]CNT1;  // Защелки обратного счетчика
 // Комбинаторика
 wire STEP;
 assign STEP = ~( PCLK | ~ZH_FF );
-wire [7:0]Cout;
-assign Cout[7:0] = ~CNT[7:0] & {Cout[6:0], 1'b1};
+wire [7:0]CNT, Cout;
+// FIFO COUNTER
+//                    Clk         F2        DIR       C_IN          Reset LOAD  STEP   DATA    CNT_OUT     C_OUT
+COUNTER FIFOCNT[7:0] (Clk, ~(LOAD | STEP), 1'b0, {Cout[6:0], 1'b1}, 1'b0, LOAD, STEP, OB[7:0], CNT[7:0], Cout[7:0]);
 // Логика
 always @(posedge Clk) begin
          if ( PCLK & ( ~|CNT[7:0] ))            ZH_FF <= 1'b0;
     else if (~( nPCLK | n0_H | ( ~|CNT[7:0] ))) ZH_FF <= 1'b1;
-         if (LOAD | STEP) CNT[7:0] <= LOAD ? OB[7:0] : CNT1[7:0];
-         if ( ~(LOAD | STEP)) CNT1[7:0] <= CNT[7:0] ^ {Cout[6:0], 1'b1};
          if (nPCLK) EN <= ~( nVIS | ZH_FF );
                        end
 // Конец модуля счетчика горизонтальной позиции спрайтового FIFO
@@ -1490,25 +1451,25 @@ endmodule
 // Модуль сдвигового регистра спрайтового FIFO и BG_COLOR
 //===============================================================================================
 module SHIFTREG(
-input Clk,          // Системный клок
+input Clk,           // Системный клок
 // Входы
-input SIN,          // Последовательный вход сдвигового регистра
-input NEXT,         // Разрешение на сдвиг, 2 фаза
-input STEP,         // Разрешение на сдвиг, 1 фаза
-input LOAD,         // Разрешение на загрузку данных для сдвига
-input [7:0]D,       // Данные для сдвига
-// Выходы 
-output Q            // Выход сдвигового регистра
+input SIN,           // Последовательный вход сдвигового регистра
+input STEP,          // Разрешение на сдвиг, 1 фаза
+input NEXT,          // Разрешение на сдвиг, 2 фаза
+input LOAD,          // Разрешение на загрузку данных для сдвига
+input [7:0]D,        // Данные для сдвига
+// Выходы
+output reg [7:0]QP,  // Параллельный выход сдвигового регистра
+output QS            // Последовательный выход сдвигового регистра
 );
 // Переменные
-reg [7:0]QS;        // Вторая фаза сдвига
-reg [7:0]QS_IN;     // Первая фаза сдвига
+reg [7:0]QS_IN;      // Первая фаза сдвига
 // Комбинаторика
-assign Q = QS[7];   // Выход сдвигового регистра
+assign QS = QP[7];   // Выход сдвигового регистра
 // Логика
 always @(posedge Clk) begin
-                      if (LOAD | STEP) QS_IN[7:0] <= LOAD ? D[7:0] : {QS[6:0], SIN};
-                      if (NEXT) QS[7:0] <= QS_IN[7:0];
+       if (LOAD | STEP) QS_IN[7:0] <= LOAD ? D[7:0] : {QP[6:0], SIN};
+       if (NEXT) QP[7:0] <= QS_IN[7:0];
                        end
 // Конец модуля сдвигового регистра спрайтового FIFO и BG_COLOR
 endmodule
@@ -1517,21 +1478,21 @@ endmodule
 // Модуль мультиплексора пикселей
 //===============================================================================================
 module PIX_MUX(
-input Clk,           // Системный клок
-input PCLK,          // Пиксельклок
-input nPCLK,         // Пиксельклок
+input Clk,         // Системный клок
+input PCLK,        // Пиксельклок
+input nPCLK,       // Пиксельклок
 // Входы
-input [3:0]BGC,      // Выход генератора пикселей фона
-input [4:0]ZCOL,     // Выход спрайтового FIFO
-input [4:0]THO,      // Горизонтальная координата тайла
-input nVIS,          // Видимая часть строки спрайтов
-input SPR0_EV,       // Спрайт #0 находится на текущей строке
-input nSPR0HIT,      // Детектор спрайта #0
-input RESCL,         // Строка пререндера (сброс всех схем выборки)
-input TH_MUX,        // Обращение в палитру
+input [3:0]BGC,    // Выход генератора пикселей фона
+input [4:0]ZCOL,   // Выход спрайтового FIFO
+input [4:0]THO,    // Горизонтальная координата тайла
+input nVIS,        // Видимая часть строки спрайтов
+input SPR0_EV,     // Спрайт #0 находится на текущей строке
+input nSPR0HIT,    // Детектор спрайта #0
+input RESCL,       // Строка пререндера (сброс всех схем выборки)
+input TH_MUX,      // Диапазон палитры
 // Выходы
-output [4:0]CGA,     // Шина данных графики
-output reg R2DB6     // Флаг спрайтхита
+output [4:0]CGA,   // Шина данных графики
+output reg R2DB6   // Флаг спрайтхита
 );
 // Переменные
 reg [4:0]ZCOLN;
@@ -1543,7 +1504,7 @@ reg BGC_LATCH, ZCOL_LATCH, OCOLN;
 wire OCOL;
 assign OCOL = ~( ~( ZCOLN[1] | ZCOLN[0] ) | ( ZCOLN[4] & ( BGC[1] | BGC[0] )));
 wire [3:0]BGCF;
-assign BGCF[3:0] = ( ~( BGC_LATCH | ZCOL_LATCH )) ? 4'b0000 : STEP2[3:0];
+assign BGCF[3:0] = ( ~( BGC_LATCH | ZCOL_LATCH )) ? 4'h0 : STEP2[3:0];
 assign CGA[4:0] = TH_MUX ? THO_LATCH[4:0] : STEP3[4:0];
 // Логика
 always @(posedge Clk) begin
@@ -1573,7 +1534,7 @@ input PCLK,            // Пиксельклок
 input nPCLK,           // Пиксельклок
 // Входы
 input R7,              // Чтение из регистра $2007
-input TH_MUX,          // Обращение в палитру
+input TH_MUX,          // Диапазон палитры
 input nPICTURE,        // Гашение
 input B_W,             // Режим Ч/Б (обнуление младших 4х битов индекса цвета)
 input DB_PAR,          // Проброс данных CPU на шину PPU
@@ -1581,7 +1542,6 @@ input [4:0]CGA,        // Шина данных графики
 input [5:0]DBIN,       // Шина данных CPU
 input PALSEL0,         // Выбор палитры
 input PALSEL1,         // Выбор палитры
-
 // Выходы
 output RPIX,           // Выбор пиксельного вывода
 output reg [5:0]PIX,   // Данные пиксельного вывода
@@ -1592,7 +1552,7 @@ reg DB_PARR;
 reg [1:0]PICTR;
 // Комбинаторика
 wire CGAH;
-assign CGAH = ( CGA[0] | CGA[1] ) & CGA[4];
+assign CGAH = CGA[4] & ( CGA[1] | CGA[0] );
 wire [3:0]CN;
 assign CN[3:0] = C[3:0] & { 4 { nB_W }};
 wire nB_W;
@@ -1601,8 +1561,8 @@ assign RPIX = R7 & TH_MUX;
 // Вложенные модули палитрового ОЗУ / ПЗУ
 wire [17:0]RGB_TABLE;
 wire [5:0]C;
-PALETTE_RAM MOD_PALETTE_RAM ( {CGAH,CGA[3:0]}, Clk, DBIN[5:0],( TH_MUX & DB_PARR ), C[5:0] );
-PALETTE_RGB_TABLE MOD_RGB_TABLE ( {PALSEL1,PALSEL0,PIX[5:0]}, Clk, RGB_TABLE[17:0] );
+PALETTE_RAM MOD_PALETTE_RAM ( {CGAH,CGA[3:0]}, Clk, DBIN[5:0],( TH_MUX & DB_PARR ), C[5:0] );  // Adr, Clk, DIn, WE, Q
+PALETTE_RGB_TABLE MOD_RGB_TABLE ( {PALSEL1,PALSEL0,PIX[5:0]}, Clk, RGB_TABLE[17:0] );          // Adr, Clk, Q
 // Выход
 assign RGB[17:0] = RGB_TABLE[17:0] & { 18 { ~PICTR[1] }};
 // Логика
@@ -1613,7 +1573,7 @@ always @(posedge Clk) begin
          PICTR[0] <= nPICTURE;
                     end
          PICTR[1] <= PICTR[0];
-                      end
+                       end
 // Конец модуля палитры
 endmodule
 
@@ -1621,25 +1581,29 @@ endmodule
 // Модуль счетчика
 //===============================================================================================
 module COUNTER(
-// Clocks
-input Clk,       // Clock
-input F2,        // Phase 2 (PCLK, nPCLK, etc)
-//Inputs  
-input C_IN,      // Carry input
-input Reset,     // Reset counter
-input LOAD,      // Load DATA
-input STEP,      // Step Count
-input DATA,      // DATA INPUT
-// Outputs 
-output reg CNT,  // Counter output
-output C_OUT     // Carry out
+input Clk,       // Системный клок
+input F2,        // Фаза 2 (PCLK, nPCLK, и т д)
+// Входы
+input DIR,       // Напрвление счета
+input C_IN,      // Вход переноса
+input Reset,     // Сброс
+input LOAD,      // Загрузка данных
+input STEP,      // Шаг счетчика
+input DATA,      // Вход данных
+// Выходы
+output reg CNT,  // Выход счетчика
+output C_OUT     // Перенос счетчика
 );
 reg CNT1;
-assign C_OUT = CNT & C_IN;
-
+assign C_OUT = DIR ? CNT & C_IN : ~CNT & C_IN;
+//Логика
+always @(posedge Clk or posedge Reset) begin
+       if (Reset) CNT <= 1'b0;
+  else if (LOAD)  CNT <= DATA;
+  else if (STEP)  CNT <= CNT1;
+                      end
 always @(posedge Clk) begin
-      if ( Reset | LOAD | STEP ) CNT <= ( Reset ? 1'b0 : LOAD ? DATA : CNT1 );
-      if ( F2 ) CNT1  <= CNT ^ C_IN;
+       if ( F2 ) CNT1 <= CNT ^ C_IN;
                       end
 endmodule
 
@@ -1647,17 +1611,16 @@ endmodule
 // Модуль счетчика OAM1
 //===============================================================================================
 module OAM_COUNTER(
-// Clocks
-input Clk,           // Clock
-//Inputs
-input MODE4,         // Counting mode 1 or 4 step
-input Reset,         // Reset counter
-input LOAD,          // Load DATA
-input STEP,          // Step Count
-input  [7:0]DATA,    // DATA INPUT
-// Outputs 
-output reg [7:0]CNT, // Counter output
-output C_OUT         // Carry out
+input Clk,           // Системный клок
+// Входы
+input MODE4,         // Режим счета +4 или +1
+input Reset,         // Сброс
+input LOAD,          // Загрузка данных
+input STEP,          // Шаг счетчика
+input  [7:0]DATA,    // Вход данных
+// Выходы
+output reg [7:0]CNT, // Выход счетчика
+output C_OUT         // Перенос счетчика
 );
 reg [7:0]CNT1;
 wire [7:0]OAM1Cout;
@@ -1668,8 +1631,9 @@ wire [5:0]CNT4;
 assign CNT4[5:0]  = CNT[7:2] ^ {OAM4Cout[4:0],1'b1};
 assign C_OUT = (MODE4) ? CNT[7] & CNT[6] & CNT[5] & CNT[4] & CNT[3] & CNT[2] & ~CNT[1] & ~CNT[0]
                        : CNT[7] & CNT[6] & CNT[5] & CNT[4] & CNT[3] & CNT[2] &  CNT[1] &  CNT[0];
+//Логика
 always @(posedge Clk) begin
      if (   LOAD | STEP | Reset ) CNT[7:0]  <= Reset ? 8'h00 : LOAD ? DATA[7:0] : CNT1[7:0];
-     if (~( LOAD | STEP ))        CNT1[7:0] <= MODE4 ? {CNT4[5:0], 2'b00 } : ( CNT[7:0] ^ {OAM1Cout[6:0],1'b1});
+     if (~( LOAD | STEP ))        CNT1[7:0] <= MODE4 ? {CNT4[5:0], 2'h0 } : ( CNT[7:0] ^ {OAM1Cout[6:0],1'b1});
                       end
 endmodule

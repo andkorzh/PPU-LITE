@@ -6,9 +6,6 @@ Page_0		0x00000000		0x00013255
 
 Notes:
 
-- Data checksum for this conversion is 0x06DD53E3
+- Data checksum for this conversion is 0x06DFA40E
 
 - All the addresses in this file are byte addresses
-
-- The following changes from default values for Advanced Options settings are in effect:
-	Disable EPCS ID check: ON
