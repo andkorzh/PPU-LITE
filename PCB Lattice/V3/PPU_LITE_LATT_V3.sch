@@ -20041,7 +20041,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="VCC_IO3@3" x="-45.72" y="-25.4" length="middle"/>
 <pin name="GND@4" x="15.24" y="-45.72" length="middle" rot="R90"/>
 <pin name="IO43" x="45.72" y="-25.4" length="middle" rot="R180"/>
-<pin name="GNG@8" x="-10.16" y="45.72" length="middle" rot="R270"/>
+<pin name="GND@8" x="-10.16" y="45.72" length="middle" rot="R270"/>
 <pin name="GND@5" x="45.72" y="-17.78" length="middle" rot="R180"/>
 <pin name="IO44" x="45.72" y="-22.86" length="middle" rot="R180"/>
 <pin name="IO45" x="45.72" y="-15.24" length="middle" rot="R180"/>
@@ -20113,7 +20113,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <connect gate="G$1" pin="GND@5" pad="56"/>
 <connect gate="G$1" pin="GND@6" pad="72"/>
 <connect gate="G$1" pin="GND@7" pad="79"/>
-<connect gate="G$1" pin="GNG@8" pad="92"/>
+<connect gate="G$1" pin="GND@8" pad="92"/>
 <connect gate="G$1" pin="IO1" pad="1"/>
 <connect gate="G$1" pin="IO10" pad="13"/>
 <connect gate="G$1" pin="IO11" pad="14"/>
@@ -23572,22 +23572,14 @@ Source: www.kingbright.com</description>
 <wire x1="-66.04" y1="73.66" x2="-68.58" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="GND29" gate="1" pin="GND"/>
 <wire x1="-68.58" y1="73.66" x2="-68.58" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="CON1" gate="G$1" pin="EXT0"/>
-<wire x1="-66.04" y1="88.9" x2="-68.58" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="88.9" x2="-68.58" y2="86.36" width="0.1524" layer="91"/>
 <junction x="-68.58" y="73.66"/>
-<pinref part="CON1" gate="G$1" pin="EXT1"/>
-<wire x1="-68.58" y1="86.36" x2="-68.58" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="-68.58" y1="83.82" x2="-68.58" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="-68.58" y1="81.28" x2="-68.58" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="-66.04" y1="86.36" x2="-68.58" y2="86.36" width="0.1524" layer="91"/>
-<junction x="-68.58" y="86.36"/>
-<pinref part="CON1" gate="G$1" pin="EXT2"/>
-<wire x1="-66.04" y1="83.82" x2="-68.58" y2="83.82" width="0.1524" layer="91"/>
-<junction x="-68.58" y="83.82"/>
 <pinref part="CON1" gate="G$1" pin="EXT3"/>
 <wire x1="-66.04" y1="81.28" x2="-68.58" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-68.58" y="81.28"/>
+<pinref part="CON1" gate="G$1" pin="EXT2"/>
+<wire x1="-66.04" y1="83.82" x2="-68.58" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R17" gate="G$1" pin="2"/>
@@ -23738,7 +23730,7 @@ Source: www.kingbright.com</description>
 <wire x1="-10.16" y1="33.02" x2="-2.54" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="33.02" x2="-2.54" y2="40.64" width="0.1524" layer="91"/>
 <junction x="-2.54" y="40.64"/>
-<pinref part="U1" gate="G$1" pin="GNG@8"/>
+<pinref part="U1" gate="G$1" pin="GND@8"/>
 </segment>
 <segment>
 <pinref part="GND41" gate="1" pin="GND"/>
