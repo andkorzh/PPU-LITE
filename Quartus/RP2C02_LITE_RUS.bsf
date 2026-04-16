@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "symbol" (version "1.1"))
 (symbol
 	(rect 16 16 200 272)
-	(text "RP2C02_LITE" (rect 5 0 82 12)(font "Arial" ))
+	(text "RP2C02_LITE_RUS" (rect 5 0 111 12)(font "Arial" ))
 	(text "inst" (rect 8 240 36 252)(font "Arial" ))
 	(port
 		(pt 0 32)

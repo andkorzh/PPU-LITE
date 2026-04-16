@@ -1,5 +1,5 @@
 Fitter report for PPU_LITE
-Mon Apr 06 18:50:58 2026
+Thu Apr 16 21:13:46 2026
 Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
 
 
@@ -65,14 +65,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------+
 ; Fitter Summary                                                        ;
 +-----------------------+-----------------------------------------------+
-; Fitter Status         ; Successful - Mon Apr 06 18:50:58 2026         ;
+; Fitter Status         ; Successful - Thu Apr 16 21:13:46 2026         ;
 ; Quartus II Version    ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
 ; Revision Name         ; PPU_LITE                                      ;
 ; Top-level Entity Name ; PPU_LITE                                      ;
 ; Family                ; Cyclone                                       ;
 ; Device                ; EP1C3T100C8                                   ;
 ; Timing Models         ; Final                                         ;
-; Total logic elements  ; 1,214 / 2,910 ( 42 % )                        ;
+; Total logic elements  ; 1,212 / 2,910 ( 42 % )                        ;
 ; Total pins            ; 62 / 65 ( 95 % )                              ;
 ; Total virtual pins    ; 0                                             ;
 ; Total memory bits     ; 7,104 / 59,904 ( 12 % )                       ;
@@ -133,7 +133,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 10     ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -144,8 +144,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 1320 ( 0.00 % )    ;
-;     -- Achieved     ; 0 / 1320 ( 0.00 % )    ;
+;     -- Requested    ; 0 / 1318 ( 0.00 % )    ;
+;     -- Achieved     ; 0 / 1318 ( 0.00 % )    ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -168,7 +168,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 1317    ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 1315    ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -176,59 +176,59 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.pin.
+The pin-out file can be found in D:/SRC/PPU_LITE/PPU_LITE.pin.
 
 
-+-------------------------------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                                             ;
-+---------------------------------------------+---------------------------------------------+
-; Resource                                    ; Usage                                       ;
-+---------------------------------------------+---------------------------------------------+
-; Total logic elements                        ; 1,214 / 2,910 ( 42 % )                      ;
-;     -- Combinational with no register       ; 202                                         ;
-;     -- Register only                        ; 319                                         ;
-;     -- Combinational with a register        ; 693                                         ;
-;                                             ;                                             ;
-; Logic element usage by number of LUT inputs ;                                             ;
-;     -- 4 input functions                    ; 559                                         ;
-;     -- 3 input functions                    ; 193                                         ;
-;     -- 2 input functions                    ; 112                                         ;
-;     -- 1 input functions                    ; 31                                          ;
-;     -- 0 input functions                    ; 0                                           ;
-;                                             ;                                             ;
-; Logic elements by mode                      ;                                             ;
-;     -- normal mode                          ; 1207                                        ;
-;     -- arithmetic mode                      ; 7                                           ;
-;     -- qfbk mode                            ; 107                                         ;
-;     -- register cascade mode                ; 0                                           ;
-;     -- synchronous clear/load mode          ; 338                                         ;
-;     -- asynchronous clear/load mode         ; 10                                          ;
-;                                             ;                                             ;
-; Total registers                             ; 1,012 / 3,099 ( 33 % )                      ;
-; Total LABs                                  ; 167 / 291 ( 57 % )                          ;
-; Logic elements in carry chains              ; 8                                           ;
-; User inserted logic elements                ; 0                                           ;
-; Virtual pins                                ; 0                                           ;
-; I/O pins                                    ; 62 / 65 ( 95 % )                            ;
-;     -- Clock pins                           ; 1 / 2 ( 50 % )                              ;
-; Global signals                              ; 4                                           ;
-; M4Ks                                        ; 4 / 13 ( 31 % )                             ;
-; Total memory bits                           ; 7,104 / 59,904 ( 12 % )                     ;
-; Total RAM block bits                        ; 18,432 / 59,904 ( 31 % )                    ;
-; PLLs                                        ; 1 / 1 ( 100 % )                             ;
-; Global clocks                               ; 4 / 8 ( 50 % )                              ;
-; JTAGs                                       ; 0 / 1 ( 0 % )                               ;
-; ASMI Blocks                                 ; 0 / 1 ( 0 % )                               ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )                               ;
-; Average interconnect usage (total/H/V)      ; 16% / 16% / 16%                             ;
-; Peak interconnect usage (total/H/V)         ; 18% / 18% / 18%                             ;
-; Maximum fan-out node                        ; PLL:inst1|altpll:altpll_component|_clk0     ;
-; Maximum fan-out                             ; 1016                                        ;
-; Highest non-global fan-out signal           ; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK~0 ;
-; Highest non-global fan-out                  ; 557                                         ;
-; Total fan-out                               ; 5480                                        ;
-; Average fan-out                             ; 4.27                                        ;
-+---------------------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                                           ;
++---------------------------------------------+-------------------------------------------+
+; Resource                                    ; Usage                                     ;
++---------------------------------------------+-------------------------------------------+
+; Total logic elements                        ; 1,212 / 2,910 ( 42 % )                    ;
+;     -- Combinational with no register       ; 202                                       ;
+;     -- Register only                        ; 319                                       ;
+;     -- Combinational with a register        ; 691                                       ;
+;                                             ;                                           ;
+; Logic element usage by number of LUT inputs ;                                           ;
+;     -- 4 input functions                    ; 550                                       ;
+;     -- 3 input functions                    ; 200                                       ;
+;     -- 2 input functions                    ; 112                                       ;
+;     -- 1 input functions                    ; 31                                        ;
+;     -- 0 input functions                    ; 0                                         ;
+;                                             ;                                           ;
+; Logic elements by mode                      ;                                           ;
+;     -- normal mode                          ; 1205                                      ;
+;     -- arithmetic mode                      ; 7                                         ;
+;     -- qfbk mode                            ; 106                                       ;
+;     -- register cascade mode                ; 0                                         ;
+;     -- synchronous clear/load mode          ; 326                                       ;
+;     -- asynchronous clear/load mode         ; 10                                        ;
+;                                             ;                                           ;
+; Total registers                             ; 1,010 / 3,099 ( 33 % )                    ;
+; Total LABs                                  ; 158 / 291 ( 54 % )                        ;
+; Logic elements in carry chains              ; 8                                         ;
+; User inserted logic elements                ; 0                                         ;
+; Virtual pins                                ; 0                                         ;
+; I/O pins                                    ; 62 / 65 ( 95 % )                          ;
+;     -- Clock pins                           ; 1 / 2 ( 50 % )                            ;
+; Global signals                              ; 4                                         ;
+; M4Ks                                        ; 4 / 13 ( 31 % )                           ;
+; Total memory bits                           ; 7,104 / 59,904 ( 12 % )                   ;
+; Total RAM block bits                        ; 18,432 / 59,904 ( 31 % )                  ;
+; PLLs                                        ; 1 / 1 ( 100 % )                           ;
+; Global clocks                               ; 4 / 8 ( 50 % )                            ;
+; JTAGs                                       ; 0 / 1 ( 0 % )                             ;
+; ASMI Blocks                                 ; 0 / 1 ( 0 % )                             ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )                             ;
+; Average interconnect usage (total/H/V)      ; 16% / 16% / 16%                           ;
+; Peak interconnect usage (total/H/V)         ; 18% / 18% / 19%                           ;
+; Maximum fan-out node                        ; PLL:inst1|altpll:altpll_component|_clk0   ;
+; Maximum fan-out                             ; 1014                                      ;
+; Highest non-global fan-out signal           ; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK ;
+; Highest non-global fan-out                  ; 577                                       ;
+; Total fan-out                               ; 5461                                      ;
+; Average fan-out                             ; 4.26                                      ;
++---------------------------------------------+-------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -238,10 +238,10 @@ The pin-out file can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 1214                 ; 0                              ;
+; Total logic elements                        ; 1212                 ; 0                              ;
 ;     -- Combinational with no register       ; 202                  ; 0                              ;
 ;     -- Register only                        ; 319                  ; 0                              ;
-;     -- Combinational with a register        ; 693                  ; 0                              ;
+;     -- Combinational with a register        ; 691                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
 ;     -- 4 input functions                    ; 0                    ; 0                              ;
@@ -258,7 +258,7 @@ The pin-out file can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_
 ;     -- synchronous clear/load mode          ; 0                    ; 0                              ;
 ;     -- asynchronous clear/load mode         ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 1012 / 1455 ( 69 % ) ; 0 / 1455 ( 0 % )               ;
+; Total registers                             ; 1010 / 1455 ( 69 % ) ; 0 / 1455 ( 0 % )               ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 62                   ; 0                              ;
 ; DSP block 9-bit elements                    ; 0                    ; 0                              ;
@@ -268,18 +268,18 @@ The pin-out file can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_
 ; M4K                                         ; 4 / 13 ( 30 % )      ; 0 / 13 ( 0 % )                 ;
 ;                                             ;                      ;                                ;
 ; Connections                                 ;                      ;                                ;
-;     -- Input Connections                    ; 1016                 ; 1                              ;
-;     -- Registered Input Connections         ; 973                  ; 0                              ;
-;     -- Output Connections                   ; 1                    ; 1016                           ;
+;     -- Input Connections                    ; 1014                 ; 1                              ;
+;     -- Registered Input Connections         ; 970                  ; 0                              ;
+;     -- Output Connections                   ; 1                    ; 1014                           ;
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 5511                 ; 1017                           ;
-;     -- Registered Connections               ; 3395                 ; 0                              ;
+;     -- Total Connections                    ; 5494                 ; 1015                           ;
+;     -- Registered Connections               ; 3366                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
-;     -- Top                                  ; 0                    ; 1017                           ;
-;     -- hard_block:auto_generated_inst       ; 1017                 ; 0                              ;
+;     -- Top                                  ; 0                    ; 1015                           ;
+;     -- hard_block:auto_generated_inst       ; 1015                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Partition Interface                         ;                      ;                                ;
 ;     -- Input Ports                          ; 12                   ; 1                              ;
@@ -312,7 +312,7 @@ The pin-out file can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_
 ; A[2]    ; 79    ; 2        ; 22           ; 14           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVCMOS ; Off         ; User                 ;
 ; DENDY   ; 56    ; 3        ; 27           ; 3            ; 0           ; 8                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVCMOS ; Off         ; User                 ;
 ; MCLK    ; 10    ; 1        ; 0            ; 8            ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVCMOS ; Off         ; User                 ;
-; MODE    ; 55    ; 3        ; 27           ; 3            ; 1           ; 7                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVCMOS ; Off         ; User                 ;
+; MODE    ; 55    ; 3        ; 27           ; 3            ; 1           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVCMOS ; Off         ; User                 ;
 ; PALSEL0 ; 54    ; 3        ; 27           ; 2            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVCMOS ; Off         ; User                 ;
 ; PALSEL1 ; 57    ; 3        ; 27           ; 4            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVCMOS ; Off         ; User                 ;
 ; R_W     ; 97    ; 2        ; 6            ; 14           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVCMOS ; Off         ; User                 ;
@@ -591,20 +591,20 @@ Note: User assignments will override these defaults. The user specified values a
 +-------------------------------------------------+-------------+--------------+-------------+------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; Logic Cells ; LC Registers ; Memory Bits ; M4Ks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                           ; Library Name ;
 +-------------------------------------------------+-------------+--------------+-------------+------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |PPU_LITE                                       ; 1214 (3)    ; 1012         ; 7104        ; 4    ; 62   ; 0            ; 202 (1)      ; 319 (0)           ; 693 (2)          ; 8 (0)           ; 107 (0)    ; |PPU_LITE                                                                                                                                     ;              ;
+; |PPU_LITE                                       ; 1212 (3)    ; 1010         ; 7104        ; 4    ; 62   ; 0            ; 202 (1)      ; 319 (0)           ; 691 (2)          ; 8 (0)           ; 106 (0)    ; |PPU_LITE                                                                                                                                     ;              ;
 ;    |PLL:inst1|                                  ; 0 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1                                                                                                                           ;              ;
 ;       |altpll:altpll_component|                 ; 0 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|PLL:inst1|altpll:altpll_component                                                                                                   ;              ;
-;    |RP2C02_LITE:inst|                           ; 1211 (0)    ; 1010         ; 7104        ; 4    ; 0    ; 0            ; 201 (0)      ; 319 (0)           ; 691 (0)          ; 8 (0)           ; 107 (0)    ; |PPU_LITE|RP2C02_LITE:inst                                                                                                                    ;              ;
-;       |BG_COLOR:MOD_BG_COLOR|                   ; 131 (35)    ; 129          ; 0           ; 0    ; 0    ; 0            ; 2 (2)        ; 86 (21)           ; 43 (12)          ; 0 (0)           ; 20 (20)    ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR                                                                                              ;              ;
+;    |RP2C02_LITE:inst|                           ; 1209 (0)    ; 1008         ; 7104        ; 4    ; 0    ; 0            ; 201 (0)      ; 319 (0)           ; 689 (0)          ; 8 (0)           ; 106 (0)    ; |PPU_LITE|RP2C02_LITE:inst                                                                                                                    ;              ;
+;       |BG_COLOR:MOD_BG_COLOR|                   ; 132 (36)    ; 129          ; 0           ; 0    ; 0    ; 0            ; 3 (3)        ; 86 (21)           ; 43 (12)          ; 0 (0)           ; 19 (19)    ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR                                                                                              ;              ;
 ;          |SHIFTREG:SREG_FS0|                    ; 16 (16)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 13 (13)           ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_FS0                                                                            ;              ;
 ;          |SHIFTREG:SREG_FS1|                    ; 16 (16)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 12 (12)           ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_FS1                                                                            ;              ;
 ;          |SHIFTREG:SREG_FS2|                    ; 16 (16)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 12 (12)           ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_FS2                                                                            ;              ;
 ;          |SHIFTREG:SREG_FS3|                    ; 16 (16)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 12 (12)           ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_FS3                                                                            ;              ;
 ;          |SHIFTREG:SREG_TA|                     ; 16 (16)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TA                                                                             ;              ;
 ;          |SHIFTREG:SREG_TB|                     ; 16 (16)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB                                                                             ;              ;
-;       |CLK_DIV:MOD_CLK_DIV|                     ; 6 (6)       ; 6            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 5 (5)            ; 0 (0)           ; 1 (1)      ; |PPU_LITE|RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV                                                                                                ;              ;
-;       |LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL| ; 16 (16)     ; 13           ; 0           ; 0    ; 0    ; 0            ; 3 (3)        ; 1 (1)             ; 12 (12)          ; 0 (0)           ; 3 (3)      ; |PPU_LITE|RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL                                                                            ;              ;
-;       |OAM:MOD_OAM|                             ; 77 (45)     ; 60           ; 2304        ; 2    ; 0    ; 0            ; 17 (11)      ; 13 (9)            ; 47 (25)          ; 0 (0)           ; 6 (5)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM                                                                                                        ;              ;
+;       |CLK_DIV:MOD_CLK_DIV|                     ; 4 (4)       ; 4            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 3 (3)            ; 0 (0)           ; 2 (2)      ; |PPU_LITE|RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV                                                                                                ;              ;
+;       |LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL| ; 15 (15)     ; 13           ; 0           ; 0    ; 0    ; 0            ; 2 (2)        ; 1 (1)             ; 12 (12)          ; 0 (0)           ; 3 (3)      ; |PPU_LITE|RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL                                                                            ;              ;
+;       |OAM:MOD_OAM|                             ; 76 (46)     ; 60           ; 2304        ; 2    ; 0    ; 0            ; 16 (12)      ; 13 (9)            ; 47 (25)          ; 0 (0)           ; 7 (6)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM                                                                                                        ;              ;
 ;          |COUNTER:OAM2CNT[0]|                   ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|COUNTER:OAM2CNT[0]                                                                                     ;              ;
 ;          |COUNTER:OAM2CNT[1]|                   ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 1 (1)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|COUNTER:OAM2CNT[1]                                                                                     ;              ;
 ;          |COUNTER:OAM2CNT[2]|                   ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|COUNTER:OAM2CNT[2]                                                                                     ;              ;
@@ -613,11 +613,11 @@ Note: User assignments will override these defaults. The user specified values a
 ;          |OAM2_RAM:MOD_OAM2_RAM|                ; 0 (0)       ; 0            ; 256         ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM2_RAM:MOD_OAM2_RAM                                                                                  ;              ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)       ; 0            ; 256         ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM2_RAM:MOD_OAM2_RAM|altsyncram:altsyncram_component                                                  ;              ;
 ;                |altsyncram_hsa1:auto_generated| ; 0 (0)       ; 0            ; 256         ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM2_RAM:MOD_OAM2_RAM|altsyncram:altsyncram_component|altsyncram_hsa1:auto_generated                   ;              ;
-;          |OAM_COUNTER:OAMCNT|                   ; 22 (22)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 16 (16)          ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT                                                                                     ;              ;
+;          |OAM_COUNTER:OAMCNT|                   ; 20 (20)     ; 16           ; 0           ; 0    ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 16 (16)          ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT                                                                                     ;              ;
 ;          |OAM_RAM:MOD_OAM_RAM|                  ; 0 (0)       ; 0            ; 2048        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM_RAM:MOD_OAM_RAM                                                                                    ;              ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)       ; 0            ; 2048        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM_RAM:MOD_OAM_RAM|altsyncram:altsyncram_component                                                    ;              ;
 ;                |altsyncram_cua1:auto_generated| ; 0 (0)       ; 0            ; 2048        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OAM:MOD_OAM|OAM_RAM:MOD_OAM_RAM|altsyncram:altsyncram_component|altsyncram_cua1:auto_generated                     ;              ;
-;       |OBJ_EVAL:MOD_OBJ_EVAL|                   ; 25 (25)     ; 19           ; 0           ; 0    ; 0    ; 0            ; 6 (6)        ; 4 (4)             ; 15 (15)          ; 4 (4)           ; 4 (4)      ; |PPU_LITE|RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL                                                                                              ;              ;
+;       |OBJ_EVAL:MOD_OBJ_EVAL|                   ; 26 (26)     ; 19           ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 4 (4)             ; 15 (15)          ; 4 (4)           ; 3 (3)      ; |PPU_LITE|RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL                                                                                              ;              ;
 ;       |OBJ_FIFO:MOD_OBJ_FIFO|                   ; 550 (102)   ; 473          ; 0           ; 0    ; 0    ; 0            ; 77 (29)      ; 154 (40)          ; 319 (33)         ; 0 (0)           ; 26 (26)    ; |PPU_LITE|RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO                                                                                              ;              ;
 ;          |FIFO_HPOSCNT:HPOSCNT0|                ; 22 (5)      ; 18           ; 0           ; 0    ; 0    ; 0            ; 4 (3)        ; 0 (0)             ; 18 (2)           ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT0                                                                        ;              ;
 ;             |COUNTER:FIFOCNT[0]|                ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT0|COUNTER:FIFOCNT[0]                                                     ;              ;
@@ -714,7 +714,7 @@ Note: User assignments will override these defaults. The user specified values a
 ;          |PALETTE_RGB_TABLE:MOD_RGB_TABLE|      ; 0 (0)       ; 0            ; 4608        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE                                                                ;              ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)       ; 0            ; 4608        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component                                ;              ;
 ;                |altsyncram_9u41:auto_generated| ; 0 (0)       ; 0            ; 4608        ; 1    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated ;              ;
-;       |PAR_GEN:MOD_PAR_GEN|                     ; 137 (102)   ; 114          ; 0           ; 0    ; 0    ; 0            ; 23 (18)      ; 22 (22)           ; 92 (62)          ; 4 (4)           ; 12 (11)    ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN                                                                                                ;              ;
+;       |PAR_GEN:MOD_PAR_GEN|                     ; 137 (103)   ; 114          ; 0           ; 0    ; 0    ; 0            ; 23 (19)      ; 22 (22)           ; 92 (62)          ; 4 (4)           ; 11 (10)    ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN                                                                                                ;              ;
 ;          |COUNTER:FVCNT[0]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[0]                                                                               ;              ;
 ;          |COUNTER:FVCNT[1]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[1]                                                                               ;              ;
 ;          |COUNTER:FVCNT[2]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[2]                                                                               ;              ;
@@ -725,7 +725,7 @@ Note: User assignments will override these defaults. The user specified values a
 ;          |COUNTER:THCNT[2]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[2]                                                                               ;              ;
 ;          |COUNTER:THCNT[3]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[3]                                                                               ;              ;
 ;          |COUNTER:THCNT[4]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[4]                                                                               ;              ;
-;          |COUNTER:TVCNT[0]|                     ; 4 (4)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[0]                                                                               ;              ;
+;          |COUNTER:TVCNT[0]|                     ; 3 (3)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[0]                                                                               ;              ;
 ;          |COUNTER:TVCNT[1]|                     ; 3 (3)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[1]                                                                               ;              ;
 ;          |COUNTER:TVCNT[2]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[2]                                                                               ;              ;
 ;          |COUNTER:TVCNT[3]|                     ; 2 (2)       ; 2            ; 0           ; 0    ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PPU_LITE|RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[3]                                                                               ;              ;
@@ -835,9 +835,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DB[7]                                                                                                                                                    ;                   ;         ;
 ;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[7]                                                                                      ; 0                 ; ON      ;
 ; DB[6]                                                                                                                                                    ;                   ;         ;
-;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[6]                                                                                      ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[6]                                                                                      ; 0                 ; ON      ;
 ; DB[5]                                                                                                                                                    ;                   ;         ;
-;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[5]                                                                                      ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[5]                                                                                      ; 0                 ; ON      ;
 ; DB[4]                                                                                                                                                    ;                   ;         ;
 ;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[4]                                                                                      ; 0                 ; ON      ;
 ; DB[3]                                                                                                                                                    ;                   ;         ;
@@ -847,17 +847,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DB[1]                                                                                                                                                    ;                   ;         ;
 ;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[1]                                                                                      ; 0                 ; ON      ;
 ; DB[0]                                                                                                                                                    ;                   ;         ;
-;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[0]                                                                                      ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[0]                                                                                      ; 1                 ; ON      ;
 ; PD_BUS[7]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[7]                                                                                                      ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[7]                                                                                  ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                                                                                ; 1                 ; ON      ;
 ; PD_BUS[6]                                                                                                                                                ;                   ;         ;
-;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[6]                                                                                                      ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[6]                                                                                  ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[6]                                                                                                      ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[6]                                                                                  ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                ; 0                 ; ON      ;
 ; PD_BUS[5]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[5]                                                                                                      ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[5]                                                                                                ; 1                 ; ON      ;
@@ -879,10 +879,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[2]                                                                                                ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[2]                                                                                  ; 1                 ; ON      ;
 ; PD_BUS[1]                                                                                                                                                ;                   ;         ;
-;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[1]                                                                                                      ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[1]                                                                                  ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[1]                                                                                                      ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[6]                                                                                                ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[1]                                                                                                ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[1]                                                                                  ; 1                 ; ON      ;
 ; PD_BUS[0]                                                                                                                                                ;                   ;         ;
 ;      - RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PDIN[0]                                                                                                      ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[7]                                                                                                ; 0                 ; ON      ;
@@ -891,22 +891,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VRAMCS                                                                                                                                                   ;                   ;         ;
 ; VRAMA10                                                                                                                                                  ;                   ;         ;
 ; DENDY                                                                                                                                                    ;                   ;         ;
-;      - RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_N[0]                                                                                                    ; 0                 ; ON      ;
 ;      - inst3                                                                                                                                             ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~5                                                                                 ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|DIV[1]                                                                                                       ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~1                                                                                 ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET[0]                                                                                    ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|EMP_G                                                                                              ; 0                 ; ON      ;
 ;      - RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|EMP_R                                                                                              ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_P[0]                                                                                                    ; 0                 ; ON      ;
-;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET~2                                                                                     ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET~0                                                                                     ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~10                                                                                ; 0                 ; ON      ;
 ; MODE                                                                                                                                                     ;                   ;         ;
-;      - RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_N[0]                                                                                                    ; 1                 ; ON      ;
 ;      - inst3                                                                                                                                             ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~5                                                                                 ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|DIV[1]                                                                                                       ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~1                                                                                 ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|EMP_G                                                                                              ; 1                 ; ON      ;
 ;      - RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|EMP_R                                                                                              ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_P[0]                                                                                                    ; 1                 ; ON      ;
-;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET~1                                                                                     ; 1                 ; ON      ;
+;      - RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~10                                                                                ; 1                 ; ON      ;
 ; PALSEL0                                                                                                                                                  ;                   ;         ;
 ;      - RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated|ram_block1a17 ; 0                 ; ON      ;
 ; PALSEL1                                                                                                                                                  ;                   ;         ;
@@ -923,7 +922,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; A[1]                                                                                                                                                     ;                   ;         ;
 ;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|ADR[1]                                                                                       ; 0                 ; ON      ;
 ; A[2]                                                                                                                                                     ;                   ;         ;
-;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|ADR[2]                                                                                       ; 0                 ; ON      ;
+;      - RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|ADR[2]                                                                                       ; 1                 ; ON      ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 
 
@@ -933,84 +932,84 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                  ; Location      ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ;
 +---------------------------------------------------------------------------------------+---------------+---------+-------------------------+--------+----------------------+------------------+
 ; MCLK                                                                                  ; PIN_10        ; 1       ; Clock                   ; no     ; --                   ; --               ;
-; PLL:inst1|altpll:altpll_component|_clk0                                               ; PLL_1         ; 1010    ; Clock                   ; yes    ; Global Clock         ; GCLK0            ;
-; PLL:inst1|altpll:altpll_component|_clk1                                               ; PLL_1         ; 6       ; Clock                   ; yes    ; Global Clock         ; GCLK2            ;
-; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PD_SEL                                         ; LC_X11_Y11_N4 ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PD_SR                                          ; LC_X10_Y9_N9  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SRLOAD~0                                       ; LC_X10_Y9_N4  ; 17      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|STEP2                                          ; LC_X17_Y5_N3  ; 48      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK~0                                           ; LC_X19_Y7_N5  ; 539     ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|ALE~5                        ; LC_X18_Y7_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|PD_RB~0                      ; LC_X11_Y10_N0 ; 17      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|nRD~0                        ; LC_X11_Y9_N9  ; 24      ; Output enable           ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|OAM2STEP~2                                               ; LC_X12_Y7_N5  ; 6       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|always0~0                             ; LC_X16_Y9_N9  ; 9       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|always0~1                             ; LC_X16_Y7_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|ORES~0                                                   ; LC_X19_Y7_N6  ; 6       ; Async. clear            ; yes    ; Global Clock         ; GCLK7            ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|WE                                                       ; LC_X15_Y7_N8  ; 1       ; Write enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|comb~4                                                   ; LC_X17_Y9_N6  ; 1       ; Write enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|always0~0                                      ; LC_X12_Y7_N1  ; 6       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT0|COUNTER:FIFOCNT[1]|CNT~0 ; LC_X18_Y4_N2  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT1|COUNTER:FIFOCNT[3]|CNT~0 ; LC_X5_Y11_N7  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT2|COUNTER:FIFOCNT[7]|CNT~1 ; LC_X5_Y4_N1   ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT3|COUNTER:FIFOCNT[7]|CNT~1 ; LC_X20_Y10_N9 ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT4|COUNTER:FIFOCNT[0]|CNT~0 ; LC_X20_Y4_N4  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT5|COUNTER:FIFOCNT[2]|CNT~0 ; LC_X21_Y5_N4  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT6|COUNTER:FIFOCNT[2]|CNT~0 ; LC_X5_Y9_N1   ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT7|COUNTER:FIFOCNT[3]|CNT~0 ; LC_X19_Y11_N4 ; 16      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_0A|always0~0                     ; LC_X16_Y6_N0  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_0B|always0~0                     ; LC_X16_Y4_N3  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1A|always0~0                     ; LC_X9_Y3_N6   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1B|always0~0                     ; LC_X12_Y5_N7  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_2A|always0~0                     ; LC_X7_Y5_N7   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_2B|always0~0                     ; LC_X7_Y4_N2   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3A|always0~0                     ; LC_X16_Y6_N2  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|always0~0                     ; LC_X16_Y4_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4A|always0~0                     ; LC_X10_Y4_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4B|always0~0                     ; LC_X12_Y5_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_5A|always0~0                     ; LC_X8_Y4_N5   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_5B|always0~0                     ; LC_X7_Y4_N3   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_6A|always0~0                     ; LC_X11_Y6_N8  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_6B|always0~0                     ; LC_X11_Y3_N4  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_7A|always0~0                     ; LC_X9_Y3_N7   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_7B|always0~0                     ; LC_X6_Y2_N4   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~0                                      ; LC_X10_Y6_N8  ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~1                                      ; LC_X10_Y6_N6  ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~2                                      ; LC_X10_Y6_N9  ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~3                                      ; LC_X10_Y6_N1  ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~4                                      ; LC_X8_Y4_N3   ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~5                                      ; LC_X7_Y5_N8   ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~6                                      ; LC_X7_Y5_N1   ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~7                                      ; LC_X7_Y5_N2   ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|comb~0                                           ; LC_X11_Y9_N2  ; 1       ; Write enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[0]|CNT~1                           ; LC_X11_Y9_N3  ; 6       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[0]|CNT~0                           ; LC_X9_Y9_N7   ; 9       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|ZTV~0                                            ; LC_X9_Y9_N9   ; 5       ; Async. clear            ; yes    ; Global Clock         ; GCLK3            ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~0                                        ; LC_X9_Y12_N8  ; 5       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~1                                        ; LC_X12_Y7_N0  ; 21      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~2                                        ; LC_X9_Y10_N6  ; 2       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~3                                        ; LC_X9_Y10_N2  ; 3       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~4                                        ; LC_X9_Y10_N9  ; 5       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~5                                        ; LC_X17_Y5_N5  ; 10      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|R_EN~0                           ; LC_X16_Y13_N3 ; 11      ; Output enable           ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W0                               ; LC_X16_Y13_N2 ; 12      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W1                               ; LC_X16_Y13_N4 ; 14      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W5_1                             ; LC_X10_Y13_N7 ; 10      ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|always0~0                        ; LC_X10_Y12_N6 ; 8       ; Clock enable            ; no     ; --                   ; --               ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|PAR_O                          ; LC_X12_Y7_N4  ; 26      ; Sync. clear, Sync. load ; no     ; --                   ; --               ;
+; PLL:inst1|altpll:altpll_component|_clk0                                               ; PLL_1         ; 1010    ; Clock                   ; yes    ; Global Clock         ; GCLK3            ;
+; PLL:inst1|altpll:altpll_component|_clk1                                               ; PLL_1         ; 4       ; Clock                   ; yes    ; Global Clock         ; GCLK2            ;
+; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PD_SEL                                         ; LC_X12_Y8_N8  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PD_SR                                          ; LC_X12_Y9_N5  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SRLOAD~0                                       ; LC_X12_Y9_N4  ; 18      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|STEP2                                          ; LC_X12_Y9_N6  ; 48      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK                                             ; LC_X21_Y6_N9  ; 556     ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|PD_RB~0                      ; LC_X12_Y6_N5  ; 17      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|nRD~0                        ; LC_X12_Y7_N0  ; 24      ; Output enable           ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OAM2STEP~2                                               ; LC_X17_Y8_N6  ; 6       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|always0~0                             ; LC_X17_Y7_N9  ; 9       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|always0~1                             ; LC_X17_Y8_N5  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|ORES~0                                                   ; LC_X17_Y10_N9 ; 6       ; Async. clear            ; yes    ; Global Clock         ; GCLK1            ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|SPR_OVERFLOW~2                                           ; LC_X19_Y7_N3  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|WE                                                       ; LC_X19_Y6_N1  ; 2       ; Write enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|comb~2                                                   ; LC_X19_Y7_N8  ; 1       ; Write enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|always0~0                                      ; LC_X19_Y6_N4  ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT0|COUNTER:FIFOCNT[1]|CNT~0 ; LC_X8_Y3_N1   ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT1|COUNTER:FIFOCNT[3]|CNT~0 ; LC_X22_Y4_N4  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT2|COUNTER:FIFOCNT[7]|CNT~1 ; LC_X22_Y10_N6 ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT3|COUNTER:FIFOCNT[7]|CNT~1 ; LC_X11_Y3_N2  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT4|COUNTER:FIFOCNT[0]|CNT~0 ; LC_X8_Y12_N6  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT5|COUNTER:FIFOCNT[2]|CNT~0 ; LC_X19_Y3_N9  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT6|COUNTER:FIFOCNT[2]|CNT~0 ; LC_X23_Y9_N4  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT7|COUNTER:FIFOCNT[3]|CNT~0 ; LC_X23_Y4_N4  ; 16      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_0A|always0~0                     ; LC_X9_Y6_N6   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_0B|always0~0                     ; LC_X5_Y11_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1A|always0~0                     ; LC_X10_Y7_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_1B|always0~0                     ; LC_X10_Y7_N3  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_2A|always0~0                     ; LC_X9_Y6_N3   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_2B|always0~0                     ; LC_X10_Y9_N3  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3A|always0~0                     ; LC_X5_Y5_N4   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_3B|always0~0                     ; LC_X5_Y5_N3   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4A|always0~0                     ; LC_X11_Y11_N6 ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4B|always0~0                     ; LC_X5_Y11_N5  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_5A|always0~0                     ; LC_X16_Y11_N5 ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_5B|always0~0                     ; LC_X10_Y11_N5 ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_6A|always0~0                     ; LC_X10_Y7_N0  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_6B|always0~0                     ; LC_X5_Y12_N6  ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_7A|always0~0                     ; LC_X10_Y10_N4 ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_7B|always0~0                     ; LC_X7_Y9_N8   ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~0                                      ; LC_X11_Y10_N5 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~1                                      ; LC_X11_Y10_N6 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~2                                      ; LC_X11_Y10_N4 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~3                                      ; LC_X11_Y10_N2 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~4                                      ; LC_X16_Y11_N4 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~5                                      ; LC_X11_Y10_N8 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~6                                      ; LC_X11_Y10_N7 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|always0~7                                      ; LC_X10_Y10_N2 ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|comb~0                                           ; LC_X12_Y7_N4  ; 1       ; Write enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[0]|CNT~1                           ; LC_X12_Y7_N2  ; 6       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[0]|CNT~0                           ; LC_X18_Y7_N9  ; 9       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|ZTV~0                                            ; LC_X18_Y6_N9  ; 5       ; Async. clear            ; yes    ; Global Clock         ; GCLK7            ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~0                                        ; LC_X12_Y5_N4  ; 5       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~1                                        ; LC_X20_Y6_N3  ; 21      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~2                                        ; LC_X15_Y6_N4  ; 2       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~3                                        ; LC_X12_Y5_N2  ; 3       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~4                                        ; LC_X12_Y5_N6  ; 5       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~5                                        ; LC_X19_Y4_N8  ; 2       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|R_EN~0                           ; LC_X16_Y10_N5 ; 11      ; Output enable           ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W0                               ; LC_X16_Y10_N4 ; 12      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W1                               ; LC_X16_Y10_N8 ; 14      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W5_1                             ; LC_X15_Y10_N4 ; 10      ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|always0~0                        ; LC_X16_Y10_N2 ; 8       ; Clock enable            ; no     ; --                   ; --               ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|PAR_O                          ; LC_X17_Y8_N0  ; 26      ; Sync. clear, Sync. load ; no     ; --                   ; --               ;
 +---------------------------------------------------------------------------------------+---------------+---------+-------------------------+--------+----------------------+------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                   ;
-+--------------------------------------------+--------------+---------+----------------------+------------------+
-; Name                                       ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
-+--------------------------------------------+--------------+---------+----------------------+------------------+
-; PLL:inst1|altpll:altpll_component|_clk0    ; PLL_1        ; 1010    ; Global Clock         ; GCLK0            ;
-; PLL:inst1|altpll:altpll_component|_clk1    ; PLL_1        ; 6       ; Global Clock         ; GCLK2            ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|ORES~0        ; LC_X19_Y7_N6 ; 6       ; Global Clock         ; GCLK7            ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|ZTV~0 ; LC_X9_Y9_N9  ; 5       ; Global Clock         ; GCLK3            ;
-+--------------------------------------------+--------------+---------+----------------------+------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                    ;
++--------------------------------------------+---------------+---------+----------------------+------------------+
+; Name                                       ; Location      ; Fan-Out ; Global Resource Used ; Global Line Name ;
++--------------------------------------------+---------------+---------+----------------------+------------------+
+; PLL:inst1|altpll:altpll_component|_clk0    ; PLL_1         ; 1010    ; Global Clock         ; GCLK3            ;
+; PLL:inst1|altpll:altpll_component|_clk1    ; PLL_1         ; 4       ; Global Clock         ; GCLK2            ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|ORES~0        ; LC_X17_Y10_N9 ; 6       ; Global Clock         ; GCLK1            ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|ZTV~0 ; LC_X18_Y6_N9  ; 5       ; Global Clock         ; GCLK7            ;
++--------------------------------------------+---------------+---------+----------------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -1018,12 +1017,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------+---------+
 ; Name                                                                                  ; Fan-Out ;
 +---------------------------------------------------------------------------------------+---------+
-; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK~0                                           ; 557     ;
+; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK                                             ; 577     ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|comb~2                                         ; 64      ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|comb~1                                         ; 64      ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|comb~0                                         ; 64      ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|STEP2                                          ; 48      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|BLNK                           ; 31      ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|BLNK                           ; 30      ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SEL_LATCH[7]                                   ; 28      ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SEL_LATCH[5]                                   ; 28      ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SEL_LATCH[3]                                   ; 28      ;
@@ -1035,13 +1034,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|PAR_O                          ; 26      ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|nRD~0                        ; 24      ;
 ; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|PD_FIFO                                        ; 23      ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|Hnn[0]                         ; 21      ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~1                                        ; 21      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|Hnn[0]                         ; 19      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB[1]                                                    ; 19      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB[5]                                                    ; 19      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB[0]                                                    ; 19      ;
+; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SRLOAD~0                                       ; 18      ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|HC                             ; 18      ;
-; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SRLOAD~0                                       ; 17      ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|PD_RB~0                      ; 17      ;
 ; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PICTR[1]                                         ; 17      ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|PD_LATCH[0]                                    ; 16      ;
@@ -1064,24 +1063,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|nVIS                           ; 15      ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[1]|CNT            ; 15      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W1                               ; 14      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[0]|CNT            ; 14      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W6_2                             ; 13      ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[6]|CNT            ; 13      ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[2]|CNT            ; 13      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|R2                               ; 13      ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[0]|CNT            ; 13      ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|FH[0]                                          ; 12      ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|I_OAM2                         ; 12      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB[6]                                                    ; 12      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB[7]                                                    ; 12      ;
 ; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|RPIX                                             ; 12      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|R7                               ; 12      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[6]|CNT            ; 12      ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[8]|CNT            ; 12      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|ADR[1]                           ; 12      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|ADR[0]                           ; 12      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W0                               ; 12      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[3]|CNT            ; 12      ;
-; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_N[1]                                        ; 11      ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|FH[2]                                          ; 11      ;
-; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_P[2]                                        ; 11      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB[2]                                                    ; 11      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB[3]                                                    ; 11      ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAP~0                                                    ; 11      ;
@@ -1093,34 +1090,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[1]                          ; 11      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[3]                          ; 11      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|R_EN~0                           ; 11      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[8]|CNT            ; 11      ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~5                                        ; 10      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W5_1                             ; 10      ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[5]                          ; 10      ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|TVLOAD~0                                         ; 10      ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[4]|CNT            ; 10      ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN                       ; 10      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[4]|CNT            ; 10      ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[7]|CNT            ; 10      ;
-; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_P[3]                                        ; 10      ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[1]|CNT            ; 10      ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PAD[2]~5                                         ; 9       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PAD[2]~4                                         ; 9       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SH3                                            ; 9       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SH7                                            ; 9       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SH5                                            ; 9       ;
+; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SH2                                            ; 9       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|always0~0                             ; 9       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W3                               ; 9       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W6_1                             ; 9       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DBIN[7]                          ; 9       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|R4                               ; 9       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[0]|CNT~0                           ; 9       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[4]|CNT            ; 9       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[6]|CNT            ; 9       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[5]|CNT            ; 9       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[1]|CNT            ; 9       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[6]|CNT            ; 9       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[2]|CNT            ; 9       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[0]|CNT            ; 9       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|CNT[0]                                ; 9       ;
 ; DENDY                                                                                 ; 8       ;
-; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|ALE~5                        ; 8       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|SPR_OVERFLOW~2                                           ; 8       ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PD_SEL                                         ; 8       ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PD_SR                                          ; 8       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|Hnn[4]                         ; 8       ;
@@ -1152,17 +1146,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[7]|CNT            ; 8       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[3]|CNT            ; 8       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PARR                                             ; 8       ;
-; inst3                                                                                 ; 8       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[2]|CNT            ; 8       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[3]|CNT            ; 8       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[7]|CNT            ; 8       ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|W7Q[3]                       ; 8       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|CNT[1]                                ; 8       ;
-; MODE                                                                                  ; 7       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[2]|CNT                             ; 7       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|THLOAD~0                                         ; 7       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[5]|CNT            ; 7       ;
+; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|OBE                                    ; 7       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[8]|CNT            ; 7       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[4]|CNT            ; 7       ;
+; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|BGE                                    ; 7       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|BLNK_FF                        ; 7       ;
+; inst3                                                                                 ; 7       ;
+; MODE                                                                                  ; 6       ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|W7Q[1]                       ; 6       ;
-; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|always0~0                                      ; 6       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SPR~10                                         ; 6       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAM2STEP~2                                               ; 6       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SPR~0                                          ; 6       ;
@@ -1174,11 +1172,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[2]|CNT                             ; 6       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[0]|CNT                             ; 6       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[0]|CNT~1                           ; 6       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|BPORCH_FF~0                    ; 6       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|F_AT~0                         ; 6       ;
-; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|OBE                                    ; 6       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[0]|CNT                             ; 6       ;
-; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|BGE                                    ; 6       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|BLNK_FF                        ; 6       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|CNT[3]                                ; 6       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT7|COUNTER:FIFOCNT[0]|CNT   ; 5       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT6|COUNTER:FIFOCNT[0]|CNT   ; 5       ;
@@ -1195,21 +1191,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SPR~12                                         ; 5       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SPR~11                                         ; 5       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SPR~7                                          ; 5       ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|MODE4~0                                                  ; 5       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|M4~0                                                     ; 5       ;
 ; RP2C02_LITE:inst|PIX_MUX:MOD_PIX_MUX|OCOL~0                                           ; 5       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~4                                        ; 5       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|COUNTER:OAM2CNT[2]|CNT                                   ; 5       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|COUNTER:OAM2CNT[1]|CNT                                   ; 5       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~4                                        ; 5       ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|CLPB_LATCH                                     ; 5       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~0                                        ; 5       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[1]|CNT                             ; 5       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[4]|CNT                             ; 5       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~0                                        ; 5       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|TV_IN                                            ; 5       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|H_LINE23~1                     ; 5       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|H_LINE23~2                     ; 5       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|nPICTURE                       ; 5       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|NFO_OUT                        ; 5       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|BPORCH_FF~0                    ; 5       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[3]|CNT                             ; 5       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[4]|CNT                             ; 5       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|Hn[2]                          ; 5       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[1]|CNT                             ; 5       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|N_HB                           ; 5       ;
@@ -1268,11 +1263,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[2]|C_OUT~0        ; 4       ;
 ; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|W1R[0]                                 ; 4       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|NFO2~0                         ; 4       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|NFO_OUT                        ; 4       ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|R7Q[2]                       ; 4       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL                          ; 4       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|H_LINE0~0                      ; 4       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[4]|CNT                             ; 4       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:NTVCNT|CNT                               ; 4       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|V_LINE5~0                      ; 4       ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|R7Q[4]                       ; 4       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|CNT[6]                                ; 4       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|CNT[2]                                ; 4       ;
@@ -1319,6 +1314,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT4|WideNor0~0               ; 3       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT4|COUNTER:FIFOCNT[2]|CNT   ; 3       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT4|COUNTER:FIFOCNT[6]|CNT   ; 3       ;
+; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|always0~0                                      ; 3       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT0|WideNor0~1               ; 3       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT0|COUNTER:FIFOCNT[4]|CNT   ; 3       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|FIFO_HPOSCNT:HPOSCNT0|WideNor0~0               ; 3       ;
@@ -1344,10 +1340,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|OMFG~0                                         ; 3       ;
 ; RP2C02_LITE:inst|PIX_MUX:MOD_PIX_MUX|ZCOLN[1]                                         ; 3       ;
 ; RP2C02_LITE:inst|PIX_MUX:MOD_PIX_MUX|ZCOLN[0]                                         ; 3       ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|COUNTER:OAM2CNT[4]|CNT                                   ; 3       ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|OFETCH~0                                                 ; 3       ;
 ; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|I1_32                                  ; 3       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:THCNT[1]|C_OUT~0                         ; 3       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|COUNTER:OAM2CNT[4]|CNT                                   ; 3       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~3                                        ; 3       ;
 ; inst8[0]                                                                              ; 3       ;
 ; inst8[1]                                                                              ; 3       ;
@@ -1359,18 +1354,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; inst8[6]                                                                              ; 3       ;
 ; inst8[7]                                                                              ; 3       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:FVCNT[2]|CNT                             ; 3       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|NTV_IN                                           ; 3       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|FV_IN                                            ; 3       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:VCNT[5]|C_OUT~0        ; 3       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|ODDEVEN[0]                     ; 3       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|FTB_OUT                        ; 3       ;
 ; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|O8_16                                  ; 3       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|W62[1]                                           ; 3       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W0~0                             ; 3       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:NTHCNT|CNT                               ; 3       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:NTVCNT|CNT                               ; 3       ;
 ; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|DB_PARR                                          ; 3       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|V_LINE4~0                      ; 3       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~0                     ; 3       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|V_LINE5~0                      ; 3       ;
-; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|PCLK_P[1]                                        ; 3       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|INT_FF                         ; 3       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF                       ; 3       ;
 ; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|OVS[4]~2                                       ; 3       ;
@@ -1422,6 +1416,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SPR~3                                          ; 2       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_0A|QS                            ; 2       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|W4Q[3]                                                   ; 2       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~5                                        ; 2       ;
 ; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|DO_COPY~0                                      ; 2       ;
 ; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|CLATCH[3]                                      ; 2       ;
 ; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|CLATCH[1]                                      ; 2       ;
@@ -1432,13 +1427,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|REG2000_2001:MOD_REG2000_2001|CLIPOR                                 ; 2       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OMSTEP[1]                                                ; 2       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OMSTEP[0]                                                ; 2       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|WE                                                       ; 2       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OFETCH~0                                                 ; 2       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|always0~1                        ; 2       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|DWR1                             ; 2       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|R2DB5~0                                                  ; 2       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OMFG_LATCH                                               ; 2       ;
 ; RP2C02_LITE:inst|OBJ_EVAL:MOD_OBJ_EVAL|SPR0_EV                                        ; 2       ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|BGC2[1]                                        ; 2       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|V_LINE4~1                      ; 2       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|V_LINE4~2                      ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|W62_FF                                           ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|ODDEVEN[1]                     ; 2       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|R2DB5                                                    ; 2       ;
@@ -1449,19 +1446,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|PIX_MUX:MOD_PIX_MUX|CGA[1]~1                                         ; 2       ;
 ; RP2C02_LITE:inst|PIX_MUX:MOD_PIX_MUX|CGA[0]~0                                         ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|COUNTER:TVCNT[1]|C_OUT~0                         ; 2       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|THZ~1                                            ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|always0~2                                        ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|EEV_IN                         ; 2       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|FV_IN                                            ; 2       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|NTH_IN                                           ; 2       ;
-; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|THZ~1                                            ; 2       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|TVZ                                              ; 2       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|NTV_IN~0                                         ; 2       ;
+; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|TVZB                                             ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|TVZ~0                                            ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|H_LINE5~0                      ; 2       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|H_LINE23~0                     ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|COUNTER:HCNT[1]|C_OUT~0        ; 2       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|W7                               ; 2       ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|W7_FF                        ; 2       ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|R7_FF                        ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|H_LINE7~0                      ; 2       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|FTB_OUT                        ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|OBOUT[0]                                         ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|TVSTEP~0                                         ; 2       ;
 ; RP2C02_LITE:inst|REGISTER_SELECT:MOD_REGISTER_SELECT|RnWR                             ; 2       ;
@@ -1478,13 +1476,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|NFO1                           ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|NFO2                           ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSET[0]                        ; 2       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~3                     ; 2       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|V_LINE4~1                      ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|FPORCH_FF                      ; 2       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~5                     ; 2       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~4                     ; 2       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~3                     ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~2                     ; 2       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|RESCL_IN~1                     ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~2                     ; 2       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~1                     ; 2       ;
-; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~0                     ; 2       ;
+; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|DIV[1]                                           ; 2       ;
+; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|DIV2n~0                                          ; 2       ;
 ; RP2C02_LITE:inst|LOCAL_BUS_CONTROL:MOD_LOCAL_BUS_CONTROL|R7Q[3]                       ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PAD[8]                                           ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PAD[9]                                           ; 2       ;
@@ -1493,6 +1493,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PAD[12]                                          ; 2       ;
 ; RP2C02_LITE:inst|PAR_GEN:MOD_PAR_GEN|PAD[13]                                          ; 2       ;
 ; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|HSYNC                          ; 2       ;
+; RP2C02_LITE:inst|CLK_DIV:MOD_CLK_DIV|DIV[2]                                           ; 2       ;
 ; A[2]                                                                                  ; 1       ;
 ; A[1]                                                                                  ; 1       ;
 ; A[0]                                                                                  ; 1       ;
@@ -1507,7 +1508,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DB~2                                                                                  ; 1       ;
 ; DB~1                                                                                  ; 1       ;
 ; DB~0                                                                                  ; 1       ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|comb~4                                                   ; 1       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|comb~2                                                   ; 1       ;
+; RP2C02_LITE:inst|TIMING_GENERATOR:MOD_TIMING_GENERATOR|VSYNC_FF~10                    ; 1       ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|PDTA[0]                                        ; 1       ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TB|QS_IN[0]                      ; 1       ;
 ; RP2C02_LITE:inst|BG_COLOR:MOD_BG_COLOR|SHIFTREG:SREG_TA|QS_IN[0]                      ; 1       ;
@@ -1963,8 +1965,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_6A|QS_IN[7]                      ; 1       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4A|QS_IN[7]                      ; 1       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|W4Q[0]                                                   ; 1       ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|C_OUT~1                               ; 1       ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_COUNTER:OAMCNT|C_OUT~0                               ; 1       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OMV_LATCH~1                                              ; 1       ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OMV_LATCH~0                                              ; 1       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB2[1]                                                   ; 1       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB2[2]                                                   ; 1       ;
 ; RP2C02_LITE:inst|OAM:MOD_OAM|OB2[3]                                                   ; 1       ;
@@ -2015,9 +2017,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|SHIFTREG:SREG_4B|QS                            ; 1       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|ZCOL[1]~10                                     ; 1       ;
 ; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|ATR7[2]                                        ; 1       ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|ZCOL[4]~8                                      ; 1       ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|ZCOL[4]~7                                      ; 1       ;
-; RP2C02_LITE:inst|OBJ_FIFO:MOD_OBJ_FIFO|ATR2[2]                                        ; 1       ;
 +---------------------------------------------------------------------------------------+---------+
 
 
@@ -2026,10 +2025,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-----------------------+-------------+
 ; Name                                                                                                                                           ; Type ; Mode        ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF                   ; Location    ;
 +------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-----------------------+-------------+
-; RP2C02_LITE:inst|OAM:MOD_OAM|OAM2_RAM:MOD_OAM2_RAM|altsyncram:altsyncram_component|altsyncram_hsa1:auto_generated|ALTSYNCRAM                   ; AUTO ; Single Port ; Single Clock ; 32           ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 256  ; 32                          ; 8                           ; --                          ; --                          ; 256                 ; 1    ; None                  ; M4K_X13_Y8  ;
-; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_RAM:MOD_OAM_RAM|altsyncram:altsyncram_component|altsyncram_cua1:auto_generated|ALTSYNCRAM                     ; AUTO ; Single Port ; Single Clock ; 256          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 2048 ; 256                         ; 8                           ; --                          ; --                          ; 2048                ; 1    ; None                  ; M4K_X13_Y10 ;
-; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM|altsyncram:altsyncram_component|altsyncram_fsa1:auto_generated|ALTSYNCRAM     ; AUTO ; Single Port ; Single Clock ; 32           ; 6            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 192  ; 32                          ; 6                           ; --                          ; --                          ; 192                 ; 1    ; None                  ; M4K_X13_Y9  ;
-; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; Single Clock ; 256          ; 18           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4608 ; 256                         ; 18                          ; --                          ; --                          ; 4608                ; 1    ; PALETTE_RGB_TABLE.mif ; M4K_X13_Y1  ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OAM2_RAM:MOD_OAM2_RAM|altsyncram:altsyncram_component|altsyncram_hsa1:auto_generated|ALTSYNCRAM                   ; AUTO ; Single Port ; Single Clock ; 32           ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 256  ; 32                          ; 8                           ; --                          ; --                          ; 256                 ; 1    ; None                  ; M4K_X13_Y12 ;
+; RP2C02_LITE:inst|OAM:MOD_OAM|OAM_RAM:MOD_OAM_RAM|altsyncram:altsyncram_component|altsyncram_cua1:auto_generated|ALTSYNCRAM                     ; AUTO ; Single Port ; Single Clock ; 256          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 2048 ; 256                         ; 8                           ; --                          ; --                          ; 2048                ; 1    ; None                  ; M4K_X13_Y7  ;
+; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RAM:MOD_PALETTE_RAM|altsyncram:altsyncram_component|altsyncram_fsa1:auto_generated|ALTSYNCRAM     ; AUTO ; Single Port ; Single Clock ; 32           ; 6            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 192  ; 32                          ; 6                           ; --                          ; --                          ; 192                 ; 1    ; None                  ; M4K_X13_Y4  ;
+; RP2C02_LITE:inst|PALETTE:MOD_PALETTE|PALETTE_RGB_TABLE:MOD_RGB_TABLE|altsyncram:altsyncram_component|altsyncram_9u41:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; Single Clock ; 256          ; 18           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4608 ; 256                         ; 18                          ; --                          ; --                          ; 4608                ; 1    ; PALETTE_RGB_TABLE.mif ; M4K_X13_Y2  ;
 +------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-----------------------+-------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -2039,126 +2038,130 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------+-------------------------+
 ; Interconnect Resource Type ; Usage                   ;
 +----------------------------+-------------------------+
-; C4s                        ; 1,203 / 8,840 ( 14 % )  ;
-; Direct links               ; 168 / 11,506 ( 1 % )    ;
+; C4s                        ; 1,158 / 8,840 ( 13 % )  ;
+; Direct links               ; 185 / 11,506 ( 2 % )    ;
 ; Global clocks              ; 4 / 8 ( 50 % )          ;
-; LAB clocks                 ; 30 / 156 ( 19 % )       ;
-; LUT chains                 ; 8 / 2,619 ( < 1 % )     ;
-; Local interconnects        ; 1,968 / 11,506 ( 17 % ) ;
+; LAB clocks                 ; 26 / 156 ( 17 % )       ;
+; LUT chains                 ; 10 / 2,619 ( < 1 % )    ;
+; Local interconnects        ; 1,902 / 11,506 ( 17 % ) ;
 ; M4K buffers                ; 40 / 468 ( 9 % )        ;
-; R4s                        ; 1,147 / 7,520 ( 15 % )  ;
+; R4s                        ; 1,158 / 7,520 ( 15 % )  ;
 +----------------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +--------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 7.27) ; Number of LABs  (Total = 167) ;
+; Number of Logic Elements  (Average = 7.67) ; Number of LABs  (Total = 158) ;
 +--------------------------------------------+-------------------------------+
-; 1                                          ; 36                            ;
-; 2                                          ; 2                             ;
-; 3                                          ; 7                             ;
+; 1                                          ; 26                            ;
+; 2                                          ; 4                             ;
+; 3                                          ; 4                             ;
 ; 4                                          ; 2                             ;
-; 5                                          ; 1                             ;
-; 6                                          ; 4                             ;
-; 7                                          ; 7                             ;
-; 8                                          ; 6                             ;
-; 9                                          ; 1                             ;
-; 10                                         ; 101                           ;
+; 5                                          ; 2                             ;
+; 6                                          ; 5                             ;
+; 7                                          ; 5                             ;
+; 8                                          ; 7                             ;
+; 9                                          ; 3                             ;
+; 10                                         ; 100                           ;
 +--------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 1.80) ; Number of LABs  (Total = 167) ;
+; LAB-wide Signals  (Average = 1.83) ; Number of LABs  (Total = 158) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 3                             ;
-; 1 Clock                            ; 161                           ;
-; 1 Clock enable                     ; 85                            ;
+; 1 Async. clear                     ; 2                             ;
+; 1 Clock                            ; 155                           ;
+; 1 Clock enable                     ; 80                            ;
 ; 1 Sync. clear                      ; 2                             ;
-; 1 Sync. load                       ; 2                             ;
-; 2 Clock enables                    ; 46                            ;
-; 2 Clocks                           ; 2                             ;
+; 1 Sync. load                       ; 1                             ;
+; 2 Clock enables                    ; 49                            ;
 +------------------------------------+-------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +---------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 7.75) ; Number of LABs  (Total = 167) ;
+; Number of Signals Sourced  (Average = 8.17) ; Number of LABs  (Total = 158) ;
 +---------------------------------------------+-------------------------------+
 ; 0                                           ; 0                             ;
-; 1                                           ; 36                            ;
-; 2                                           ; 2                             ;
-; 3                                           ; 7                             ;
+; 1                                           ; 26                            ;
+; 2                                           ; 4                             ;
+; 3                                           ; 4                             ;
 ; 4                                           ; 2                             ;
-; 5                                           ; 1                             ;
-; 6                                           ; 4                             ;
-; 7                                           ; 7                             ;
-; 8                                           ; 0                             ;
-; 9                                           ; 2                             ;
-; 10                                          ; 72                            ;
-; 11                                          ; 17                            ;
-; 12                                          ; 6                             ;
-; 13                                          ; 7                             ;
-; 14                                          ; 1                             ;
+; 5                                           ; 2                             ;
+; 6                                           ; 5                             ;
+; 7                                           ; 4                             ;
+; 8                                           ; 4                             ;
+; 9                                           ; 4                             ;
+; 10                                          ; 70                            ;
+; 11                                          ; 18                            ;
+; 12                                          ; 4                             ;
+; 13                                          ; 5                             ;
+; 14                                          ; 3                             ;
 ; 15                                          ; 2                             ;
-; 16                                          ; 1                             ;
+; 16                                          ; 0                             ;
+; 17                                          ; 0                             ;
+; 18                                          ; 1                             ;
 +---------------------------------------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 5.03) ; Number of LABs  (Total = 167) ;
+; Number of Signals Sourced Out  (Average = 5.20) ; Number of LABs  (Total = 158) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 42                            ;
-; 2                                               ; 19                            ;
-; 3                                               ; 10                            ;
-; 4                                               ; 5                             ;
-; 5                                               ; 8                             ;
-; 6                                               ; 10                            ;
-; 7                                               ; 28                            ;
-; 8                                               ; 21                            ;
-; 9                                               ; 10                            ;
+; 1                                               ; 35                            ;
+; 2                                               ; 20                            ;
+; 3                                               ; 7                             ;
+; 4                                               ; 9                             ;
+; 5                                               ; 7                             ;
+; 6                                               ; 9                             ;
+; 7                                               ; 23                            ;
+; 8                                               ; 25                            ;
+; 9                                               ; 9                             ;
 ; 10                                              ; 7                             ;
 ; 11                                              ; 3                             ;
-; 12                                              ; 1                             ;
+; 12                                              ; 2                             ;
 ; 13                                              ; 1                             ;
-; 14                                              ; 2                             ;
+; 14                                              ; 0                             ;
+; 15                                              ; 0                             ;
+; 16                                              ; 0                             ;
+; 17                                              ; 0                             ;
+; 18                                              ; 1                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 11.59) ; Number of LABs  (Total = 167) ;
+; Number of Distinct Inputs  (Average = 11.79) ; Number of LABs  (Total = 158) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 2                             ;
-; 3                                            ; 19                            ;
-; 4                                            ; 9                             ;
-; 5                                            ; 5                             ;
-; 6                                            ; 11                            ;
+; 2                                            ; 3                             ;
+; 3                                            ; 5                             ;
+; 4                                            ; 12                            ;
+; 5                                            ; 3                             ;
+; 6                                            ; 17                            ;
 ; 7                                            ; 3                             ;
-; 8                                            ; 6                             ;
-; 9                                            ; 6                             ;
-; 10                                           ; 2                             ;
-; 11                                           ; 10                            ;
-; 12                                           ; 11                            ;
+; 8                                            ; 8                             ;
+; 9                                            ; 5                             ;
+; 10                                           ; 3                             ;
+; 11                                           ; 6                             ;
+; 12                                           ; 13                            ;
 ; 13                                           ; 25                            ;
-; 14                                           ; 4                             ;
-; 15                                           ; 7                             ;
+; 14                                           ; 5                             ;
+; 15                                           ; 6                             ;
 ; 16                                           ; 6                             ;
-; 17                                           ; 7                             ;
-; 18                                           ; 9                             ;
-; 19                                           ; 5                             ;
-; 20                                           ; 16                            ;
-; 21                                           ; 3                             ;
-; 22                                           ; 1                             ;
+; 17                                           ; 8                             ;
+; 18                                           ; 12                            ;
+; 19                                           ; 3                             ;
+; 20                                           ; 10                            ;
+; 21                                           ; 5                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -2185,7 +2188,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Apr 06 18:50:55 2026
+    Info: Processing started: Thu Apr 16 21:13:41 2026
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off PPU_LITE -c PPU_LITE
 Info: Selected device EP1C3T100C8 for design "PPU_LITE"
 Info: Implementing parameter values for PLL "PLL:inst1|altpll:altpll_component|pll"
@@ -2237,7 +2240,7 @@ Info: Fitter placement was successful
 Info: Fitter placement operations ending: elapsed time is 00:00:01
 Info: Fitter routing operations beginning
 Info: Router estimated average interconnect usage is 15% of the available device resources
-    Info: Router estimated peak interconnect usage is 17% of the available device resources in the region that extends from location X0_Y0 to location X13_Y14
+    Info: Router estimated peak interconnect usage is 17% of the available device resources in the region that extends from location X14_Y0 to location X27_Y14
 Info: Fitter routing operations ending: elapsed time is 00:00:01
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
@@ -2247,17 +2250,17 @@ Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
 Info: Completed Auto Delay Chain Operation
 Info: Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
-Info: Generated suppressed messages file D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.fit.smsg
+Info: Generated suppressed messages file D:/SRC/PPU_LITE/PPU_LITE.fit.smsg
 Info: Quartus II Fitter was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 297 megabytes
-    Info: Processing ended: Mon Apr 06 18:50:59 2026
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 338 megabytes
+    Info: Processing ended: Thu Apr 16 21:13:46 2026
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/RadioSoft/VIDEO GAME/DENDY/SRC/PPU_LITE/PPU_LITE.fit.smsg.
+The suppressed messages can be found in D:/SRC/PPU_LITE/PPU_LITE.fit.smsg.
 
 

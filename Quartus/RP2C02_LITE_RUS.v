@@ -1227,7 +1227,7 @@ reg OMV_LATCH, TMV_LATCH;
 reg OAMCTR2;
 reg [7:0]OB2;
 // Комбинаторика
-wire WE_EN, WE, OFETCH, OAP, SPR_OVERFLOW, OAMSTEP, M4, OAM2STEP, ORES, OMV;
+wire WE_EN, WE, OFETCH, OAP, SPR_OVERFLOW, OAMSTEP, M4, OAM2STEP, ORES;
 assign WE_EN = ~( PCLK | BLNK | nVIS | OAMCTR2 | SPR_OV | ~Hnn0 );
 assign WE = WE_EN | OFETCH;
 assign OFETCH = ~( ~W4Q[2] | W4Q[4] );
@@ -1243,8 +1243,8 @@ assign OBDZ[2:0] = OAMQ[4:2] & {3{ ~( OAM1ADR[1] & ~OAM1ADR[0] )}};
 wire [4:0]OAM2ADR, OAM2Cout;
 wire [7:0]OAM1ADR;
 // OAM COUNTER
-//                  Clk  MODE  Reset LOAD   STEP    DATA      CNT_OUT      C_OUT
-OAM_COUNTER OAMCNT (Clk, M4,   PAR_O, W3, OAMSTEP, DBIN[7:0], OAM1ADR[7:0], OMV);
+//                  Clk  MODE  Reset LOAD   STEP    DATA      CNT_OUT
+OAM_COUNTER OAMCNT (Clk, M4,   PAR_O, W3, OAMSTEP, DBIN[7:0], OAM1ADR[7:0]);
 // OAM2 COUNTER
 //                    Clk   F2    DIR             C_IN        Reset  LOAD     STEP   DATA    CNT_OUT        C_OUT
 COUNTER OAM2CNT[4:0] (Clk, nPCLK, 1'b1, {OAM2Cout[3:0], 1'b1}, ORES, 1'b0, OAM2STEP, 5'h00, OAM2ADR[4:0], OAM2Cout[4:0]);
@@ -1272,7 +1272,7 @@ always @(posedge Clk) begin
          ORES_LATCH  <= nEVAL;
          OVF_LATCH   <= ~OAMCTR2;
          OMFG_LATCH  <= OMFG;
-         OMV_LATCH   <= OMV;
+         OMV_LATCH   <= M4 ? &OAM1ADR[7:2] & ~OAM1ADR[1] & ~OAM1ADR[0] : &OAM1ADR[7:0];
          TMV_LATCH   <= OAM2Cout[4];
                      end
                        end
@@ -1606,8 +1606,7 @@ input LOAD,          // Загрузка данных
 input STEP,          // Шаг счетчика
 input  [7:0]DATA,    // Вход данных
 // Выходы
-output reg [7:0]CNT, // Выход счетчика
-output C_OUT         // Перенос счетчика
+output reg [7:0]CNT  // Выход счетчика
 );
 reg [7:0]CNT1;
 wire [7:0]OAM1Cout;
@@ -1616,8 +1615,6 @@ wire [5:0]OAM4Cout;
 assign OAM4Cout[5:0] = CNT[7:2] & {OAM4Cout[4:0],1'b1};
 wire [5:0]CNT4;
 assign CNT4[5:0]  = CNT[7:2] ^ {OAM4Cout[4:0],1'b1};
-assign C_OUT = (MODE4) ? CNT[7] & CNT[6] & CNT[5] & CNT[4] & CNT[3] & CNT[2] & ~CNT[1] & ~CNT[0]
-                       : CNT[7] & CNT[6] & CNT[5] & CNT[4] & CNT[3] & CNT[2] &  CNT[1] &  CNT[0];
 //Логика
 always @(posedge Clk) begin
      if (   LOAD | STEP | Reset ) CNT[7:0]  <= Reset ? 8'h00 : LOAD ? DATA[7:0] : CNT1[7:0];
