@@ -1,6 +1,6 @@
 /*
  ===============================================================================================
- *                             Copyright (C) 2026  EMU-RUSSIA.COM
+ *                             Copyright (C) 2026  andkorzh
  *
  *
  *                This program is free software; you can redistribute it and/or
@@ -38,6 +38,7 @@ input Clk2,        // Clock 21.477/26.601 for divider
 // Inputs
 input MODE,        // PAL/NTSC mode
 input DENDY,       // DENDY mode (for PAL)
+input ODD_EN,      // Enable ODDEVEN
 input nRES,        // Reset
 input PALSEL0,     // Palette select
 input PALSEL1,     // Palette select
@@ -58,7 +59,6 @@ output SYNC,       // Composite sync output
 output HSYNC,      // horizontal synchronization
 output VSYNC,      // vertical synchronization
 output SUBCLK      // Subcarrier clock
-
 );
 // Module connections
 wire PCLK;
@@ -218,6 +218,7 @@ PCLK,
 nPCLK,
 MODE,
 DENDY,
+ODD_EN,
 OBCLIP,
 BGCLIP,
 BLACK,
@@ -437,32 +438,31 @@ endmodule
 // CLK DIVIDER Module
 //===============================================================================================
 module CLK_DIV(
-input Clk2,         // MASTER clock
+input Clk2,          // MASTER clock
 // Inputs
-input MODE,         // PAL/NTSC mode
-input nRES,         // Reset
+input MODE,          // PAL/NTSC mode
+input nRES,          // Reset
 // Outputs
-output  PCLK,       //  PIXEL CLOCK
-output nPCLK,       // ~PIXEL CLOCK
-output reg SUBCLK   // Subcarrier clock
+output  PCLK,        //  PIXEL CLOCK
+output nPCLK,        // ~PIXEL CLOCK
+output reg SUBCLK    // Subcarrier clock
 );
 // Variables
-reg [1:0]PCLK_N;
-reg [3:0]PCLK_P;
+reg DIV2n;
+reg [2:0]DIV;
 reg [1:0]SUB;
 // Combinatorics
-assign PCLK  =   PCLK_N[1] | PCLK_P[2] | PCLK_P[3];
-assign nPCLK = ~(PCLK_N[1] | PCLK_P[2] | PCLK_P[3]);
+assign PCLK  =   DIV[2] | DIV2n | (~MODE & DIV[1]);
+assign nPCLK = ~(DIV[2] | DIV2n | (~MODE & DIV[1]));
 // Logics
 always @(posedge Clk2) begin
         // PCLK DIVIDER
-        PCLK_N[1:0] <= {PCLK_N[0],   ~( ~nRES |  MODE |   PCLK_N[1] )};
-        PCLK_P[2:0] <= {PCLK_P[1:0], ~( ~nRES | ~MODE | ( PCLK_P[1] | PCLK_P[2] ))};
+        DIV[2:0] <= { DIV[1] & MODE, DIV[0], ~( ~nRES | DIV[2] | DIV[1] )};
         // SUBCARRIER DIVIDER
         {SUBCLK, SUB[1:0]} <= {SUB[1:0], ~( SUBCLK | ~nRES )};
                         end
 always @(negedge Clk2) begin
-         PCLK_P[3] <= PCLK_P[1];
+         DIV2n <= DIV[1] & MODE;
                         end
 endmodule
 
@@ -477,7 +477,7 @@ input nDBE,            // PPU access strobe
 input RnW,             // R/W circulation direction
 input [2:0]A,          // Register address
 // Outputs
-output reg [7:0]DBIN,  // PPU open bus
+output reg [7:0]DBIN,  // PPU Register Open Bus
 output R_EN,           // CPU Data Bus Tristate Management
 output reg W0,         // Write to register     $2000
 output reg W1,         // Write to register     $2001
@@ -535,7 +535,7 @@ input nPCLK,         // Pixel clock
 input W0,            // Write to register $2000
 input W1,            // Write to register $2001
 input RC,            // Clearing registers
-input [7:0]DBIN,     // PPU open bus
+input [7:0]DBIN,     // PPU Register Open Bus
 input nVIS,          // Visible part of the line
 input CLIP_O,        // Blanking the left column of 8 screen pixels for sprites
 input CLIP_B,        // Blanking the left column of 8 screen dots for the
@@ -605,7 +605,7 @@ input [2:0]R2DB,  // $2002 data
 input XRB,        // VRAM Read Selection
 input PD_RB,      // VRAM Bus Bridge Strobe
 input RC,         // Clearing registers
-input [7:0]DBIN,  // PPU open bus
+input [7:0]DBIN,  // PPU Register Open Bus
 input [7:0]PD,    // PPU Graphics Data Bus
 // Outputs
 output [7:0]DB    // Output data for reading PPU from CPU side
@@ -637,6 +637,7 @@ input nPCLK,         // Pixel clock
 // Inputs
 input MODE,          // PAL mode
 input DENDY,         // DENDY mode
+input ODD_EN,        // Enable ODDEVEN
 input OBCLIP,        // Controls the blanking of the left 8 sprite dots
 input BGCLIP,        // Controls the blanking of the left 8 background dots
 input BLACK,         // Disabling rendering
@@ -711,9 +712,9 @@ wire VC, HIN5;
 assign HIN5 = H[4] & H[3] & H[2] & H[1] & H[0];
 assign VC = HC | ~VC_LATCH;
 // HV COUNTERS
-//                Clk   F2    DIR                   C_IN                  Reset     LOAD     STEP   DATA   CNT_OUT    C_OUT
-COUNTER HCNT[8:0](Clk, nPCLK, 1'b1, {HCout[7:5], HIN5, HCout[3:0], 1'b1}, ~nRES, ~HC & PCLK, PCLK, 9'h000, H[8:0],  HCout[8:0]);
-COUNTER VCNT[8:0](Clk, nPCLK, 1'b1, {VCout[7:0], H_LINE23},               ~nRES, ~VC & PCLK, PCLK, 9'h000, V[8:0],  VCout[8:0]);
+//                Clk   F2    DIR                   C_IN                  Reset     LOAD     STEP   DATA   CNT_OUT   C_OUT
+COUNTER HCNT[8:0](Clk, nPCLK, 1'b1, {HCout[7:5], HIN5, HCout[3:0], 1'b1}, ~nRES, ~HC & PCLK, PCLK, 9'h000, H[8:0], HCout[8:0]);
+COUNTER VCNT[8:0](Clk, nPCLK, 1'b1, {VCout[7:0], H_LINE23},               ~nRES, ~VC & PCLK, PCLK, 9'h000, V[8:0], VCout[8:0]);
 //HV PLA (NTSC/PAL)
 wire H_LINE0, H_LINE1, H_LINE2, H_LINE5, H_LINE6, H_LINE7, H_LINE17, H_LINE18;
 wire H_LINE20, H_LINE21, H_LINE22, H_LINE23;
@@ -741,7 +742,7 @@ assign V_LINE3N = ~( ~V[7] | ~V[6] | ~V[5] | ~V[4] |  V[3] |  V[2] |  V[1] | ~V[
 assign V_LINE3P = ~( ~V[7] | ~V[6] | ~V[5] | ~V[4] |  V[3] |  V[2] |  V[1] |  V[0] | ~MODE );                  // V240 PAL
 assign V_LINE4  = ~(  V[8] |  V[7] |  V[6] |  V[5] |  V[4] |  V[3] |  V[2] |  V[1] |  V[0] );                  // V000
 assign V_LINE5  = ~( ~V[7] | ~V[6] | ~V[5] | ~V[4] |  V[3] |  V[2] |  V[1] |  V[0] );                          // V240
-assign VLINE241 = ~( ~V[8] | ~V[7] | ~V[6] | ~V[5] | ~V[4] |  V[3] |  V[2] |  V[1] | ~V[0] | ~MODE |  DENDY ); // V241 PAL INT
+assign VLINE241 = ~( ~V[7] | ~V[6] | ~V[5] | ~V[4] |  V[3] |  V[2] |  V[1] | ~V[0] | ~MODE | DENDY );          // V241 PAL INT
 assign VLINE291 = ~( ~V[8] |  V[7] |  V[6] | ~V[5] |  V[4] |  V[3] |  V[2] | ~V[1] | ~V[0] | ~MODE | ~DENDY ); // V291 DENDY INT
 assign VLINE311 = ~( ~V[8] |  V[7] |  V[6] | ~V[5] | ~V[4] |  V[3] | ~V[2] | ~V[1] | ~V[0] | ~MODE );          // V311 PAL
 //FETCH CONTROL
@@ -796,7 +797,7 @@ always @(posedge Clk) begin
          VSET[1]   <= ~VSET[0];
                     end
          if (nPCLK) begin
-         HC        <= ~( H_LINE23 | ( H_LINE5 & ~ODDEVEN[0] & RESCL & ~MODE ));
+         HC        <= ~( H_LINE23 | ( H_LINE5 & ~ODDEVEN[0] & RESCL & ~MODE & ODDEVEN ));
          VC_LATCH  <= V_LINE2N | VLINE311;
          Hn[5:0]   <= H[5:0];
          SEV_IN    <= H_LINE2;
@@ -912,7 +913,7 @@ input N_FO,       // Activate graphics shift
 input [7:0]PD,    // PPU Graphics Data Bus
 input THO1,       // Horizontal coordinate in attribute
 input TVO1,       // Vertical coordinate in attribute
-input [2:0]DBIN,  // PPU open bus
+input [2:0]DBIN,  // PPU Register Open Bus
 input W5_1,       // Write to the fine horizontal scroll register $2005.1
 input RC,         // Clearing registers
 // Outputs
@@ -1000,7 +1001,7 @@ input SH2,            // Sprite attribute reading phase
 input [3:0]OV,        // Sprite graphic line number
 input [7:0]OB,        // Sprite data bus
 input [7:0]PD,        // PPU Graphics Data Bus
-input [7:0]DBIN,      // PPU open bus
+input [7:0]DBIN,      // PPU Register Open Bus
 input O8_16,          // Sprite height (0 - 8 points, 1 - 16 points)
 input OBSEL,          // MSB addresses of objects
 input BGSEL,          // MSB background addresses
@@ -1209,7 +1210,7 @@ input nEVAL,        // Reset OAM2 counter and start OAM2 processing
 input PAR_O,        // Fetch sprite graphics
 input OMFG,         // Signal to copy the current comparison sprite in OAM2
 input RESCL,        // Prerender line (reset all fetch schemes)
-input [7:0]DBIN,    // PPU open bus
+input [7:0]DBIN,    // PPU Register Open Bus
 // Outputs
 output reg [7:0]OB, // Sprite data bus
 output reg R2DB5,   // Sprite Overflow Flag
@@ -1226,33 +1227,25 @@ reg OMV_LATCH, TMV_LATCH;
 reg OAMCTR2;
 reg [7:0]OB2;
 // Combinatorics
-wire WE_EN;
+wire WE_EN, WE, OFETCH, OAP, SPR_OVERFLOW, OAMSTEP, M4, OAM2STEP, ORES;
 assign WE_EN = ~( PCLK | BLNK | nVIS | OAMCTR2 | SPR_OV | ~Hnn0 );
-wire WE;
 assign WE = WE_EN | OFETCH;
-wire OFETCH;
 assign OFETCH = ~( ~W4Q[2] | W4Q[4] );
-wire OAP;
 assign OAP = ~(( Hnn0 | nVIS ) & ~BLNK );
-wire SPR_OVERFLOW;
 assign SPR_OVERFLOW = ~( nPCLK | Hn0 | OVF_LATCH | OMFG_LATCH );
 // OAM counter control
-wire OAMSTEP;
 assign OAMSTEP = ~(( nPCLK | OMSTEP[1] ) & ( nPCLK | ~OMSTEP[0] ));
-wire MODE4;
-assign MODE4 = ~( ~OMFG | BLNK );
-wire ORES;
+assign M4 = ~( ~OMFG | BLNK );
 assign ORES  = ~( nPCLK | ORES_LATCH );
-wire OAM2STEP;
 assign OAM2STEP = ~( nPCLK | OSTEP[0] | ~(( PAR_O & ~Hn2 ) | ~( Hn0 | ~( OSTEP[1] | OSTEP[2] ))));
-wire OMV;
 wire [2:0]OBDZ;
 assign OBDZ[2:0] = OAMQ[4:2] & {3{ ~( OAM1ADR[1] & ~OAM1ADR[0] )}};
 wire [4:0]OAM2ADR, OAM2Cout;
-wire [7:0]OAM1ADR;
+wire [7:0]OAM1ADR, OAMCout;
 // OAM COUNTER
-//                  Clk  MODE   Reset LOAD   STEP    DATA      CNT_OUT      C_OUT
-OAM_COUNTER OAMCNT (Clk, MODE4, PAR_O, W3, OAMSTEP, DBIN[7:0], OAM1ADR[7:0], OMV);
+//                    Clk          F2         DIR              C_IN                         Reset         LOAD            STEP        DATA               CNT_OUT         C_OUT
+COUNTER OAMCNT1[1:0] (Clk, ~( OAMSTEP | W3 ), 1'b1, {OAMCout[0], 1'b1},                     PAR_O, W3 | M4,             OAMSTEP, M4 ? 2'h0 : DBIN[1:0], OAM1ADR[1:0], OAMCout[1:0]);
+COUNTER OAMCNT2[7:2] (Clk, ~( OAMSTEP | W3 ), 1'b1, {OAMCout[6:2], M4 ? 1'b1 : OAMCout[1]}, PAR_O, W3,                  OAMSTEP,             DBIN[7:2], OAM1ADR[7:2], OAMCout[7:2]);
 // OAM2 COUNTER
 //                    Clk   F2    DIR              C_IN       Reset  LOAD   STEP     DATA    CNT_OUT        C_OUT
 COUNTER OAM2CNT[4:0] (Clk, nPCLK, 1'b1, {OAM2Cout[3:0], 1'b1}, ORES, 1'b0, OAM2STEP, 5'h00, OAM2ADR[4:0], OAM2Cout[4:0]);
@@ -1280,7 +1273,7 @@ always @(posedge Clk) begin
          ORES_LATCH  <= nEVAL;
          OVF_LATCH   <= ~OAMCTR2;
          OMFG_LATCH  <= OMFG;
-         OMV_LATCH   <= OMV;
+         OMV_LATCH   <= M4 ? &OAM1ADR[7:2] & ~OAM1ADR[1] & ~OAM1ADR[0] : &OAM1ADR[7:0];
          TMV_LATCH   <= OAM2Cout[4];
                      end
                        end
@@ -1309,14 +1302,11 @@ output reg SH2,   // Reading sprite attributes (for vertical mirroring)
 output [4:0]ZCOL  // Sprite FIFO output
 );
 // Variables
-reg [7:0]SEL_LATCH;
-reg MIRR_LATCH;
+reg SPR0HIT_LATCH, MIRR_LATCH, SH3, SH5, SH7;
+reg [7:0]SEL_LATCH, PD_LATCH;
 reg [2:0]ZPOS;
-reg [7:0]PD_LATCH;
-reg SH3, SH5, SH7;
-reg [2:0] ATR_IN0, ATR_IN1, ATR_IN2, ATR_IN3, ATR_IN4, ATR_IN5, ATR_IN6, ATR_IN7;
-reg [2:0] ATR0, ATR1, ATR2, ATR3, ATR4, ATR5, ATR6, ATR7;
-reg SPR0HIT_LATCH;
+reg [2:0]ATR_IN0, ATR_IN1, ATR_IN2, ATR_IN3, ATR_IN4, ATR_IN5, ATR_IN6, ATR_IN7;
+reg [2:0]ATR0, ATR1, ATR2, ATR3, ATR4, ATR5, ATR6, ATR7;
 // Combinatorics
 wire [7:0]MIRR_MUX;
 assign MIRR_MUX[7:0] = MIRR_LATCH ? {PD[0],PD[1],PD[2],PD[3],PD[4],PD[5],PD[6],PD[7]} : PD[7:0];
@@ -1436,7 +1426,6 @@ reg ZH_FF;      // Downward Counter Control Trigger
 wire STEP;
 assign STEP = ~( PCLK | ~ZH_FF );
 wire [7:0]CNT, Cout;
-
 // FIFO COUNTER
 //                    Clk         F2        DIR       C_IN          Reset LOAD  STEP   DATA    CNT_OUT     C_OUT
 COUNTER FIFOCNT[7:0] (Clk, ~(LOAD | STEP), 1'b0, {Cout[6:0], 1'b1}, 1'b0, LOAD, STEP, OB[7:0], CNT[7:0], Cout[7:0]);
@@ -1497,11 +1486,9 @@ output [4:0]CGA,  // Graphics data bus
 output reg R2DB6  // Spritehit flag
 );
 // Variables
-reg [4:0]ZCOLN;
-reg [4:0]THO_LATCH;
-reg [3:0]STEP2;
-reg [4:0]STEP3;
 reg BGC_LATCH, ZCOL_LATCH, OCOLN;
+reg [4:0]ZCOLN, THO_LATCH, STEP3;
+reg [3:0]STEP2;
 // Combinatorics
 wire OCOL;
 assign OCOL = ~( ~( ZCOLN[1] | ZCOLN[0] ) | ( ZCOLN[4] & ( BGC[1] | BGC[0] )));
@@ -1541,7 +1528,7 @@ input nPICTURE,       // Blanking
 input B_W,            // B/W mode (zeroing the lower 4 bits of the color index)
 input DB_PAR,         // Forwarding CPU data to PPU bus
 input [4:0]CGA,       // Graphics data bus
-input [5:0]DBIN,      // PPU open bus
+input [5:0]DBIN,      // PPU Register Open Bus
 input PALSEL0,        // Palette select
 input PALSEL1,        // Palette select
 // Outputs
@@ -1553,11 +1540,10 @@ output [17:0]RGB      // RGB output R6 + G6 + B6
 reg DB_PARR;
 reg [1:0]PICTR;
 // Combinatorics
-wire CGAH;
-assign CGAH = CGA[4] & ( CGA[1] | CGA[0] );
+wire CGAH, nB_W;
 wire [3:0]CN;
-assign CN[3:0] = C[3:0] & { 4 { nB_W }};
-wire nB_W;
+assign CGAH = CGA[4] & ( CGA[1] | CGA[0] );
+assign CN[3:0] = C[3:0] & {4{ nB_W }};
 assign nB_W = ~( B_W | ( nPICTURE & ~RPIX ));
 assign RPIX = R7 & TH_MUX;
 // Internal Palette RAM/ROM Modules
@@ -1571,7 +1557,7 @@ assign RGB[17:0] = RGB_TABLE[17:0] & { 18 { ~PICTR[1] }};
 always @(posedge Clk) begin
          if (PCLK) begin
          DB_PARR  <= DB_PAR;
-         PIX[5:0] <= {C[5:4],CN[3:0]};
+         PIX[5:0] <= {C[5:4], CN[3:0]};
          PICTR[0] <= nPICTURE;
                    end
          PICTR[1] <= PICTR[0];
@@ -1583,7 +1569,6 @@ endmodule
 // counter module
 //===============================================================================================
 module COUNTER(
-// Clocks
 input Clk,       // Clock
 input F2,        // Phase 2 (PCLK, nPCLK, etc)
 // Inputs
@@ -1607,37 +1592,5 @@ always @(posedge Clk or posedge Reset) begin
                       end
 always @(posedge Clk) begin
        if ( F2 ) CNT1 <= CNT ^ C_IN;
-                      end
-endmodule
-
-//===============================================================================================
-// counter module OAM1
-//===============================================================================================
-module OAM_COUNTER(
-// Clocks
-input Clk,            // Clock
-// Inputs
-input MODE4,          // Counting mode 1 or 4 step
-input Reset,          // Reset counter
-input LOAD,           // Load DATA
-input STEP,           // Step Count
-input [7:0]DATA,      // DATA INPUT
-// Outputs 
-output reg [7:0]CNT,  // Counter output
-output C_OUT          // Carry out
-);
-reg [7:0]CNT1;
-wire [7:0]OAM1Cout;
-assign OAM1Cout[7:0] = CNT[7:0] & {OAM1Cout[6:0],1'b1};
-wire [5:0]OAM4Cout;
-assign OAM4Cout[5:0] = CNT[7:2] & {OAM4Cout[4:0],1'b1};
-wire [5:0]CNT4;
-assign CNT4[5:0]  = CNT[7:2] ^ {OAM4Cout[4:0],1'b1};
-assign C_OUT = (MODE4) ? CNT[7] & CNT[6] & CNT[5] & CNT[4] & CNT[3] & CNT[2] & ~CNT[1] & ~CNT[0]
-                       : CNT[7] & CNT[6] & CNT[5] & CNT[4] & CNT[3] & CNT[2] &  CNT[1] &  CNT[0];
-// Logics
-always @(posedge Clk) begin
-     if (   LOAD | STEP | Reset ) CNT[7:0]  <= Reset ? 8'h00 : LOAD ? DATA[7:0] : CNT1[7:0];
-     if (~( LOAD | STEP ))        CNT1[7:0] <= MODE4 ? {CNT4[5:0], 2'h0 } : ( CNT[7:0] ^ {OAM1Cout[6:0],1'b1});
                       end
 endmodule
