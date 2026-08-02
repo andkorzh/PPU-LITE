@@ -575,8 +575,8 @@ assign EMPH[1] = EM_G   ? 1'b0 : 1'hZ;
 assign EMPH[2] = W1R[7] ? 1'b0 : 1'hZ;
 // Логика
 always @(posedge Clk) begin
-         if (W0) W0R[4:0] <= RC ? 1'b0 : {DBIN[7],DBIN[5:2]};
-         if (W1) W1R[7:0] <= RC ? 1'b0 : DBIN[7:0];
+         if (W0) W0R[4:0] <= RC ? 5'h00 : {DBIN[7],DBIN[5:2]};
+         if (W1) W1R[7:0] <= RC ? 8'h00 : DBIN[7:0];
          if (~W0) {O8_16, BGSEL, OBSEL, I1_32} <= W0R[3:0];
          if (~W1) {EMP_G, EMP_R, OBE, BGE, OBCLIP, BGCLIP} <= W1R[6:1];
          if (nPCLK) begin
