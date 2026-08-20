@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -14446,82 +14446,6 @@ SOurce: www.abracon.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="con-faston" urn="urn:adsk.eagle:library:144">
-<description>&lt;b&gt;FASTON Connector&lt;/b&gt; Printed Circuit Board Tabs&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="62221" urn="urn:adsk.eagle:footprint:6754/1" library_version="1">
-<description>&lt;b&gt;TAB, FSSTON, DUAL STAKE, .187 SERIES&lt;/b&gt;&lt;p&gt;
-Source: Tyco Electronics Corporation .. ENG_CD_62221_R.pdf&lt;br&gt;
-http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND&lt;br&gt;</description>
-<wire x1="2.54" y1="1.4605" x2="2.54" y2="-1.4605" width="0" layer="46"/>
-<wire x1="2.54" y1="-1.4605" x2="-2.54" y2="-1.4605" width="0" layer="46"/>
-<wire x1="-2.54" y1="-1.4605" x2="-2.54" y2="1.4605" width="0" layer="46"/>
-<wire x1="-2.54" y1="1.4605" x2="2.54" y2="1.4605" width="0" layer="46"/>
-<wire x1="-3.6195" y1="2.921" x2="-3.6195" y2="-2.921" width="0.508" layer="51"/>
-<wire x1="3.6195" y1="-2.921" x2="3.6195" y2="2.921" width="0.508" layer="51"/>
-<wire x1="-3.6" y1="3.075" x2="3.625" y2="3.075" width="0.2032" layer="51"/>
-<wire x1="3.6" y1="-3.075" x2="-3.625" y2="-3.075" width="0.2032" layer="51"/>
-<wire x1="-2.2352" y1="1.2192" x2="-2.2352" y2="-1.2192" width="0.2032" layer="51"/>
-<wire x1="2.2352" y1="-1.2192" x2="2.2352" y2="1.2192" width="0.2032" layer="51"/>
-<wire x1="-2.2352" y1="1.2192" x2="2.2352" y2="1.2192" width="0.2032" layer="51"/>
-<wire x1="2.2352" y1="-1.2192" x2="-2.2352" y2="-1.2192" width="0.2032" layer="51"/>
-<pad name="1" x="0" y="0" drill="2.921" diameter="5.08" shape="long"/>
-<text x="-3.8608" y="3.6576" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.8608" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-2.032" y1="3.048" x2="2.032" y2="3.4544" layer="51"/>
-<rectangle x1="-2.032" y1="-3.4544" x2="2.032" y2="-3.048" layer="51" rot="R180"/>
-</package>
-</packages>
-<packages3d>
-<package3d name="62221" urn="urn:adsk.eagle:package:6764/1" type="box" library_version="1">
-<description>TAB, FSSTON, DUAL STAKE, .187 SERIES
-Source: Tyco Electronics Corporation .. ENG_CD_62221_R.pdf
-http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND</description>
-<packageinstances>
-<packageinstance name="62221"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="PIN" urn="urn:adsk.eagle:symbol:6744/1" library_version="1">
-<text x="-2.54" y="1.27" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="0" y1="-0.508" x2="2.54" y2="0.508" layer="94"/>
-<pin name="1" x="-5.08" y="0" visible="off" length="middle" direction="pas" swaplevel="1"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PIN1-2" urn="urn:adsk.eagle:component:6768/1" prefix="J" library_version="1">
-<description>&lt;b&gt;CONN TAB FASTON BRASS .187 PCB&lt;/b&gt;&lt;p&gt;
-TAB, FSSTON, DUAL STAKE, .187 SERIES&lt;br&gt;
-Digi-Key Part Number: A24734CT-ND&lt;br&gt;
-Source: Tyco Electronics Corporation .. ENG_CD_62221_R.pdf&lt;br&gt;
-http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND&lt;br&gt;</description>
-<gates>
-<gate name="G$1" symbol="PIN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="62221">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:6764/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="MF" value="TYCO ELECTRONICS" constant="no"/>
-<attribute name="MPN" value="62221-1" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="16H2318" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -14637,6 +14561,8 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <part name="C14" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10uF"/>
 <part name="1V2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCINT" device=""/>
 <part name="V9" library="supply" deviceset="+3V3" device=""/>
+<part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C5" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="22uF"/>
 <part name="C2" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -14678,7 +14604,7 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C9" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X9" device="" package3d_urn="urn:adsk.eagle:package:22483/2"/>
-<part name="L1" library="rcl_my" deviceset="L-EU" device="L0201" package3d_urn="urn:adsk.eagle:package:23513/2" value="BLM31"/>
+<part name="L1" library="rcl_my" deviceset="L-EU" device="L0201" package3d_urn="urn:adsk.eagle:package:23513/2"/>
 <part name="C21" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="GND47" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="XO1" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="ASE" device="" package3d_urn="urn:adsk.eagle:package:12120/1"/>
@@ -14698,20 +14624,11 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <part name="R27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
 <part name="GND55" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="V12" library="supply" deviceset="+3V3" device=""/>
-<part name="R28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="GND56" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="V13" library="supply" deviceset="+3V3" device=""/>
-<part name="R31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="J5" library="con-faston" library_urn="urn:adsk.eagle:library:144" deviceset="PIN1-2" device="" package3d_urn="urn:adsk.eagle:package:6764/1"/>
-<part name="J6" library="con-faston" library_urn="urn:adsk.eagle:library:144" deviceset="PIN1-2" device="" package3d_urn="urn:adsk.eagle:package:6764/1"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="64.262" y="119.126" size="2.54" layer="94">JTAG</text>
+<text x="38.862" y="119.126" size="2.54" layer="94">JTAG</text>
 <text x="337.312" y="-23.622" size="1.778" layer="91">GND</text>
 <text x="337.312" y="-26.162" size="1.778" layer="91">VCC</text>
 <text x="337.312" y="-13.462" size="1.778" layer="91">#CS</text>
@@ -14736,48 +14653,48 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <instance part="GND34" gate="1" x="-129.54" y="-86.36" smashed="yes">
 <attribute name="VALUE" x="-132.08" y="-88.9" size="1.778" layer="96"/>
 </instance>
-<instance part="X1" gate="-1" x="60.96" y="109.22" smashed="yes">
-<attribute name="NAME" x="61.976" y="108.458" size="1.524" layer="95"/>
-<attribute name="VALUE" x="58.42" y="111.125" size="1.778" layer="96"/>
+<instance part="X1" gate="-1" x="35.56" y="109.22" smashed="yes">
+<attribute name="NAME" x="36.576" y="108.458" size="1.524" layer="95"/>
+<attribute name="VALUE" x="33.02" y="111.125" size="1.778" layer="96"/>
 </instance>
-<instance part="X1" gate="-2" x="83.82" y="109.22" smashed="yes">
-<attribute name="NAME" x="84.836" y="108.458" size="1.524" layer="95"/>
+<instance part="X1" gate="-2" x="58.42" y="109.22" smashed="yes">
+<attribute name="NAME" x="59.436" y="108.458" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-3" x="60.96" y="104.14" smashed="yes">
-<attribute name="NAME" x="61.976" y="103.378" size="1.524" layer="95"/>
+<instance part="X1" gate="-3" x="35.56" y="104.14" smashed="yes">
+<attribute name="NAME" x="36.576" y="103.378" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-4" x="83.82" y="104.14" smashed="yes">
-<attribute name="NAME" x="84.836" y="103.378" size="1.524" layer="95"/>
+<instance part="X1" gate="-4" x="58.42" y="104.14" smashed="yes">
+<attribute name="NAME" x="59.436" y="103.378" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-5" x="60.96" y="99.06" smashed="yes">
-<attribute name="NAME" x="61.976" y="98.298" size="1.524" layer="95"/>
+<instance part="X1" gate="-5" x="35.56" y="99.06" smashed="yes">
+<attribute name="NAME" x="36.576" y="98.298" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-6" x="83.82" y="99.06" smashed="yes">
-<attribute name="NAME" x="84.836" y="98.298" size="1.524" layer="95"/>
+<instance part="X1" gate="-6" x="58.42" y="99.06" smashed="yes">
+<attribute name="NAME" x="59.436" y="98.298" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-7" x="60.96" y="93.98" smashed="yes">
-<attribute name="NAME" x="61.976" y="93.218" size="1.524" layer="95"/>
+<instance part="X1" gate="-7" x="35.56" y="93.98" smashed="yes">
+<attribute name="NAME" x="36.576" y="93.218" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-8" x="83.82" y="93.98" smashed="yes">
-<attribute name="NAME" x="84.836" y="93.218" size="1.524" layer="95"/>
+<instance part="X1" gate="-8" x="58.42" y="93.98" smashed="yes">
+<attribute name="NAME" x="59.436" y="93.218" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-9" x="60.96" y="88.9" smashed="yes">
-<attribute name="NAME" x="61.976" y="88.138" size="1.524" layer="95"/>
+<instance part="X1" gate="-9" x="35.56" y="88.9" smashed="yes">
+<attribute name="NAME" x="36.576" y="88.138" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-10" x="83.82" y="88.9" smashed="yes">
-<attribute name="NAME" x="84.836" y="88.138" size="1.524" layer="95"/>
+<instance part="X1" gate="-10" x="58.42" y="88.9" smashed="yes">
+<attribute name="NAME" x="59.436" y="88.138" size="1.524" layer="95"/>
 </instance>
-<instance part="GND43" gate="1" x="76.2" y="109.22" smashed="yes" rot="R270">
-<attribute name="VALUE" x="73.66" y="111.76" size="1.778" layer="96" rot="R270"/>
+<instance part="GND43" gate="1" x="50.8" y="109.22" smashed="yes" rot="R270">
+<attribute name="VALUE" x="48.26" y="111.76" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="GND44" gate="1" x="76.2" y="88.9" smashed="yes" rot="R270">
-<attribute name="VALUE" x="73.66" y="91.44" size="1.778" layer="96" rot="R270"/>
+<instance part="GND44" gate="1" x="50.8" y="88.9" smashed="yes" rot="R270">
+<attribute name="VALUE" x="48.26" y="91.44" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="V8" gate="G$1" x="-93.98" y="-76.2" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-92.03" y="-76.965" size="1.778" layer="96"/>
 </instance>
-<instance part="V15" gate="G$1" x="76.2" y="104.14" smashed="yes" rot="R90">
-<attribute name="VALUE" x="74.25" y="104.905" size="1.778" layer="96" rot="R180"/>
+<instance part="V15" gate="G$1" x="50.8" y="104.14" smashed="yes" rot="R90">
+<attribute name="VALUE" x="48.85" y="104.905" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="V23" gate="1" x="-187.96" y="-76.2" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-189.85" y="-75.39" size="1.778" layer="96" rot="R180"/>
@@ -15089,6 +15006,7 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 </instance>
 <instance part="C4" gate="G$1" x="-116.84" y="-83.82" smashed="yes" rot="R180">
 <attribute name="NAME" x="-110.49" y="-79.121" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-107.696" y="-81.661" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C10" gate="G$1" x="-190.5" y="63.5" smashed="yes" rot="R180">
 <attribute name="NAME" x="-186.182" y="69.469" size="1.778" layer="95" rot="R180"/>
@@ -15228,6 +15146,13 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 </instance>
 <instance part="V9" gate="G$1" x="-48.26" y="-30.48" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-50.21" y="-29.715" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND20" gate="1" x="-104.14" y="-86.36" smashed="yes">
+<attribute name="VALUE" x="-106.68" y="-88.9" size="1.778" layer="96"/>
+</instance>
+<instance part="C5" gate="G$1" x="-104.14" y="-83.82" smashed="yes" rot="R180">
+<attribute name="NAME" x="-97.79" y="-79.121" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-94.996" y="-81.661" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C2" gate="G$1" x="-170.18" y="-83.82" smashed="yes" rot="R180">
 <attribute name="NAME" x="-163.83" y="-79.121" size="1.778" layer="95" rot="R180"/>
@@ -15373,7 +15298,7 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <attribute name="VALUE" x="328.93" y="-30.48" size="1.778" layer="96"/>
 </instance>
 <instance part="L1" gate="G$1" x="-88.9" y="-7.62" smashed="yes" rot="R90">
-<attribute name="NAME" x="-87.63" y="-1.4986" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="-87.63" y="-4.0386" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-85.09" y="-4.318" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C21" gate="G$1" x="-60.96" y="22.86" smashed="yes" rot="R180">
@@ -15444,39 +15369,6 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <instance part="V12" gate="G$1" x="-104.14" y="15.24" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-106.09" y="16.005" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R28" gate="G$1" x="12.7" y="99.06" smashed="yes" rot="R90">
-<attribute name="NAME" x="17.8054" y="103.632" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="18.288" y="100.838" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="R29" gate="G$1" x="22.86" y="99.06" smashed="yes" rot="R90">
-<attribute name="NAME" x="27.9654" y="103.632" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="28.448" y="100.838" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="R30" gate="G$1" x="33.02" y="99.06" smashed="yes" rot="R90">
-<attribute name="NAME" x="38.1254" y="103.632" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="38.608" y="100.838" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="GND56" gate="1" x="12.7" y="91.44" smashed="yes">
-<attribute name="VALUE" x="10.16" y="88.9" size="1.778" layer="96"/>
-</instance>
-<instance part="V13" gate="G$1" x="22.86" y="88.9" smashed="yes" rot="R180">
-<attribute name="VALUE" x="22.095" y="86.95" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R31" gate="G$1" x="-83.82" y="86.36" smashed="yes" rot="R90">
-<attribute name="NAME" x="-76.9366" y="89.916" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-76.708" y="87.376" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="GND20" gate="1" x="-83.82" y="93.98" smashed="yes" rot="R180">
-<attribute name="VALUE" x="-81.28" y="96.52" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="J5" gate="G$1" x="-193.04" y="114.3" smashed="yes" rot="MR0">
-<attribute name="NAME" x="-190.5" y="115.57" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="-190.5" y="111.76" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="J6" gate="G$1" x="-193.04" y="99.06" smashed="yes" rot="MR0">
-<attribute name="NAME" x="-190.5" y="100.33" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="-190.5" y="96.52" size="1.778" layer="96" rot="MR0"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -15484,18 +15376,13 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <net name="TCK" class="0">
 <segment>
 <pinref part="X1" gate="-1" pin="S"/>
-<wire x1="55.88" y1="109.22" x2="48.26" y2="109.22" width="0.1524" layer="91"/>
-<label x="48.26" y="109.22" size="1.778" layer="95"/>
+<wire x1="30.48" y1="109.22" x2="22.86" y2="109.22" width="0.1524" layer="91"/>
+<label x="22.86" y="109.22" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="73.66" y1="-20.32" x2="86.36" y2="-20.32" width="0.1524" layer="91"/>
 <label x="76.2" y="-20.32" size="1.778" layer="95"/>
 <pinref part="U1" gate="G$1" pin="TCK"/>
-</segment>
-<segment>
-<pinref part="R28" gate="G$1" pin="2"/>
-<wire x1="12.7" y1="104.14" x2="12.7" y2="109.22" width="0.1524" layer="91"/>
-<label x="12.7" y="104.14" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -15724,54 +15611,36 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <pinref part="GND55" gate="1" pin="GND"/>
 <junction x="274.32" y="7.62"/>
 </segment>
-<segment>
-<pinref part="R28" gate="G$1" pin="1"/>
-<pinref part="GND56" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="R31" gate="G$1" pin="2"/>
-<pinref part="GND20" gate="1" pin="GND"/>
-</segment>
 </net>
 <net name="TDI" class="0">
 <segment>
 <pinref part="X1" gate="-9" pin="S"/>
-<wire x1="55.88" y1="88.9" x2="48.26" y2="88.9" width="0.1524" layer="91"/>
-<label x="48.26" y="88.9" size="1.778" layer="95"/>
+<wire x1="30.48" y1="88.9" x2="22.86" y2="88.9" width="0.1524" layer="91"/>
+<label x="22.86" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="73.66" y1="-7.62" x2="86.36" y2="-7.62" width="0.1524" layer="91"/>
 <label x="76.2" y="-7.62" size="1.778" layer="95"/>
 <pinref part="U1" gate="G$1" pin="TDI"/>
 </segment>
-<segment>
-<pinref part="R29" gate="G$1" pin="2"/>
-<wire x1="22.86" y1="104.14" x2="22.86" y2="109.22" width="0.1524" layer="91"/>
-<label x="22.86" y="104.14" size="1.778" layer="95" rot="R90"/>
-</segment>
 </net>
 <net name="TMS" class="0">
 <segment>
 <pinref part="X1" gate="-5" pin="S"/>
-<wire x1="55.88" y1="99.06" x2="48.26" y2="99.06" width="0.1524" layer="91"/>
-<label x="48.26" y="99.06" size="1.778" layer="95"/>
+<wire x1="30.48" y1="99.06" x2="22.86" y2="99.06" width="0.1524" layer="91"/>
+<label x="22.86" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="73.66" y1="-17.78" x2="86.36" y2="-17.78" width="0.1524" layer="91"/>
 <label x="76.2" y="-17.78" size="1.778" layer="95"/>
 <pinref part="U1" gate="G$1" pin="TMS"/>
 </segment>
-<segment>
-<pinref part="R30" gate="G$1" pin="2"/>
-<wire x1="33.02" y1="104.14" x2="33.02" y2="109.22" width="0.1524" layer="91"/>
-<label x="33.02" y="104.14" size="1.778" layer="95" rot="R90"/>
-</segment>
 </net>
 <net name="TDO" class="0">
 <segment>
 <pinref part="X1" gate="-3" pin="S"/>
-<wire x1="55.88" y1="104.14" x2="48.26" y2="104.14" width="0.1524" layer="91"/>
-<label x="48.26" y="104.14" size="1.778" layer="95"/>
+<wire x1="30.48" y1="104.14" x2="22.86" y2="104.14" width="0.1524" layer="91"/>
+<label x="22.86" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="73.66" y1="-15.24" x2="86.36" y2="-15.24" width="0.1524" layer="91"/>
@@ -15781,10 +15650,10 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 </net>
 <net name="N$3" class="0">
 <segment>
-<wire x1="43.18" y1="116.84" x2="43.18" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="83.82" x2="93.98" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="83.82" x2="93.98" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="116.84" x2="43.18" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="116.84" x2="17.78" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="83.82" x2="68.58" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="83.82" x2="68.58" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="116.84" x2="17.78" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -15885,8 +15754,11 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <wire x1="-129.54" y1="-76.2" x2="-116.84" y2="-76.2" width="0.1524" layer="91"/>
 <junction x="-129.54" y="-76.2"/>
 <pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="-116.84" y1="-76.2" x2="-96.52" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="-116.84" y1="-76.2" x2="-104.14" y2="-76.2" width="0.1524" layer="91"/>
 <junction x="-116.84" y="-76.2"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="-104.14" y1="-76.2" x2="-96.52" y2="-76.2" width="0.1524" layer="91"/>
+<junction x="-104.14" y="-76.2"/>
 <pinref part="VR1" gate="G$1" pin="VOUT"/>
 </segment>
 <segment>
@@ -15983,15 +15855,6 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <pinref part="U2" gate="G$1" pin="VCC@1"/>
 <wire x1="-88.9" y1="15.24" x2="-101.6" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="V12" gate="G$1" pin="+3V3"/>
-</segment>
-<segment>
-<pinref part="R29" gate="G$1" pin="1"/>
-<pinref part="V13" gate="G$1" pin="+3V3"/>
-<wire x1="22.86" y1="93.98" x2="22.86" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="R30" gate="G$1" pin="1"/>
-<wire x1="33.02" y1="93.98" x2="33.02" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="91.44" x2="22.86" y2="91.44" width="0.1524" layer="91"/>
-<junction x="22.86" y="91.44"/>
 </segment>
 </net>
 <net name="ALE" class="0">
@@ -16363,11 +16226,7 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <segment>
 <pinref part="CON1" gate="G$1" pin="CLK"/>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="-66.04" y1="78.74" x2="-83.82" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="R31" gate="G$1" pin="1"/>
-<wire x1="-83.82" y1="78.74" x2="-86.36" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-83.82" y1="81.28" x2="-83.82" y2="78.74" width="0.1524" layer="91"/>
-<junction x="-83.82" y="78.74"/>
+<wire x1="-66.04" y1="78.74" x2="-86.36" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="CLK_EXT" class="0">
@@ -17368,21 +17227,21 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 </net>
 <net name="DATA0" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="ASDI"/>
-<wire x1="-63.5" y1="12.7" x2="-50.8" y2="12.7" width="0.1524" layer="91"/>
-<label x="-58.42" y="12.7" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="-17.78" y1="-2.54" x2="-33.02" y2="-2.54" width="0.1524" layer="91"/>
 <label x="-27.94" y="-2.54" size="1.778" layer="95"/>
 <pinref part="U1" gate="G$1" pin="DATA0"/>
+</segment>
+<segment>
+<wire x1="-99.06" y1="17.78" x2="-88.9" y2="17.78" width="0.1524" layer="91"/>
+<label x="-97.282" y="17.78" size="1.778" layer="95"/>
+<pinref part="U2" gate="G$1" pin="DATA"/>
 </segment>
 </net>
 <net name="DCLK" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="DCLK"/>
-<wire x1="-63.5" y1="15.24" x2="-50.8" y2="15.24" width="0.1524" layer="91"/>
-<label x="-58.42" y="15.24" size="1.778" layer="95"/>
+<wire x1="-63.5" y1="15.24" x2="-53.34" y2="15.24" width="0.1524" layer="91"/>
+<label x="-60.96" y="15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="-17.78" y1="-25.4" x2="-33.02" y2="-25.4" width="0.1524" layer="91"/>
@@ -17392,21 +17251,21 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 </net>
 <net name="ASDO" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="DATA"/>
-<wire x1="-88.9" y1="17.78" x2="-99.06" y2="17.78" width="0.1524" layer="91"/>
-<label x="-96.52" y="17.78" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="-17.78" y1="-27.94" x2="-33.02" y2="-27.94" width="0.1524" layer="91"/>
 <label x="-27.94" y="-27.94" size="1.778" layer="95"/>
 <pinref part="U1" gate="G$1" pin="ASDO"/>
+</segment>
+<segment>
+<wire x1="-53.34" y1="12.7" x2="-63.5" y2="12.7" width="0.1524" layer="91"/>
+<label x="-60.96" y="12.7" size="1.778" layer="95"/>
+<pinref part="U2" gate="G$1" pin="ASDI"/>
 </segment>
 </net>
 <net name="/CSO" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="/CS"/>
 <wire x1="-88.9" y1="20.32" x2="-99.06" y2="20.32" width="0.1524" layer="91"/>
-<label x="-96.52" y="20.32" size="1.778" layer="95"/>
+<label x="-97.282" y="20.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="-17.78" y1="0" x2="-33.02" y2="0" width="0.1524" layer="91"/>
@@ -17553,17 +17412,15 @@ http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&amp;name=A24734CT-ND
 <net name="VRAMCS" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="A1"/>
+<wire x1="-162.56" y1="114.3" x2="-175.26" y2="114.3" width="0.1524" layer="91"/>
 <label x="-175.26" y="114.3" size="1.778" layer="95"/>
-<pinref part="J5" gate="G$1" pin="1"/>
-<wire x1="-162.56" y1="114.3" x2="-187.96" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VRAMA10" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="A7"/>
+<wire x1="-162.56" y1="99.06" x2="-175.26" y2="99.06" width="0.1524" layer="91"/>
 <label x="-175.26" y="99.06" size="1.778" layer="95"/>
-<pinref part="J6" gate="G$1" pin="1"/>
-<wire x1="-162.56" y1="99.06" x2="-187.96" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
