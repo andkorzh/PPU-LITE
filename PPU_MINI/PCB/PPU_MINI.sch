@@ -408,9 +408,9 @@
 <pin name="A5" x="-17.78" y="-7.62" length="middle"/>
 <pin name="A6" x="-17.78" y="-10.16" length="middle"/>
 <pin name="A7" x="-17.78" y="-12.7" length="middle"/>
-<pin name="GND@2" x="-17.78" y="-17.78" length="middle" direction="pas"/>
-<pin name="GND@3" x="-17.78" y="-20.32" length="middle" direction="pas"/>
-<pin name="GND@1" x="-17.78" y="-22.86" length="middle" direction="pas"/>
+<pin name="GND@2" x="-17.78" y="-17.78" length="middle" direction="pwr"/>
+<pin name="GND@3" x="-17.78" y="-20.32" length="middle" direction="pwr"/>
+<pin name="GND@1" x="-17.78" y="-22.86" length="middle" direction="pwr"/>
 <pin name="B0" x="17.78" y="22.86" length="middle" rot="R180"/>
 <pin name="B1" x="17.78" y="20.32" length="middle" rot="R180"/>
 <pin name="B2" x="17.78" y="17.78" length="middle" rot="R180"/>
@@ -472,26 +472,26 @@
 <text x="2.54" y="-5.08" size="1.778" layer="94" rot="R90">40pin</text>
 </symbol>
 <symbol name="SN74LVC541A">
-<pin name="/OE2" x="-15.24" y="15.24" length="middle" function="dot"/>
-<pin name="A1" x="-15.24" y="10.16" length="middle"/>
-<pin name="A2" x="-15.24" y="7.62" length="middle"/>
-<pin name="A3" x="-15.24" y="5.08" length="middle"/>
-<pin name="A4" x="-15.24" y="2.54" length="middle"/>
-<pin name="A5" x="-15.24" y="0" length="middle"/>
-<pin name="A6" x="-15.24" y="-2.54" length="middle"/>
-<pin name="A7" x="-15.24" y="-5.08" length="middle"/>
-<pin name="A8" x="-15.24" y="-7.62" length="middle"/>
-<pin name="VCC" x="-15.24" y="-12.7" length="middle"/>
-<pin name="GND" x="-15.24" y="-17.78" length="middle"/>
-<pin name="/OE1" x="-15.24" y="17.78" length="middle" function="dot"/>
-<pin name="Y1" x="15.24" y="10.16" length="middle" rot="R180"/>
-<pin name="Y2" x="15.24" y="7.62" length="middle" rot="R180"/>
-<pin name="Y3" x="15.24" y="5.08" length="middle" rot="R180"/>
-<pin name="Y4" x="15.24" y="2.54" length="middle" rot="R180"/>
-<pin name="Y5" x="15.24" y="0" length="middle" rot="R180"/>
-<pin name="Y6" x="15.24" y="-2.54" length="middle" rot="R180"/>
-<pin name="Y7" x="15.24" y="-5.08" length="middle" rot="R180"/>
-<pin name="Y8" x="15.24" y="-7.62" length="middle" rot="R180"/>
+<pin name="/OE2" x="-15.24" y="15.24" length="middle" direction="in" function="dot"/>
+<pin name="A1" x="-15.24" y="10.16" length="middle" direction="in"/>
+<pin name="A2" x="-15.24" y="7.62" length="middle" direction="in"/>
+<pin name="A3" x="-15.24" y="5.08" length="middle" direction="in"/>
+<pin name="A4" x="-15.24" y="2.54" length="middle" direction="in"/>
+<pin name="A5" x="-15.24" y="0" length="middle" direction="in"/>
+<pin name="A6" x="-15.24" y="-2.54" length="middle" direction="in"/>
+<pin name="A7" x="-15.24" y="-5.08" length="middle" direction="in"/>
+<pin name="A8" x="-15.24" y="-7.62" length="middle" direction="in"/>
+<pin name="VCC" x="-15.24" y="-12.7" length="middle" direction="pwr"/>
+<pin name="GND" x="-15.24" y="-17.78" length="middle" direction="pwr"/>
+<pin name="/OE1" x="-15.24" y="17.78" length="middle" direction="in" function="dot"/>
+<pin name="Y1" x="15.24" y="10.16" length="middle" direction="out" rot="R180"/>
+<pin name="Y2" x="15.24" y="7.62" length="middle" direction="out" rot="R180"/>
+<pin name="Y3" x="15.24" y="5.08" length="middle" direction="out" rot="R180"/>
+<pin name="Y4" x="15.24" y="2.54" length="middle" direction="out" rot="R180"/>
+<pin name="Y5" x="15.24" y="0" length="middle" direction="out" rot="R180"/>
+<pin name="Y6" x="15.24" y="-2.54" length="middle" direction="out" rot="R180"/>
+<pin name="Y7" x="15.24" y="-5.08" length="middle" direction="out" rot="R180"/>
+<pin name="Y8" x="15.24" y="-7.62" length="middle" direction="out" rot="R180"/>
 <wire x1="-10.16" y1="-20.32" x2="-10.16" y2="20.32" width="0.4064" layer="94"/>
 <wire x1="-10.16" y1="20.32" x2="10.16" y2="20.32" width="0.4064" layer="94"/>
 <wire x1="10.16" y1="20.32" x2="10.16" y2="-20.32" width="0.4064" layer="94"/>
@@ -935,7 +935,7 @@ straight</description>
 <pin name="CH3_IN" x="-17.78" y="5.08" length="middle" direction="in"/>
 <pin name="CH4_IN" x="-17.78" y="2.54" length="middle" direction="in"/>
 <pin name="DISABLE" x="-17.78" y="-5.08" length="middle" direction="in"/>
-<pin name="GND" x="-17.78" y="-2.54" length="middle" direction="in"/>
+<pin name="GND" x="-17.78" y="-2.54" length="middle" direction="pwr"/>
 <pin name="VS+" x="17.78" y="-2.54" length="middle" direction="pwr" rot="R180"/>
 <pin name="CH1_OUT" x="17.78" y="10.16" length="middle" direction="out" rot="R180"/>
 <pin name="CH2_OUT" x="17.78" y="7.62" length="middle" direction="out" rot="R180"/>
@@ -18808,29 +18808,29 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="IO6" x="-45.72" y="12.7" length="middle"/>
 <pin name="IO7" x="-45.72" y="10.16" length="middle"/>
 <pin name="IO8" x="-45.72" y="7.62" length="middle"/>
-<pin name="GND@1" x="-45.72" y="17.78" length="middle"/>
+<pin name="GND@1" x="-45.72" y="17.78" length="middle" direction="pwr"/>
 <pin name="IO9_PCLKT3_1" x="-45.72" y="2.54" length="middle"/>
 <pin name="IO10_PCLKC3_1" x="-45.72" y="0" length="middle"/>
 <pin name="IO11" x="-45.72" y="-2.54" length="middle"/>
 <pin name="IO12" x="-45.72" y="-5.08" length="middle"/>
-<pin name="TMS" x="-5.08" y="45.72" length="middle" rot="R270"/>
-<pin name="TDI" x="-15.24" y="45.72" length="middle" rot="R270"/>
-<pin name="TCK" x="-7.62" y="45.72" length="middle" rot="R270"/>
-<pin name="TDO" x="-17.78" y="45.72" length="middle" rot="R270"/>
+<pin name="TMS" x="-5.08" y="45.72" length="middle" direction="in" rot="R270"/>
+<pin name="TDI" x="-15.24" y="45.72" length="middle" direction="in" rot="R270"/>
+<pin name="TCK" x="-7.62" y="45.72" length="middle" direction="in" rot="R270"/>
+<pin name="TDO" x="-17.78" y="45.72" length="middle" direction="out" rot="R270"/>
 <pin name="IO13" x="-45.72" y="-7.62" length="middle"/>
 <pin name="IO14" x="-45.72" y="-10.16" length="middle"/>
 <pin name="IO15" x="-45.72" y="-12.7" length="middle"/>
 <pin name="IO19" x="-45.72" y="-27.94" length="middle"/>
 <pin name="IO20" x="-45.72" y="-30.48" length="middle"/>
-<pin name="VCC_IO3@3" x="-45.72" y="20.32" length="middle"/>
-<pin name="GND@2" x="-45.72" y="-22.86" length="middle"/>
+<pin name="VCC_IO3@3" x="-45.72" y="20.32" length="middle" direction="pwr"/>
+<pin name="GND@2" x="-45.72" y="-22.86" length="middle" direction="pwr"/>
 <pin name="IO21_CSS" x="-27.94" y="-45.72" length="middle" rot="R90"/>
 <pin name="IO22" x="-25.4" y="-45.72" length="middle" rot="R90"/>
 <pin name="IO23" x="-22.86" y="-45.72" length="middle" rot="R90"/>
 <pin name="IO24" x="-20.32" y="-45.72" length="middle" rot="R90"/>
-<pin name="GND@3" x="-12.7" y="-45.72" length="middle" rot="R90"/>
+<pin name="GND@3" x="-12.7" y="-45.72" length="middle" direction="pwr" rot="R90"/>
 <pin name="IO25_MCLK_CCLK" x="-17.78" y="-45.72" length="middle" rot="R90"/>
-<pin name="VCC_INT@1" x="30.48" y="-45.72" length="middle" rot="R90"/>
+<pin name="VCC_INT@1" x="30.48" y="-45.72" length="middle" direction="pwr" rot="R90"/>
 <pin name="IO26_SO_SPISO" x="-15.24" y="-45.72" length="middle" rot="R90"/>
 <pin name="IO27_PCLKT2_0" x="-10.16" y="-45.72" length="middle" rot="R90"/>
 <pin name="IO28_PCLKC2_0" x="-7.62" y="-45.72" length="middle" rot="R90"/>
@@ -18848,11 +18848,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="IO40_SI_SPISI" x="27.94" y="-45.72" length="middle" rot="R90"/>
 <pin name="IO41" x="45.72" y="-30.48" length="middle" rot="R180"/>
 <pin name="IO42" x="45.72" y="-27.94" length="middle" rot="R180"/>
-<pin name="VCC_IO3@1" x="-45.72" y="-25.4" length="middle"/>
-<pin name="GND@4" x="15.24" y="-45.72" length="middle" rot="R90"/>
+<pin name="VCC_IO3@1" x="-45.72" y="-25.4" length="middle" direction="pwr"/>
+<pin name="GND@4" x="15.24" y="-45.72" length="middle" direction="pwr" rot="R90"/>
 <pin name="IO43" x="45.72" y="-25.4" length="middle" rot="R180"/>
-<pin name="GNG@8" x="-10.16" y="45.72" length="middle" rot="R270"/>
-<pin name="GND@5" x="45.72" y="-17.78" length="middle" rot="R180"/>
+<pin name="GNG@8" x="-10.16" y="45.72" length="middle" direction="pwr" rot="R270"/>
+<pin name="GND@5" x="45.72" y="-17.78" length="middle" direction="pwr" rot="R180"/>
 <pin name="IO44" x="45.72" y="-22.86" length="middle" rot="R180"/>
 <pin name="IO45" x="45.72" y="-15.24" length="middle" rot="R180"/>
 <pin name="IO46" x="45.72" y="-12.7" length="middle" rot="R180"/>
@@ -18866,13 +18866,13 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="IO54" x="45.72" y="7.62" length="middle" rot="R180"/>
 <pin name="IO55" x="45.72" y="10.16" length="middle" rot="R180"/>
 <pin name="IO56" x="45.72" y="12.7" length="middle" rot="R180"/>
-<pin name="GND@7" x="22.86" y="45.72" length="middle" rot="R270"/>
+<pin name="GND@7" x="22.86" y="45.72" length="middle" direction="pwr" rot="R270"/>
 <pin name="IO57" x="45.72" y="15.24" length="middle" rot="R180"/>
 <pin name="IO58" x="45.72" y="17.78" length="middle" rot="R180"/>
 <pin name="IO59" x="45.72" y="20.32" length="middle" rot="R180"/>
 <pin name="IO60" x="45.72" y="27.94" length="middle" rot="R180"/>
 <pin name="IO61" x="45.72" y="30.48" length="middle" rot="R180"/>
-<pin name="NC" x="-2.54" y="45.72" length="middle" rot="R270"/>
+<pin name="NC" x="-2.54" y="45.72" length="middle" direction="nc" rot="R270"/>
 <wire x1="-40.64" y1="-40.64" x2="-40.64" y2="40.64" width="0.4064" layer="94"/>
 <wire x1="-40.64" y1="40.64" x2="40.64" y2="40.64" width="0.4064" layer="94"/>
 <wire x1="40.64" y1="40.64" x2="40.64" y2="-40.64" width="0.4064" layer="94"/>
@@ -18882,14 +18882,14 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="IO16" x="-45.72" y="-15.24" length="middle"/>
 <pin name="IO17_PCLKT3_0" x="-45.72" y="-17.78" length="middle"/>
 <pin name="IO18_PCLKC3_0" x="-45.72" y="-20.32" length="middle"/>
-<pin name="VCC_IO2@1" x="-30.48" y="-45.72" length="middle" rot="R90"/>
-<pin name="VCC_IO0@1" x="20.32" y="45.72" length="middle" rot="R270"/>
-<pin name="VCC_IO2@2" x="20.32" y="-45.72" length="middle" rot="R90"/>
-<pin name="GND@6" x="45.72" y="22.86" length="middle" rot="R180"/>
-<pin name="VCC_IO3@2" x="-45.72" y="5.08" length="middle"/>
-<pin name="VCC_IO1@1" x="45.72" y="-20.32" length="middle" rot="R180"/>
-<pin name="VCC_IO1@2" x="45.72" y="25.4" length="middle" rot="R180"/>
-<pin name="VCC_INT@2" x="-30.48" y="45.72" length="middle" rot="R270"/>
+<pin name="VCC_IO2@1" x="-30.48" y="-45.72" length="middle" direction="pwr" rot="R90"/>
+<pin name="VCC_IO0@1" x="20.32" y="45.72" length="middle" direction="pwr" rot="R270"/>
+<pin name="VCC_IO2@2" x="20.32" y="-45.72" length="middle" direction="pwr" rot="R90"/>
+<pin name="GND@6" x="45.72" y="22.86" length="middle" direction="pwr" rot="R180"/>
+<pin name="VCC_IO3@2" x="-45.72" y="5.08" length="middle" direction="pwr"/>
+<pin name="VCC_IO1@1" x="45.72" y="-20.32" length="middle" direction="pwr" rot="R180"/>
+<pin name="VCC_IO1@2" x="45.72" y="25.4" length="middle" direction="pwr" rot="R180"/>
+<pin name="VCC_INT@2" x="-30.48" y="45.72" length="middle" direction="pwr" rot="R270"/>
 <pin name="DONE_IO62" x="30.48" y="45.72" length="middle" rot="R270"/>
 <pin name="INITN_IO63" x="27.94" y="45.72" length="middle" rot="R270"/>
 <pin name="IO64" x="25.4" y="45.72" length="middle" rot="R270"/>
@@ -18901,7 +18901,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="SCL_PCLKT0_0_IO70" x="5.08" y="45.72" length="middle" rot="R270"/>
 <pin name="PCLKC0_1_IO71" x="2.54" y="45.72" length="middle" rot="R270"/>
 <pin name="PCLKT0_1_IO72" x="0" y="45.72" length="middle" rot="R270"/>
-<pin name="VCC_IO0@2" x="-12.7" y="45.72" length="middle" rot="R270"/>
+<pin name="VCC_IO0@2" x="-12.7" y="45.72" length="middle" direction="pwr" rot="R270"/>
 <pin name="IO73" x="-20.32" y="45.72" length="middle" rot="R270"/>
 <pin name="IO74" x="-22.86" y="45.72" length="middle" rot="R270"/>
 <pin name="IO75" x="-25.4" y="45.72" length="middle" rot="R270"/>
@@ -19056,7 +19056,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="5.08" y="21.32" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="5.08" y="18.86" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
 <pin name="A" x="-12.7" y="0" length="middle" direction="in"/>
-<pin name="N.C" x="-12.7" y="-6.35" length="middle"/>
+<pin name="N.C" x="-12.7" y="-6.35" length="middle" direction="nc"/>
 <pin name="VCC" x="2.54" y="12.7" length="middle" direction="pwr" rot="R270"/>
 <pin name="Y" x="17.78" y="0" length="middle" direction="out" rot="R180"/>
 <pin name="GND" x="2.54" y="-12.7" length="middle" direction="pwr" rot="R90"/>
@@ -19119,8 +19119,8 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <symbols>
 <symbol name="LD1117AS33TR">
 <pin name="VIN" x="0" y="0" length="middle" direction="pwr"/>
-<pin name="VOUT" x="30.48" y="0" length="middle" rot="R180"/>
-<pin name="GND" x="15.24" y="-12.7" length="middle" rot="R90"/>
+<pin name="VOUT" x="30.48" y="0" length="middle" direction="pwr" rot="R180"/>
+<pin name="GND" x="15.24" y="-12.7" length="middle" direction="pwr" rot="R90"/>
 <wire x1="5.08" y1="2.54" x2="5.08" y2="-7.62" width="0.4064" layer="94"/>
 <wire x1="5.08" y1="-7.62" x2="25.4" y2="-7.62" width="0.4064" layer="94"/>
 <wire x1="25.4" y1="-7.62" x2="25.4" y2="2.54" width="0.4064" layer="94"/>
@@ -21135,54 +21135,54 @@ Max Component Height - 2.64mm</description>
 </packages>
 <symbols>
 <symbol name="BH7240AKV">
-<pin name="R0" x="-22.86" y="40.64" length="middle"/>
-<pin name="R1" x="-22.86" y="38.1" length="middle"/>
-<pin name="R2" x="-22.86" y="35.56" length="middle"/>
-<pin name="R3" x="-22.86" y="33.02" length="middle"/>
-<pin name="R4" x="-22.86" y="30.48" length="middle"/>
-<pin name="R5" x="-22.86" y="27.94" length="middle"/>
-<pin name="R6" x="-22.86" y="25.4" length="middle"/>
-<pin name="R7" x="-22.86" y="22.86" length="middle"/>
-<pin name="G0" x="-22.86" y="17.78" length="middle"/>
-<pin name="G1" x="-22.86" y="15.24" length="middle"/>
-<pin name="G2" x="-22.86" y="12.7" length="middle"/>
-<pin name="G3" x="-22.86" y="10.16" length="middle"/>
+<pin name="R0" x="-22.86" y="40.64" length="middle" direction="in"/>
+<pin name="R1" x="-22.86" y="38.1" length="middle" direction="in"/>
+<pin name="R2" x="-22.86" y="35.56" length="middle" direction="in"/>
+<pin name="R3" x="-22.86" y="33.02" length="middle" direction="in"/>
+<pin name="R4" x="-22.86" y="30.48" length="middle" direction="in"/>
+<pin name="R5" x="-22.86" y="27.94" length="middle" direction="in"/>
+<pin name="R6" x="-22.86" y="25.4" length="middle" direction="in"/>
+<pin name="R7" x="-22.86" y="22.86" length="middle" direction="in"/>
+<pin name="G0" x="-22.86" y="17.78" length="middle" direction="in"/>
+<pin name="G1" x="-22.86" y="15.24" length="middle" direction="in"/>
+<pin name="G2" x="-22.86" y="12.7" length="middle" direction="in"/>
+<pin name="G3" x="-22.86" y="10.16" length="middle" direction="in"/>
 <pin name="RCLAMP" x="22.86" y="50.8" length="middle" rot="R180"/>
 <pin name="GCLAMP" x="22.86" y="43.18" length="middle" rot="R180"/>
 <pin name="BCLAMP" x="22.86" y="35.56" length="middle" rot="R180"/>
 <pin name="VREFOUT" x="22.86" y="27.94" length="middle" rot="R180"/>
-<pin name="ROUT" x="22.86" y="20.32" length="middle" rot="R180"/>
-<pin name="GOUT" x="22.86" y="15.24" length="middle" rot="R180"/>
-<pin name="BOUT" x="22.86" y="10.16" length="middle" rot="R180"/>
-<pin name="YOUT" x="22.86" y="5.08" length="middle" rot="R180"/>
-<pin name="COUT" x="22.86" y="0" length="middle" rot="R180"/>
-<pin name="NC@1" x="-22.86" y="-48.26" length="middle"/>
-<pin name="NC@2" x="-22.86" y="-50.8" length="middle"/>
-<pin name="NC@3" x="-22.86" y="-53.34" length="middle"/>
-<pin name="G4" x="-22.86" y="7.62" length="middle"/>
-<pin name="G5" x="-22.86" y="5.08" length="middle"/>
-<pin name="G6" x="-22.86" y="2.54" length="middle"/>
-<pin name="G7" x="-22.86" y="0" length="middle"/>
-<pin name="B0" x="-22.86" y="-5.08" length="middle"/>
-<pin name="B1" x="-22.86" y="-7.62" length="middle"/>
-<pin name="B2" x="-22.86" y="-10.16" length="middle"/>
-<pin name="B3" x="-22.86" y="-12.7" length="middle"/>
-<pin name="B4" x="-22.86" y="-15.24" length="middle"/>
-<pin name="B5" x="-22.86" y="-17.78" length="middle"/>
-<pin name="B6" x="-22.86" y="-20.32" length="middle"/>
-<pin name="B7" x="-22.86" y="-22.86" length="middle"/>
-<pin name="VCLK" x="-22.86" y="45.72" length="middle"/>
-<pin name="SCIN" x="-22.86" y="50.8" length="middle"/>
-<pin name="SYNCIN" x="-22.86" y="-35.56" length="middle"/>
-<pin name="NT/PAL" x="-22.86" y="-38.1" length="middle"/>
-<pin name="VOUT" x="22.86" y="-5.08" length="middle" rot="R180"/>
+<pin name="ROUT" x="22.86" y="20.32" length="middle" direction="out" rot="R180"/>
+<pin name="GOUT" x="22.86" y="15.24" length="middle" direction="out" rot="R180"/>
+<pin name="BOUT" x="22.86" y="10.16" length="middle" direction="out" rot="R180"/>
+<pin name="YOUT" x="22.86" y="5.08" length="middle" direction="out" rot="R180"/>
+<pin name="COUT" x="22.86" y="0" length="middle" direction="out" rot="R180"/>
+<pin name="NC@1" x="-22.86" y="-48.26" length="middle" direction="nc"/>
+<pin name="NC@2" x="-22.86" y="-50.8" length="middle" direction="nc"/>
+<pin name="NC@3" x="-22.86" y="-53.34" length="middle" direction="nc"/>
+<pin name="G4" x="-22.86" y="7.62" length="middle" direction="in"/>
+<pin name="G5" x="-22.86" y="5.08" length="middle" direction="in"/>
+<pin name="G6" x="-22.86" y="2.54" length="middle" direction="in"/>
+<pin name="G7" x="-22.86" y="0" length="middle" direction="in"/>
+<pin name="B0" x="-22.86" y="-5.08" length="middle" direction="in"/>
+<pin name="B1" x="-22.86" y="-7.62" length="middle" direction="in"/>
+<pin name="B2" x="-22.86" y="-10.16" length="middle" direction="in"/>
+<pin name="B3" x="-22.86" y="-12.7" length="middle" direction="in"/>
+<pin name="B4" x="-22.86" y="-15.24" length="middle" direction="in"/>
+<pin name="B5" x="-22.86" y="-17.78" length="middle" direction="in"/>
+<pin name="B6" x="-22.86" y="-20.32" length="middle" direction="in"/>
+<pin name="B7" x="-22.86" y="-22.86" length="middle" direction="in"/>
+<pin name="VCLK" x="-22.86" y="45.72" length="middle" direction="in"/>
+<pin name="SCIN" x="-22.86" y="50.8" length="middle" direction="in"/>
+<pin name="SYNCIN" x="-22.86" y="-35.56" length="middle" direction="in"/>
+<pin name="NT/PAL" x="-22.86" y="-38.1" length="middle" direction="in"/>
+<pin name="VOUT" x="22.86" y="-5.08" length="middle" direction="out" rot="R180"/>
 <pin name="YTRAP" x="22.86" y="-12.7" length="middle" rot="R180"/>
-<pin name="DVDD" x="22.86" y="-22.86" length="middle" rot="R180"/>
-<pin name="DGND" x="22.86" y="-33.02" length="middle" rot="R180"/>
-<pin name="AVCC1" x="22.86" y="-38.1" length="middle" rot="R180"/>
-<pin name="AVCC2" x="22.86" y="-40.64" length="middle" rot="R180"/>
-<pin name="AGND1" x="22.86" y="-50.8" length="middle" rot="R180"/>
-<pin name="AGND2" x="22.86" y="-53.34" length="middle" rot="R180"/>
+<pin name="DVDD" x="22.86" y="-22.86" length="middle" direction="pwr" rot="R180"/>
+<pin name="DGND" x="22.86" y="-33.02" length="middle" direction="pwr" rot="R180"/>
+<pin name="AVCC1" x="22.86" y="-38.1" length="middle" direction="pwr" rot="R180"/>
+<pin name="AVCC2" x="22.86" y="-40.64" length="middle" direction="pwr" rot="R180"/>
+<pin name="AGND1" x="22.86" y="-50.8" length="middle" direction="pwr" rot="R180"/>
+<pin name="AGND2" x="22.86" y="-53.34" length="middle" direction="pwr" rot="R180"/>
 <wire x1="-17.78" y1="55.88" x2="17.78" y2="55.88" width="0.4064" layer="94"/>
 <wire x1="17.78" y1="55.88" x2="17.78" y2="-58.42" width="0.4064" layer="94"/>
 <wire x1="17.78" y1="-58.42" x2="-17.78" y2="-58.42" width="0.4064" layer="94"/>
@@ -22462,7 +22462,6 @@ SMD chip inductor</description>
 <part name="GND33" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND34" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="X1" library="con-panduit" library_urn="urn:adsk.eagle:library:169" deviceset="057-010-" device="1" package3d_urn="urn:adsk.eagle:package:9203/1"/>
-<part name="GND43" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U3" library="SnapEDA-Library" deviceset="SN74LVC8T245" device=""/>
 <part name="U4" library="SnapEDA-Library" deviceset="SN74LVC8T245" device=""/>
 <part name="U7" library="THS7374IPWR" deviceset="THS7374IPWR" device=""/>
@@ -22581,7 +22580,6 @@ SMD chip inductor</description>
 <part name="VCC1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 <part name="VCC2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 <part name="VCC3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
-<part name="VCC4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 <part name="VCC5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 <part name="VCC6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 <part name="VCC7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
@@ -22625,6 +22623,9 @@ SMD chip inductor</description>
 <part name="C7" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="C9" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="C10" library="rcl_my" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
+<part name="GND43" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND25" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="VCC4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -22641,39 +22642,36 @@ SMD chip inductor</description>
 <instance part="GND34" gate="1" x="-170.18" y="116.84" smashed="yes">
 <attribute name="VALUE" x="-172.72" y="114.3" size="1.778" layer="96"/>
 </instance>
-<instance part="X1" gate="-1" x="129.54" y="-111.76" smashed="yes">
-<attribute name="NAME" x="130.556" y="-112.522" size="1.524" layer="95"/>
-<attribute name="VALUE" x="127" y="-109.855" size="1.778" layer="96"/>
+<instance part="X1" gate="-1" x="121.92" y="-111.76" smashed="yes">
+<attribute name="NAME" x="122.936" y="-112.522" size="1.524" layer="95"/>
+<attribute name="VALUE" x="119.38" y="-109.855" size="1.778" layer="96"/>
 </instance>
 <instance part="X1" gate="-2" x="152.4" y="-111.76" smashed="yes">
 <attribute name="NAME" x="153.416" y="-112.522" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-3" x="129.54" y="-116.84" smashed="yes">
-<attribute name="NAME" x="130.556" y="-117.602" size="1.524" layer="95"/>
+<instance part="X1" gate="-3" x="121.92" y="-116.84" smashed="yes">
+<attribute name="NAME" x="122.936" y="-117.602" size="1.524" layer="95"/>
 </instance>
 <instance part="X1" gate="-4" x="152.4" y="-116.84" smashed="yes">
 <attribute name="NAME" x="153.416" y="-117.602" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-5" x="129.54" y="-121.92" smashed="yes">
-<attribute name="NAME" x="130.556" y="-122.682" size="1.524" layer="95"/>
+<instance part="X1" gate="-5" x="121.92" y="-121.92" smashed="yes">
+<attribute name="NAME" x="122.936" y="-122.682" size="1.524" layer="95"/>
 </instance>
 <instance part="X1" gate="-6" x="152.4" y="-121.92" smashed="yes">
 <attribute name="NAME" x="153.416" y="-122.682" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-7" x="129.54" y="-127" smashed="yes">
-<attribute name="NAME" x="130.556" y="-127.762" size="1.524" layer="95"/>
+<instance part="X1" gate="-7" x="121.92" y="-127" smashed="yes">
+<attribute name="NAME" x="122.936" y="-127.762" size="1.524" layer="95"/>
 </instance>
 <instance part="X1" gate="-8" x="152.4" y="-127" smashed="yes">
 <attribute name="NAME" x="153.416" y="-127.762" size="1.524" layer="95"/>
 </instance>
-<instance part="X1" gate="-9" x="129.54" y="-132.08" smashed="yes">
-<attribute name="NAME" x="130.556" y="-132.842" size="1.524" layer="95"/>
+<instance part="X1" gate="-9" x="121.92" y="-132.08" smashed="yes">
+<attribute name="NAME" x="122.936" y="-132.842" size="1.524" layer="95"/>
 </instance>
 <instance part="X1" gate="-10" x="152.4" y="-132.08" smashed="yes">
 <attribute name="NAME" x="153.416" y="-132.842" size="1.524" layer="95"/>
-</instance>
-<instance part="GND43" gate="1" x="144.78" y="-111.76" smashed="yes" rot="R270">
-<attribute name="VALUE" x="142.24" y="-109.22" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="U3" gate="G$1" x="-147.32" y="-12.7" smashed="yes">
 <attribute name="NAME" x="-149.135040625" y="16.0645" size="2.08755" layer="95" ratio="10" rot="SR0"/>
@@ -23098,9 +23096,6 @@ SMD chip inductor</description>
 <instance part="VCC3" gate="G$1" x="-40.64" y="50.8" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-42.418" y="51.562" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="VCC4" gate="G$1" x="144.78" y="-121.92" smashed="yes" rot="R90">
-<attribute name="VALUE" x="145.542" y="-118.618" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="VCC5" gate="G$1" x="-91.44" y="-30.48" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-93.218" y="-29.718" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -23300,6 +23295,15 @@ SMD chip inductor</description>
 <attribute name="NAME" x="-175.26" y="-60.071" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-172.974" y="-65.151" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="GND43" gate="1" x="144.78" y="-116.84" smashed="yes" rot="R270">
+<attribute name="VALUE" x="142.24" y="-114.3" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="GND25" gate="1" x="144.78" y="-127" smashed="yes" rot="R270">
+<attribute name="VALUE" x="142.24" y="-124.46" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="VCC4" gate="G$1" x="137.16" y="-121.92" smashed="yes" rot="R90">
+<attribute name="VALUE" x="137.922" y="-118.618" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -23307,8 +23311,8 @@ SMD chip inductor</description>
 <net name="TCK" class="0">
 <segment>
 <pinref part="X1" gate="-1" pin="S"/>
-<wire x1="124.46" y1="-111.76" x2="116.84" y2="-111.76" width="0.1524" layer="91"/>
-<label x="116.84" y="-111.76" size="1.778" layer="95"/>
+<wire x1="116.84" y1="-111.76" x2="109.22" y2="-111.76" width="0.1524" layer="91"/>
+<label x="109.22" y="-111.76" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="TCK"/>
@@ -23317,13 +23321,6 @@ SMD chip inductor</description>
 </segment>
 </net>
 <net name="GND" class="0">
-<segment>
-<pinref part="X1" gate="-2" pin="S"/>
-<pinref part="GND43" gate="1" pin="GND"/>
-<pinref part="X1" gate="-4" pin="S"/>
-<wire x1="147.32" y1="-116.84" x2="147.32" y2="-111.76" width="0.1524" layer="91"/>
-<junction x="147.32" y="-111.76"/>
-</segment>
 <segment>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="-165.1" y1="-30.48" x2="-165.1" y2="-33.02" width="0.1524" layer="91"/>
@@ -23664,6 +23661,14 @@ SMD chip inductor</description>
 <pinref part="C21" gate="G$1" pin="2"/>
 <pinref part="GND38" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="GND25" gate="1" pin="GND"/>
+<pinref part="X1" gate="-8" pin="S"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-4" pin="S"/>
+<pinref part="GND43" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="TDI" class="0">
 <segment>
@@ -23672,9 +23677,9 @@ SMD chip inductor</description>
 <label x="-15.24" y="17.78" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<wire x1="124.46" y1="-121.92" x2="116.84" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-121.92" x2="109.22" y2="-121.92" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-5" pin="S"/>
-<label x="116.84" y="-121.92" size="1.778" layer="95"/>
+<label x="109.22" y="-121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TMS" class="0">
@@ -23684,9 +23689,9 @@ SMD chip inductor</description>
 <label x="-5.08" y="17.78" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<wire x1="124.46" y1="-116.84" x2="116.84" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-116.84" x2="109.22" y2="-116.84" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-3" pin="S"/>
-<label x="116.84" y="-116.84" size="1.778" layer="95"/>
+<label x="109.22" y="-116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TDO" class="0">
@@ -23696,9 +23701,9 @@ SMD chip inductor</description>
 <label x="-17.78" y="17.78" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<wire x1="124.46" y1="-127" x2="116.84" y2="-127" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-127" x2="109.22" y2="-127" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-7" pin="S"/>
-<label x="116.84" y="-127" size="1.778" layer="95"/>
+<label x="109.22" y="-127" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -24830,7 +24835,6 @@ SMD chip inductor</description>
 <pinref part="R21" gate="G$1" pin="1"/>
 <pinref part="C29" gate="G$1" pin="2"/>
 <pinref part="R22" gate="G$1" pin="2"/>
-<pinref part="R22" gate="G$1" pin="2"/>
 <junction x="119.38" y="111.76"/>
 <wire x1="119.38" y1="114.3" x2="119.38" y2="111.76" width="0.1524" layer="91"/>
 </segment>
@@ -25419,8 +25423,9 @@ SMD chip inductor</description>
 <junction x="-190.5" y="10.16"/>
 </segment>
 <segment>
-<pinref part="X1" gate="-6" pin="S"/>
 <pinref part="VCC4" gate="G$1" pin="VCCIO"/>
+<pinref part="X1" gate="-6" pin="S"/>
+<wire x1="139.7" y1="-121.92" x2="147.32" y2="-121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
