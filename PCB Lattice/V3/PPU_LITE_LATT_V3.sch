@@ -22374,7 +22374,7 @@ Source: www.kingbright.com</description>
 <pin name="VCC_IO3@1" x="-45.72" y="-25.4" length="middle" direction="pwr"/>
 <pin name="GND@4" x="15.24" y="-45.72" length="middle" direction="pwr" rot="R90"/>
 <pin name="IO43" x="45.72" y="-25.4" length="middle" rot="R180"/>
-<pin name="GNG@8" x="-10.16" y="45.72" length="middle" direction="pwr" rot="R270"/>
+<pin name="GND@8" x="-10.16" y="45.72" length="middle" direction="pwr" rot="R270"/>
 <pin name="GND@5" x="45.72" y="-17.78" length="middle" direction="pwr" rot="R180"/>
 <pin name="IO44" x="45.72" y="-22.86" length="middle" rot="R180"/>
 <pin name="IO45" x="45.72" y="-15.24" length="middle" rot="R180"/>
@@ -22447,7 +22447,7 @@ Source: www.kingbright.com</description>
 <connect gate="G$1" pin="GND@5" pad="56"/>
 <connect gate="G$1" pin="GND@6" pad="72"/>
 <connect gate="G$1" pin="GND@7" pad="79"/>
-<connect gate="G$1" pin="GNG@8" pad="92"/>
+<connect gate="G$1" pin="GND@8" pad="92"/>
 <connect gate="G$1" pin="INITN_IO63" pad="77"/>
 <connect gate="G$1" pin="IO1" pad="1"/>
 <connect gate="G$1" pin="IO10_PCLKC3_1" pad="13"/>
@@ -22900,9 +22900,9 @@ Source: www.kingbright.com</description>
 <attribute name="NAME" x="-168.91" y="127.381" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-169.418" y="124.841" size="1.778" layer="96"/>
 </instance>
-<instance part="C4" gate="G$1" x="-127" y="114.3" smashed="yes" rot="R180">
-<attribute name="NAME" x="-125.73" y="129.159" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-122.936" y="126.619" size="1.778" layer="96" rot="R180"/>
+<instance part="C4" gate="G$1" x="-127" y="111.76" smashed="yes" rot="R180">
+<attribute name="NAME" x="-125.73" y="126.619" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-122.936" y="124.079" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C7" gate="G$1" x="-190.5" y="12.7" smashed="yes" rot="R180">
 <attribute name="NAME" x="-183.896" y="19.685" size="1.778" layer="95" rot="R180"/>
@@ -23230,9 +23230,9 @@ Source: www.kingbright.com</description>
 <instance part="GND44" gate="1" x="-114.3" y="106.68" smashed="yes">
 <attribute name="VALUE" x="-116.84" y="104.14" size="1.778" layer="96"/>
 </instance>
-<instance part="C5" gate="G$1" x="-114.3" y="114.3" smashed="yes" rot="R180">
-<attribute name="NAME" x="-113.03" y="129.159" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-111.252" y="126.619" size="1.778" layer="96" rot="R180"/>
+<instance part="C5" gate="G$1" x="-114.3" y="111.76" smashed="yes" rot="R180">
+<attribute name="NAME" x="-113.03" y="126.619" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-111.252" y="124.079" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="LED1" gate="G$1" x="228.6" y="-175.26" smashed="yes">
 <attribute name="NAME" x="239.522" y="-175.514" size="1.778" layer="95" rot="R180"/>
@@ -23732,7 +23732,7 @@ Source: www.kingbright.com</description>
 <wire x1="-10.16" y1="33.02" x2="-2.54" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="33.02" x2="-2.54" y2="40.64" width="0.1524" layer="91"/>
 <junction x="-2.54" y="40.64"/>
-<pinref part="U1" gate="G$1" pin="GNG@8"/>
+<pinref part="U1" gate="G$1" pin="GND@8"/>
 </segment>
 <segment>
 <pinref part="GND41" gate="1" pin="GND"/>
@@ -23808,16 +23808,6 @@ Source: www.kingbright.com</description>
 <pinref part="C3" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="GND39" gate="1" pin="GND"/>
-<pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="-127" y1="109.22" x2="-127" y2="111.76" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND44" gate="1" pin="GND"/>
-<pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="-114.3" y1="109.22" x2="-114.3" y2="111.76" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="C12" gate="G$1" pin="2"/>
 <pinref part="GND47" gate="1" pin="GND"/>
 </segment>
@@ -23889,6 +23879,14 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="C8" gate="G$1" pin="2"/>
 <pinref part="GND28" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND44" gate="1" pin="GND"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="GND39" gate="1" pin="GND"/>
+<pinref part="C4" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="TDI" class="0">
@@ -25879,17 +25877,6 @@ Source: www.kingbright.com</description>
 <pinref part="VCC11" gate="G$1" pin="VCCIO"/>
 </segment>
 <segment>
-<pinref part="VCC8" gate="G$1" pin="VCCIO"/>
-<pinref part="VR1" gate="G$1" pin="VOUT"/>
-<wire x1="-106.68" y1="121.92" x2="-114.3" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="-114.3" y1="121.92" x2="-127" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="-127" y1="121.92" x2="-132.08" y2="121.92" width="0.1524" layer="91"/>
-<junction x="-127" y="121.92"/>
-<pinref part="C5" gate="G$1" pin="2"/>
-<junction x="-114.3" y="121.92"/>
-</segment>
-<segment>
 <pinref part="U4" gate="G$1" pin="VCCA"/>
 <pinref part="VCC10" gate="G$1" pin="VCCIO"/>
 <wire x1="-165.1" y1="-60.96" x2="-190.5" y2="-60.96" width="0.1524" layer="91"/>
@@ -25897,6 +25884,19 @@ Source: www.kingbright.com</description>
 <wire x1="-190.5" y1="-60.96" x2="-193.04" y2="-60.96" width="0.1524" layer="91"/>
 <wire x1="-190.5" y1="-58.42" x2="-190.5" y2="-60.96" width="0.1524" layer="91"/>
 <junction x="-190.5" y="-60.96"/>
+</segment>
+<segment>
+<pinref part="VCC8" gate="G$1" pin="VCCIO"/>
+<pinref part="VR1" gate="G$1" pin="VOUT"/>
+<wire x1="-106.68" y1="121.92" x2="-114.3" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="-114.3" y1="121.92" x2="-127" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="-127" y1="121.92" x2="-132.08" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="-127" y1="119.38" x2="-127" y2="121.92" width="0.1524" layer="91"/>
+<junction x="-127" y="121.92"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="-114.3" y1="119.38" x2="-114.3" y2="121.92" width="0.1524" layer="91"/>
+<junction x="-114.3" y="121.92"/>
 </segment>
 </net>
 <net name="N$3" class="0">
