@@ -63,3 +63,9 @@ resources used by the FPGA LATTICE LCMXO2-1200HCTQFP100
 
 ![latt_res](https://github.com/user-attachments/assets/f120e214-14cc-444b-8a56-14d59b4263f6)
 
+PPU-MINI is a scaled-down version of the PPU_lite that features an integrated DAC. This not only improves image quality but also adds support for S-Video and composite video output, alongside the existing RGB output. A BH7240AKV chip is used as the DAC. See the demo on YouTube. https://www.youtube.com/shorts/1G9fNb2Auno
+
+<img width="3024" height="4032" alt="IMG_5592" src="https://github.com/user-attachments/assets/c6d950cb-4cb2-4be7-8692-9c40850c8e9e" />
+
+
+
